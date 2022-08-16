@@ -356,15 +356,10 @@ const Home: NextPage = () => {
 										<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>
 											Typescript
 										</h3>
-										<p className='text-lg'>
-											3 years experience
-											<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
-												<div
-													className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500'
-													style={{ width: '100%' }}
-												></div>
-											</div>
-										</p>
+										<p className='text-lg'>3 years experience</p>
+										<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
+											<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '100%' }}></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -377,15 +372,10 @@ const Home: NextPage = () => {
 										<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>
 											React js
 										</h3>
-										<p className='text-lg'>
-											Over 3 years experience
-											<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
-												<div
-													className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500'
-													style={{ width: '100%' }}
-												></div>
-											</div>
-										</p>
+										<p className='text-lg'>Over 3 years experience</p>
+										<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
+											<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '100%' }}></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -396,12 +386,10 @@ const Home: NextPage = () => {
 									</div>
 									<div className='content'>
 										<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>Next js</h3>
-										<p className='text-lg'>
-											1 years experience
-											<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
-												<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '90%' }}></div>
-											</div>
-										</p>
+										<p className='text-lg'>1 years experience</p>
+										<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
+											<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '90%' }}></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -414,12 +402,10 @@ const Home: NextPage = () => {
 										<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>
 											React native
 										</h3>
-										<p className='text-lg'>
-											1 years experience
-											<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
-												<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '70%' }}></div>
-											</div>
-										</p>
+										<p className='text-lg'>1 years experience</p>
+										<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
+											<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '70%' }}></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -430,12 +416,10 @@ const Home: NextPage = () => {
 									</div>
 									<div className='content'>
 										<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>Node</h3>
-										<p className='text-lg'>
-											3 years experience
-											<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
-												<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '80%' }}></div>
-											</div>
-										</p>
+										<p className='text-lg'>3 years experience</p>
+										<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
+											<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '80%' }}></div>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -446,12 +430,10 @@ const Home: NextPage = () => {
 									</div>
 									<div className='content'>
 										<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>GraphQL</h3>
-										<p className='text-lg'>
-											1 years experience
-											<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
-												<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '70%' }}></div>
-											</div>
-										</p>
+										<p className='text-lg'>1 years experience</p>
+										<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
+											<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '70%' }}></div>
+										</div>
 									</div>
 								</div>
 							</div>
