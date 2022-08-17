@@ -1,0 +1,122 @@
+import { useEffect, useState } from 'react'
+
+export const NavBar = () => {
+	const [sidebarOpen, SetSidebarOpen] = useState(false)
+	const [windowOnTop, setWindowOnTop] = useState(true)
+	const [positionWindow, setPositionWindow] = useState('home')
+
+	function isInViewPort(element: HTMLElement | null) {
+		const bounding = element ? element.getBoundingClientRect() : undefined
+		if (bounding && bounding.top <= 0 && bounding.top + bounding.height >= 10) {
+			return true
+		} else {
+			return false
+		}
+	}
+
+	const checkScreenPosition = () => {
+		if (isInViewPort(document.getElementById('contact'))) setPositionWindow('contact')
+		if (isInViewPort(document.getElementById('recentJobs'))) setPositionWindow('recentJobs')
+		if (isInViewPort(document.getElementById('workingOn'))) setPositionWindow('workingOn')
+		if (isInViewPort(document.getElementById('tecnologies'))) setPositionWindow('tecnologies')
+		if (isInViewPort(document.getElementById('home'))) setPositionWindow('home')
+		if (window.scrollY < 40 && !windowOnTop) setWindowOnTop(true)
+		else if (window.scrollY > 40 && windowOnTop) setWindowOnTop(false)
+	}
+
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			checkScreenPosition()
+		})
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [windowOnTop])
+	return (
+		<nav className=' w-full py-4 transition-all duration-300 '>
+			<button
+				className={` w-12 h-12 rounded-full m-auto mb-8 transition-all duration-300 leading-none bg-slate-600 bg-opacity-30 flex justify-center items-center fixed ${
+					sidebarOpen ? 'left-60' : 'left-5'
+				} z-50 top-6 lg:hidden text-3xl text-white `}
+				type='button'
+				onClick={() => SetSidebarOpen(!sidebarOpen)}
+			>
+				{sidebarOpen ? <i className='fa-solid fa-xmark'></i> : <i className='fa-solid fa-bars'></i>}
+			</button>
+
+			<div
+				className={`fixed ${
+					sidebarOpen ? 'left-0' : '-left-96'
+				} lg:left-0 top-0 z-20 bg-white pt-20 lg:pt-5 h-full lg:h-auto lg:w-full px-5 py-3 duration-300 lg:block ${
+					windowOnTop ? 'lg:bg-transparent lg:text-white ' : 'lg:bg-white lg: text-slate-800'
+				}`}
+				id='navbarOne'
+			>
+				<ul className=' mr-auto lg:justify-end lg:flex text-3xl lg:text-base'>
+					<li
+						className='nav-item mr-5 mb-5 lg:ml-11'
+						onClick={() => {
+							if (sidebarOpen) SetSidebarOpen(false)
+						}}
+					>
+						<a className={positionWindow === 'home' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#home'>
+							Home
+						</a>
+					</li>
+					<li
+						className='nav-item mr-5 mb-5 lg:ml-11'
+						onClick={() => {
+							if (sidebarOpen) SetSidebarOpen(false)
+						}}
+					>
+						<a
+							className={positionWindow === 'recentJobs' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							href='#recentJobs'
+						>
+							Recent Jobs
+						</a>
+					</li>
+					<li
+						className='nav-item mr-5 mb-5 lg:ml-11'
+						onClick={() => {
+							if (sidebarOpen) SetSidebarOpen(false)
+						}}
+					>
+						<a
+							className={positionWindow === 'workingOn' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							href='#workingOn'
+						>
+							Currently working on
+						</a>
+					</li>
+
+					<li
+						className='nav-item mr-5 mb-5 lg:ml-11'
+						onClick={() => {
+							if (sidebarOpen) SetSidebarOpen(false)
+						}}
+					>
+						<a
+							className={positionWindow === 'tecnologies' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							href='#tecnologies'
+						>
+							Tecnologies
+						</a>
+					</li>
+
+					<li
+						className='nav-item mr-5 mb-5 lg:ml-11'
+						onClick={() => {
+							if (sidebarOpen) SetSidebarOpen(false)
+						}}
+					>
+						<a
+							className={positionWindow === 'contact' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							href='#contact'
+						>
+							Contact
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	)
+}
