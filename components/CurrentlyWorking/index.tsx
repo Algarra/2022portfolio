@@ -55,7 +55,7 @@ export const CurrentlyWorking = () => (
 							</p>
 						</div>
 						<ul className='about-feature pb-10'>
-							<li>Typescript</li>
+							<li>TypeScript</li>
 							<li>Next js</li>
 							<li>React Native</li>
 						</ul>

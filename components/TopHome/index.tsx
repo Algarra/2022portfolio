@@ -9,7 +9,7 @@ export const TopHome = () => (
 				<div className=' pl-2 lg:pl-4 w-full lg:w-1/2'>
 					<div className='hero-content mb-0 lg:mb-6'>
 						<h1 className='text-white mb-9 text-4xl sm:text-5xl md:text-6xl lg:text-5xl xl:text-5xl 2xl:text-6xl'>
-							Daniel Algarra Navarro Javascript developer!
+							Daniel Algarra Navarro JavaScript developer!
 						</h1>
 						<p className='text-white text-lg mb-10 xl:pr-18 2xl:pr-120'>Welcome to the site to know who I am.</p>
 						<a href='#tecnologies'>
