@@ -22,7 +22,7 @@ export const TechnicalSkills = () => (
 								<img src='/img/typescript.png' alt='' className=' w-16 ' />
 							</div>
 							<div className='content'>
-								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>Typescript</h3>
+								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>TypeScript</h3>
 								<p className='text-lg'>3 years experience</p>
 								<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
 									<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '100%' }}></div>
