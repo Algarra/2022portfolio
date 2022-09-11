@@ -97,7 +97,7 @@ export const TechnicalSkills = () => (
 								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>GraphQL</h3>
 								<p className='text-lg'>1 years experience</p>
 								<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
-									<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '70%' }}></div>
+									<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '50%' }}></div>
 								</div>
 							</div>
 						</div>
