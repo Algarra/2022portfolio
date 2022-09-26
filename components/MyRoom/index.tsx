@@ -61,7 +61,7 @@ const RoomPage = () => {
 							<i className='fa-solid fa-xmark'></i>
 						</button>
 						<h2 className='text-4xl mt-5 font-extrabold dark:text-gray-800 w-full'>{itemSelected?.title}</h2>
-						<p className='my-4 text-lg text-gray-500 w-full'>{itemSelected?.text}</p>
+						<p className='my-4 text-lg text-gray-600 w-full'>{itemSelected?.text}</p>
 						{itemSelected?.img && <img src={itemSelected.img} className='w-full' />}
 					</>
 				)}
