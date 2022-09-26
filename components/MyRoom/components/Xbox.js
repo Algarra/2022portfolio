@@ -48,8 +48,8 @@ export default function Xbox() {
 					onClick={e =>
 						setItemSelected({
 							title: 'Video Games',
-							text: 'For example, pt-6 would add 1.5rem of padding to the top of an element, pr-4 would add 1rem of padding to the right of an element, pb-8 would add 2rem of padding to the bottom of an element, and pl-2 would add 0.5rem of padding to the left of an element.',
-							img: '',
+							text: 'The truth is that I am not a gamer or a person who spends many hours playing games. But I have to admit that a game after work can be one of the best ways to take your mind off work.',
+							img: '/img/game.gif',
 						})
 					}
 					onPointerOver={e => {

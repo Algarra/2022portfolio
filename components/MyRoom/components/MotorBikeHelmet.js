@@ -50,8 +50,8 @@ export default function MotorBikeHelmet() {
 					onClick={e =>
 						setItemSelected({
 							title: 'Motorbikes',
-							text: 'For example, pt-6 would add 1.5rem of padding to the top of an element, pr-4 would add 1rem of padding to the right of an element, pb-8 would add 2rem of padding to the bottom of an element, and pl-2 would add 0.5rem of padding to the left of an element.',
-							img: '',
+							text: "I started riding a motorcycle when I was very young, following my father's hobby. And that hobby introduced me to competition from which I learned many positive things such as effort and dedication. Traveling and spending time with my father was probably the best part of that time.",
+							img: '/img/dani-moto.jpeg',
 						})
 					}
 					onPointerOver={e => {

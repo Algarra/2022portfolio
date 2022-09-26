@@ -45,8 +45,8 @@ export default function Cat() {
 					onClick={e =>
 						setItemSelected({
 							title: 'Cats',
-							text: 'For example, pt-6 would add 1.5rem of padding to the top of an element, pr-4 would add 1rem of padding to the right of an element, pb-8 would add 2rem of padding to the bottom of an element, and pl-2 would add 0.5rem of padding to the left of an element.',
-							img: '',
+							text: "Although I have always been a dog person for diferent things in life I have ended up living with cats. And even though it's very normal to live with cats nowadays, I can't avoid to feel like the crazy lady from the Simpsons on occasion.",
+							img: '/img/cats.gif',
 						})
 					}
 					onPointerOver={e => {

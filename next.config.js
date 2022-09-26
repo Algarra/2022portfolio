@@ -10,6 +10,9 @@ const nextConfig = {
 			use: ['raw-loader', 'glslify-loader'],
 		},
 	],
+	images: {
+		domains: ['media.giphy.com', 'giphy.com'],
+	},
 }
 
 module.exports = nextConfig

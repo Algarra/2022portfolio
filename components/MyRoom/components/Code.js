@@ -47,8 +47,8 @@ export default function Code() {
 					onClick={e =>
 						setItemSelected({
 							title: 'Code',
-							text: 'For example, pt-6 would add 1.5rem of padding to the top of an element, pr-4 would add 1rem of padding to the right of an element, pb-8 would add 2rem of padding to the bottom of an element, and pl-2 would add 0.5rem of padding to the left of an element.',
-							img: '',
+							text: 'I started programming a little over 4 years ago for a personal project in which I needed different extra features on a Wordpress website that I had at that time. After that and seeing the number of things that could be done, I started to make different applications with React and since then I have not stopped.',
+							img: '/img/code.gif',
 						})
 					}
 					onPointerOver={e => {

@@ -58,7 +58,7 @@ export default function BikeHelmet() {
 					onClick={e =>
 						setItemSelected({
 							title: 'Bike',
-							text: 'For example, pt-6 would add 1.5rem of padding to the top of an element, pr-4 would add 1rem of padding to the right of an element, pb-8 would add 2rem of padding to the bottom of an element, and pl-2 would add 0.5rem of padding to the left of an element.',
+							text: 'I have always liked mountain biking, it started as a hobby when I was racing a motorcycle and I ended up dedicating myself professionally for a few years. The truth is that it was a very positive experience that allowed me to travel and meet many people.',
 							img: '/img/dani-bike.jpeg',
 						})
 					}
