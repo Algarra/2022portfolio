@@ -1,3 +1,5 @@
+import Image from 'next/image'
+import dani from '../../public/img/dani.png'
 export const TopHome = () => (
 	<section
 		id='home'
@@ -17,6 +19,7 @@ export const TopHome = () => (
 								Skills
 							</button>
 						</a>
+
 						<a href='https://www.linkedin.com/in/daniel-algarra-navarro/'>
 							<button className='absolute left-10 -bottom-20 w-12 h-12 rounded-full bg-white hidden lg:flex justify-center items-center'>
 								<i className='fa-brands fa-linkedin-in'></i>
@@ -24,9 +27,9 @@ export const TopHome = () => (
 						</a>
 					</div>
 				</div>
-				<div className='w-full lg:w-1/2'>
-					<div className='flex pt-8 lg:pt-0'>
-						<img src='/img/dani.png' alt='' className=' m-auto w-full lg:w-auto' />
+				<div className='w-full flex lg:w-1/2 content-center '>
+					<div className='flex pt-8 lg:pt-0 m-auto'>
+						<Image src={dani} alt='' className=' w-full lg:w-auto' />
 					</div>
 				</div>
 			</div>

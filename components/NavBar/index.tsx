@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 export const NavBar = () => {
@@ -50,6 +51,13 @@ export const NavBar = () => {
 				}`}
 				id='navbarOne'
 			>
+				<Link href='/my-room'>
+					<button className='absolute hidden lg:inline-flex -mt-2 ml-4  items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+						<span className='relative px-5 py-2 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
+							VISIT MY ROOM
+						</span>
+					</button>
+				</Link>
 				<ul className=' mr-auto lg:justify-end lg:flex text-3xl lg:text-base'>
 					<li
 						className='nav-item mr-5 mb-5 lg:ml-11'
@@ -116,6 +124,13 @@ export const NavBar = () => {
 						</a>
 					</li>
 				</ul>
+				<Link href='/my-room'>
+					<button className='absolute inline-flex lg:hidden -mt-2  items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
+						<span className='relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0'>
+							VISIT MY ROOM
+						</span>
+					</button>
+				</Link>
 			</div>
 		</nav>
 	)

@@ -8,6 +8,8 @@ html {
 
 body {
 	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 h1 {
@@ -32,6 +34,18 @@ h6 {
 a,
 button {
 	@apply transition-all duration-300;
+}
+
+.blinking-cursor::after {
+	content: '|';
+	animation: blink 1s step-start infinite;
+	@apply text-green-600;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0;
+	}
 }
 
 .btn-hover::after {

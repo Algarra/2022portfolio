@@ -1,3 +1,9 @@
+import Image from 'next/image'
+import typescript from '../../public/img/typescript.png'
+import next from '../../public/img/nextjs.png'
+import node from '../../public/img/node.png'
+import graph from '../../public/img/graphql.png'
+
 export const TechnicalSkills = () => (
 	<section id='tecnologies' className=' mt-40 lg:mt-56 pt-24 pb-24 bg-indigo-200 w-full flex justify-center'>
 		<div className='feature-extended-wrapper py-18 bg-theme-color bg-opacity-10 max-w-screen-2xl'>
@@ -18,8 +24,10 @@ export const TechnicalSkills = () => (
 				<div className='flex flex-wrap'>
 					<div className='w-full md:w-1/2 lg:w-4/12'>
 						<div className='p-8 lg:px-3'>
-							<div className=' text-6xl mb-8 text-theme-color leading-none'>
-								<img src='/img/typescript.png' alt='' className=' w-16 ' />
+							<div className=' text-6xl mb-[20px] text-theme-color leading-none'>
+								<div className=' w-16 '>
+									<Image src={typescript} alt='' />
+								</div>
 							</div>
 							<div className='content'>
 								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>TypeScript</h3>
@@ -32,7 +40,7 @@ export const TechnicalSkills = () => (
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12'>
 						<div className='p-8 lg:px-3'>
-							<div className=' text-6xl mb-[34px] text-theme-color leading-none'>
+							<div className=' text-6xl mb-[31px] text-theme-color leading-none'>
 								<i className='fa-brands fa-react'></i>
 							</div>
 							<div className='content'>
@@ -46,8 +54,10 @@ export const TechnicalSkills = () => (
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12'>
 						<div className='p-8 lg:px-3'>
-							<div className=' text-6xl mb-8 text-theme-color leading-none'>
-								<img src='/img/nextjs.png' alt='' className=' w-16 ' />
+							<div className=' text-6xl mb-[20px] text-theme-color leading-none'>
+								<div className=' w-16 '>
+									<Image src={next} alt='' />
+								</div>
 							</div>
 							<div className='content'>
 								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>Next js</h3>
@@ -76,8 +86,10 @@ export const TechnicalSkills = () => (
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12'>
 						<div className='p-8 lg:px-3'>
-							<div className=' text-6xl mb-[39px] text-theme-color leading-none'>
-								<img src='/img/node.png' alt='' className=' w-12 ' />
+							<div className=' text-6xl mb-[11px] text-theme-color leading-none'>
+								<div className=' w-16 '>
+									<Image src={node} alt='' />
+								</div>
 							</div>
 							<div className='content'>
 								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>Node</h3>
@@ -90,8 +102,10 @@ export const TechnicalSkills = () => (
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12'>
 						<div className='p-8 lg:px-3'>
-							<div className=' text-6xl mb-[46px] text-theme-color leading-none'>
-								<img src='/img/graphql.png' alt='' className=' w-12 ' />
+							<div className=' text-6xl mb-[21px] text-theme-color leading-none'>
+								<div className=' w-16 '>
+									<Image src={graph} alt='' />
+								</div>
 							</div>
 							<div className='content'>
 								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>GraphQL</h3>
