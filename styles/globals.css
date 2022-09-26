@@ -48,6 +48,12 @@ button {
 	}
 }
 
+.glass-section {
+	backdrop-filter: blur(20px);
+	box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+}
+
 .btn-hover::after {
 	@apply absolute w-0 h-0 rounded-full top-1/2 left-1/2 transition-all duration-500 transform-gpu scale-0 -translate-x-1/2 -translate-y-1/2;
 	padding: 50%;

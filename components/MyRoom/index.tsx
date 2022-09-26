@@ -47,7 +47,7 @@ const RoomPage = () => {
 			<div
 				className={` transition-all z-50 duration-700 absolute h-full right-0 ${
 					itemSelected ? 'lg:w-1/2 w-full p-14' : 'w-0'
-				} bg-clip-padding  backdrop-filter backdrop-blur-xl bg-opacity-60 `}
+				} bg-clip-padding glass-section bg-opacity-60 `}
 			>
 				{content && (
 					<>
