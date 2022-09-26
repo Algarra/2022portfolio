@@ -21,7 +21,7 @@ const RoomPage = () => {
 	}, [itemSelected])
 
 	return (
-		<div className=' justify-center flex h-full overflow-hidden bg-zinc-600'>
+		<div className=' justify-center flex absolute inset-0  bg-zinc-600'>
 			<Link href='/'>
 				<button className='absolute z-40 left-3 top-3 lg:left-7 lg:top-5 inline-flex  items-center rounded-full justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800'>
 					<span className='relative px-3.5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-full group-hover:bg-opacity-0'>
