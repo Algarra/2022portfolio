@@ -32,7 +32,7 @@ const RoomPage = () => {
 
 			<Title />
 
-			<div className={` w-full h-screen `}>
+			<div className={` w-full h-full `}>
 				<Canvas
 					dpr={[1, 2]}
 					shadows
