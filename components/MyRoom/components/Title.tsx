@@ -8,7 +8,6 @@ const Title = () => {
 		console.log('object')
 		const timeout = setTimeout(() => {
 			setTypedTitle(title.slice(0, typedTitle.length + 1))
-			console.log('🚀 ~ file: index.tsx ~ line 15 ~ timeout ~ title.slice(0, title.length + 1)', title)
 		}, 200)
 
 		return () => clearTimeout(timeout)

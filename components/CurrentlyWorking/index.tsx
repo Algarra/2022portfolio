@@ -1,3 +1,11 @@
+import Image from 'next/image'
+import about2 from '../../public/img/about-2.png'
+import about1 from '../../public/img/about-1.png'
+import rightShape from '../../public/img/about-right-shape.svg'
+import leftShape from '../../public/img/about-left-shape.svg'
+import rightDots from '../../public/img/right-dots.svg'
+import leftDots from '../../public/img/left-dots.svg'
+
 export const CurrentlyWorking = () => (
 	<>
 		<section id='workingOn' className='  lg:mt-10 relative z-10 pt-20 max-w-screen-2xl'>
@@ -10,13 +18,15 @@ export const CurrentlyWorking = () => (
 					</div>
 					<div className='w-full lg:w-1/2'>
 						<div className='relative z-10 lg:pt-20 pb-20 mb-20 ml-6 lg:ml-0 lg:mb-0'>
-							<img src='/img/about-1.png' alt='' className='w-100' />
-							<img
-								src='/img/about-left-shape.svg'
-								alt=''
-								className='absolute -z-10 top-1/2 transform -translate-y-1/2 -left-20'
-							/>
-							<img src='/img/left-dots.svg' alt='' className='absolute -z-10 bottom-0 right-14' />
+							<span className='w-12'>
+								<Image src={about1} alt='abut1' layout='responsive' />
+							</span>
+							<span className=' absolute -z-10 top-1/2 w-2/3 h-full transform -translate-y-1/2 -left-10'>
+								<Image src={leftShape} alt='leftshape' layout='responsive' />
+							</span>
+							<span className=' absolute -z-10 -bottom-2 w-2/3 h-44 right-14'>
+								<Image src={leftDots} alt='leftDots' layout='responsive' />
+							</span>
 						</div>
 					</div>
 					<div className='w-full mt-20 lg:w-1/2'>
@@ -30,7 +40,7 @@ export const CurrentlyWorking = () => (
 							<ul className='about-feature pb-10'>
 								<li>Playwright</li>
 								<li>Next js</li>
-								<li>GraphQL</li>
+								<li>Tailwind</li>
 								<li>MongoDB</li>
 							</ul>
 						</div>
@@ -57,7 +67,9 @@ export const CurrentlyWorking = () => (
 						<ul className='about-feature pb-10'>
 							<li>TypeScript</li>
 							<li>Next js</li>
-							<li>React Native</li>
+							<li>Redux</li>
+							<li>OpenAPI</li>
+							<li>Jest</li>
 						</ul>
 						{/* <a className='border-2 bg-transparent hover:bg-slate-100 border-solid font-bold text-center rounded-full text-black hover:text-neutral-700 cursor-pointer py-4 px-6 '>
 								Learn More
@@ -66,13 +78,15 @@ export const CurrentlyWorking = () => (
 				</div>
 				<div className='w-full lg:w-1/2 order-first lg:order-last'>
 					<div className='relative z-10 mb-18 lg:mb-0 '>
-						<img src='/img/about-2.png' alt='' className='' />
-						<img
-							src='/img/about-right-shape.svg'
-							alt=''
-							className='absolute -z-10 top-1/2 transform -translate-y-1/2 right-0 w-2/3 lg:w-3/4 lg:right-0'
-						/>
-						<img src='/img/right-dots.svg' alt='' className='absolute -z-10 bottom-0 left-14 w-2/3 lg:w-3/4' />
+						<span>
+							<Image src={about2} alt='' layout='responsive' className='' />
+						</span>
+						<span className='absolute -z-10 top-1/2 -translate-y-1/2 right-0  w-2/3 lg:w-3/4 lg:-right-10'>
+							<Image src={rightShape} layout='responsive' alt='' />
+						</span>
+						<span className='absolute -z-10 -bottom-12 left-4 w-2/3 lg:w-3/4'>
+							<Image layout='responsive' src={rightDots} alt='' />
+						</span>
 					</div>
 				</div>
 			</div>

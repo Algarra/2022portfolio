@@ -2,13 +2,14 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { roomContext } from '../../../context/RoomContext'
 import { isMobile } from 'react-device-detect'
+import { Group } from 'three'
 
 export default function Code() {
 	const [hover, setHover] = useState(false)
-	const [scene, setScene] = useState(undefined)
+	const [scene, setScene] = useState<Group | undefined>(undefined)
 	const { itemOnHover, setItemOnHover, setItemSelected, itemSelected } = useContext(roomContext)
 
-	const codeRef = useRef()
+	const codeRef: any = useRef()
 
 	useEffect(() => {
 		const loader = new GLTFLoader()
@@ -75,7 +76,7 @@ export default function Code() {
 						}
 					}}
 				>
-					<boxGeometry args={[17, 17, 15]} position={[0, 0, 0]} />
+					<boxGeometry args={[17, 17, 15]} />
 					<meshPhongMaterial color='#ff0000' opacity={0} transparent />
 					<primitive object={scene} rotation={[0, 26.7, 0]} position={[0, -95, 5]} />
 				</mesh>

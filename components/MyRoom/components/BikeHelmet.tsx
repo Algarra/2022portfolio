@@ -2,13 +2,18 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { roomContext } from '../../../context/RoomContext'
 import { isMobile } from 'react-device-detect'
+import { Group } from 'three'
 
 export default function BikeHelmet() {
 	const [hover, setHover] = useState(false)
-	const [scene, setScene] = useState(undefined)
+	const [scene, setScene] = useState<Group | undefined>(undefined)
 	const { itemOnHover, setItemOnHover, itemSelected, setItemSelected } = useContext(roomContext)
 
-	const bikeRef = useRef()
+	const bikeRef: any = useRef(null)
+
+	useEffect(() => {
+		console.log('🚀 ~ file: BikeHelmet.tsx ~ line 13 ~ BikeHelmet ~ bikeRef', bikeRef)
+	}, [bikeRef])
 
 	useEffect(() => {
 		const loader = new GLTFLoader()
@@ -39,10 +44,6 @@ export default function BikeHelmet() {
 
 	useEffect(() => {
 		document.body.style.cursor = hover ? 'pointer' : 'auto'
-		console.log(
-			'🚀 ~ file: BikeHelmet.js ~ line 42 ~ useEffect ~ document.body.style.cursor',
-			document.body.style.cursor
-		)
 	}, [hover])
 
 	return (
@@ -92,7 +93,7 @@ export default function BikeHelmet() {
 						}
 					}}
 				>
-					<boxGeometry args={[700, 700, 700]} position={[0, 0, 0]} />
+					<boxGeometry args={[700, 700, 700]} />
 					<meshPhongMaterial color='#ff0000' opacity={0} transparent />
 					<primitive castShadow receiveShadow object={scene} />
 				</mesh>

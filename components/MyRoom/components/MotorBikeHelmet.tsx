@@ -2,13 +2,14 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { roomContext } from '../../../context/RoomContext'
 import { isMobile } from 'react-device-detect'
+import { Group } from 'three'
 
 export default function MotorBikeHelmet() {
 	const [hover, setHover] = useState(false)
-	const [scene, setScene] = useState(undefined)
+	const [scene, setScene] = useState<Group | undefined>(undefined)
 	const { itemOnHover, setItemOnHover, setItemSelected, itemSelected } = useContext(roomContext)
 
-	const motoHelmetRef = useRef()
+	const motoHelmetRef: any = useRef(null)
 
 	useEffect(() => {
 		const loader = new GLTFLoader()
@@ -83,7 +84,7 @@ export default function MotorBikeHelmet() {
 						}
 					}}
 				>
-					<boxGeometry args={[0.7, 0.7, 0.7]} position={[0, -75, 0]} />
+					<boxGeometry args={[0.7, 0.7, 0.7]} />
 					<meshPhongMaterial color='#ff0000' opacity={0} transparent />
 					<primitive castShadow receiveShadow object={scene} position={[0, -0.3, 0]} />
 				</mesh>
