@@ -9,7 +9,7 @@ import leftDots from '../../public/img/left-dots.svg'
 export const CurrentlyWorking = () => (
 	<>
 		<section id='workingOn' className='  lg:mt-10 relative z-10 pt-20 max-w-screen-2xl'>
-			<div className='px-4'>
+			<div className='px-8'>
 				<div className='flex-wrap flex items-center'>
 					<div className='w-full text-center'>
 						<h2 className=' mb-32 lg:mb-16 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold'>
@@ -55,7 +55,7 @@ export const CurrentlyWorking = () => (
 		<section id='workingOn' className='about-section pt-20 lg:pt-72 max-w-screen-2xl'>
 			<div className='flex-wrap flex items-center '>
 				<div className='w-full lg:w-1/2 mt-52 lg:mt-0 '>
-					<div className='px-4'>
+					<div className='px-8'>
 						<div className='section-title mb-8'>
 							<h1 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl'>Eurosender</h1>
 							<p className=''>
