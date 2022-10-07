@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { Objectron, BOX_CONNECTIONS } from '@mediapipe/objectron'
 import { Camera } from '@mediapipe/camera_utils'
 import drawingUtils from '@mediapipe/drawing_utils'
+import { isMobile } from 'react-device-detect'
+
 function App() {
 	const [model, setModel] = useState('Shoe')
 	const videoElement = useRef(null)
@@ -66,7 +68,11 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				<video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>
+				{isMobile ? (
+					<input style={{ display: 'none' }} ref={videoElement} type='file' accept='image/*' capture='environment' />
+				) : (
+					<video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>
+				)}
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>
