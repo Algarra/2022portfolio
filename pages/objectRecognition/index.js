@@ -70,7 +70,13 @@ function App() {
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
 				{isMobile ? (
-					<video style={{ display: 'none' }} ref={videoElement} id='camera--view' autoPlay playsInline></video>
+					<video
+						style={{ width: '500px', height: '800px' }}
+						ref={videoElement}
+						id='camera--view'
+						autoPlay
+						playsInline
+					></video>
 				) : (
 					<video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>
 				)}
