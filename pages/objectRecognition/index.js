@@ -69,7 +69,7 @@ function App() {
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
 				{isMobile ? (
-					<input style={{ display: 'none' }} ref={videoElement} type='file' accept='image/*' capture='environment' />
+					<input style={{ display: 'none' }} ref={videoElement} type='file' accept='video/*' capture='environment' />
 				) : (
 					<video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>
 				)}
