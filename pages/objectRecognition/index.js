@@ -8,6 +8,7 @@ function App() {
 	const [model, setModel] = useState('Shoe')
 	const videoElement = useRef(null)
 	const canvasElement = useRef(null)
+	console.log('🚀 ~ file: index.js ~ line 6 ~ isMobile', isMobile)
 
 	useEffect(() => {
 		const videoElement = document.getElementsByClassName('input_video')[0]
@@ -69,7 +70,7 @@ function App() {
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
 				{isMobile ? (
-					<video ref={videoElement} id='camera--view' autoPlay playsinline></video>
+					<video style={{ display: 'none' }} ref={videoElement} id='camera--view' autoPlay playsInline></video>
 				) : (
 					<video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>
 				)}
