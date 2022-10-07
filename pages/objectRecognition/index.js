@@ -69,7 +69,7 @@ function App() {
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
 				{isMobile ? (
-					<input multiple='multiple' type='file' accept='video/*' capture='environment' />
+					<video style={{ display: 'none' }} ref={videoElement} id='camera--view' autoPlay playsinline></video>
 				) : (
 					<video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>
 				)}
