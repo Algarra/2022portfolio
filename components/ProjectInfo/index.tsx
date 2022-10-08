@@ -1,4 +1,4 @@
-import { Dispatch, FunctionComponent, SetStateAction, useState } from 'react'
+import { Dispatch, FunctionComponent, SetStateAction, useEffect, useState } from 'react'
 import { infoBoxContent } from '../../pages'
 
 interface propTypes {
@@ -8,6 +8,10 @@ interface propTypes {
 
 export const ProjectInfo: FunctionComponent<propTypes> = ({ infoBox, setInfoBox }) => {
 	const [actualIndex, setActualIndex] = useState(0)
+
+	useEffect(() => {
+		setActualIndex(0)
+	}, [infoBox])
 
 	return (
 		<div
