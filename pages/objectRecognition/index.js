@@ -11,58 +11,59 @@ function App() {
 	console.log('🚀 ~ file: index.js ~ line 6 ~ isMobile', isMobile)
 
 	useEffect(() => {
-		const videoElement = document.getElementsByClassName('input_video')[0]
-		const canvasElement = document.getElementsByClassName('output_canvas')[0]
-		const canvasCtx = canvasElement.getContext('2d')
 		;(async () => {
+			const videoElement = document.getElementsByClassName('input_video')[0]
+			console.log('🚀 ~ file: index.js ~ line 15 ~ useEffect ~ videoElement', { ...videoElement })
+			const canvasElement = document.getElementsByClassName('output_canvas')[0]
+			const canvasCtx = canvasElement.getContext('2d')
 			console.log('🚀 ~ file: index.js ~ line 19 ~ ; ~ navigator.mediaDevices', navigator.mediaDevices)
 			const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
 			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
-		})()
 
-		function onResults(results) {
-			canvasCtx.save()
-			canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height)
-			if (results.objectDetections) {
-				for (const detectedObject of results.objectDetections) {
-					console.log('🚀 ~ file: App.js ~ line 27 ~ onResults ~ detectedObject', detectedObject)
-					// Reformat keypoint information as landmarks, for easy drawing.
-					const landmarks = detectedObject.keypoints.map(x => x.point2d)
-					// Draw bounding box.
-					drawingUtils.drawConnectors(canvasCtx, landmarks, BOX_CONNECTIONS, {
-						color: '#FF0000',
-					})
+			function onResults(results) {
+				canvasCtx.save()
+				canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height)
+				if (results.objectDetections) {
+					for (const detectedObject of results.objectDetections) {
+						console.log('🚀 ~ file: App.js ~ line 27 ~ onResults ~ detectedObject', detectedObject)
+						// Reformat keypoint information as landmarks, for easy drawing.
+						const landmarks = detectedObject.keypoints.map(x => x.point2d)
+						// Draw bounding box.
+						drawingUtils.drawConnectors(canvasCtx, landmarks, BOX_CONNECTIONS, {
+							color: '#FF0000',
+						})
 
-					// Draw centroid.
-					drawingUtils.drawLandmarks(canvasCtx, [landmarks[0]], {
-						color: '#FFFFFF',
-					})
+						// Draw centroid.
+						drawingUtils.drawLandmarks(canvasCtx, [landmarks[0]], {
+							color: '#FFFFFF',
+						})
+					}
 				}
+				canvasCtx.restore()
 			}
-			canvasCtx.restore()
-		}
 
-		const objectron = new Objectron({
-			locateFile: file => {
-				return `https://cdn.jsdelivr.net/npm/@mediapipe/objectron/${file}`
-			},
-		})
+			const objectron = new Objectron({
+				locateFile: file => {
+					return `https://cdn.jsdelivr.net/npm/@mediapipe/objectron/${file}`
+				},
+			})
 
-		objectron.setOptions({
-			modelName: model,
-			maxNumObjects: 3,
-		})
+			objectron.setOptions({
+				modelName: model,
+				maxNumObjects: 3,
+			})
 
-		objectron.onResults(onResults)
+			objectron.onResults(onResults)
 
-		const camera = new Camera(videoElement, {
-			onFrame: async () => {
-				await objectron.send({ image: videoElement })
-			},
-			width: 1280,
-			height: 720,
-		})
-		camera.start()
+			const camera = new Camera(videoElement, {
+				onFrame: async () => {
+					await objectron.send({ image: videoElement })
+				},
+				width: 1280,
+				height: 720,
+			})
+			camera.start()
+		})()
 	}, [model])
 
 	return (
