@@ -28,7 +28,7 @@ function App() {
 				},
 			}
 
-			const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
+			const videoStream = await navigator.mediaDevices.getUserMedia(constraints)
 			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
 
 			const videoElement = isMobile ? videoStream : document.getElementsByClassName('input_video')[0]
