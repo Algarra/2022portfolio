@@ -12,8 +12,24 @@ function App() {
 
 	useEffect(() => {
 		;(async () => {
+			const constraints = {
+				video: {
+					width: {
+						min: 1280,
+						ideal: 1920,
+						max: 2560,
+					},
+					height: {
+						min: 720,
+						ideal: 1080,
+						max: 1440,
+					},
+					facingMode: 'environment',
+				},
+			}
+
 			const videoElement = isMobile
-				? await navigator.mediaDevices.getUserMedia({ video: true })
+				? await navigator.mediaDevices.getUserMedia(constraints)
 				: document.getElementsByClassName('input_video')[0]
 			console.log('🚀 ~ file: index.js ~ line 15 ~ useEffect ~ videoElement', { ...videoElement })
 			const canvasElement = document.getElementsByClassName('output_canvas')[0]
