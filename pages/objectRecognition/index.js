@@ -6,9 +6,8 @@ import { isMobile } from 'react-device-detect'
 
 function App() {
 	const [model, setModel] = useState('Shoe')
-	const videoElement = useRef(null)
+
 	const canvasElement = useRef(null)
-	console.log('🚀 ~ file: index.js ~ line 6 ~ isMobile', isMobile)
 
 	useEffect(() => {
 		;(async () => {
@@ -30,8 +29,11 @@ function App() {
 
 			const videoStream = isMobile ? await navigator.mediaDevices.getUserMedia(constraints) : undefined
 			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
-
 			const videoElement = document.getElementsByClassName('input_video')[0]
+
+			if (videoStream) videoElement.srcObject = videoStream
+
+			console.log('🚀 ~ file: index.js ~ line 34 ~ ; ~ videoElement', { ...videoElement })
 			const canvasElement = document.getElementsByClassName('output_canvas')[0]
 			const canvasCtx = canvasElement.getContext('2d')
 
@@ -70,27 +72,14 @@ function App() {
 
 			objectron.onResults(onResults)
 
-			if (isMobile) {
-				videoStream.onloadedmetadata(() => {
-					const camera = new Camera(videoStream, {
-						onFrame: async () => {
-							await objectron.send({ image: videoStream })
-						},
-						width: 1280,
-						height: 720,
-					})
-					camera.start()
-				})
-			} else {
-				const camera = new Camera(videoElement, {
-					onFrame: async () => {
-						await objectron.send({ image: videoElement })
-					},
-					width: 1280,
-					height: 720,
-				})
-				camera.start()
-			}
+			const camera = new Camera(videoElement, {
+				onFrame: async () => {
+					await objectron.send({ image: videoElement })
+				},
+				width: 1280,
+				height: 720,
+			})
+			camera.start()
 		})()
 	}, [model])
 
@@ -103,7 +92,7 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				<video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>
+				<video style={{ display: 'none' }} className='input_video'></video>
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>
