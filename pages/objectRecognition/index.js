@@ -4,19 +4,21 @@ import { Camera } from '@mediapipe/camera_utils'
 import drawingUtils from '@mediapipe/drawing_utils'
 import { isMobile } from 'react-device-detect'
 
-function App() {
+const App = async () => {
 	const [model, setModel] = useState('Shoe')
 	const videoElement = useRef(null)
 	const canvasElement = useRef(null)
 	console.log('🚀 ~ file: index.js ~ line 6 ~ isMobile', isMobile)
+	const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
 
 	useEffect(() => {
 		;(async () => {
-			const videoElement = isMobile
-				? await navigator.mediaDevices.getUserMedia({ video: true })
-				: document.getElementsByClassName('input_video')[0]
+			const videoElement = document.getElementsByClassName('input_video')[0]
+			console.log('🚀 ~ file: index.js ~ line 15 ~ useEffect ~ videoElement', { ...videoElement })
 			const canvasElement = document.getElementsByClassName('output_canvas')[0]
 			const canvasCtx = canvasElement.getContext('2d')
+			console.log('🚀 ~ file: index.js ~ line 19 ~ ; ~ navigator.mediaDevices', navigator.mediaDevices)
+			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
 
 			function onResults(results) {
 				canvasCtx.save()
@@ -53,16 +55,16 @@ function App() {
 
 			objectron.onResults(onResults)
 
-			const camera = new Camera(videoElement, {
+			const camera = new Camera(videoStream ?? videoElement, {
 				onFrame: async () => {
-					await objectron.send({ image: videoElement })
+					await objectron.send({ image: videoStream ?? videoElement })
 				},
 				width: 1280,
 				height: 720,
 			})
 			camera.start()
 		})()
-	}, [model])
+	}, [model, videoStream])
 
 	return (
 		<div className='App'>
@@ -73,7 +75,16 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				{!isMobile && <video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>}
+				{isMobile ? (
+					<video
+						style={{ width: '500px', height: '800px', backgroundColor: 'red' }}
+						ref={videoElement}
+						id='camera--view'
+						autoPlay
+					></video>
+				) : (
+					<video style={{ display: 'none' }} ref={videoElement} className='input_video'></video>
+				)}
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>
