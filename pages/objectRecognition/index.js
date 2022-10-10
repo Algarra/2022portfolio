@@ -28,15 +28,14 @@ function App() {
 				},
 			}
 
-			const videoElement = isMobile
-				? await navigator.mediaDevices.getUserMedia(constraints)
-				: document.getElementsByClassName('input_video')[0]
+			const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
+			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
+
+			const videoElement = isMobile ? videoStream : document.getElementsByClassName('input_video')[0]
 			console.log('🚀 ~ file: index.js ~ line 15 ~ useEffect ~ videoElement', { ...videoElement })
 			const canvasElement = document.getElementsByClassName('output_canvas')[0]
 			const canvasCtx = canvasElement.getContext('2d')
 			console.log('🚀 ~ file: index.js ~ line 19 ~ ; ~ navigator.mediaDevices', navigator.mediaDevices)
-			const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
-			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
 
 			function onResults(results) {
 				canvasCtx.save()
