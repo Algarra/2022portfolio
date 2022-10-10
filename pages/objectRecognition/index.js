@@ -28,14 +28,12 @@ function App() {
 				},
 			}
 
-			const videoStream = await navigator.mediaDevices.getUserMedia(constraints)
+			const videoStream = isMobile ? await navigator.mediaDevices.getUserMedia(constraints) : undefined
 			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
 
-			const videoElement = isMobile ? videoStream : document.getElementsByClassName('input_video')[0]
-			console.log('🚀 ~ file: index.js ~ line 15 ~ useEffect ~ videoElement', { ...videoElement })
+			const videoElement = document.getElementsByClassName('input_video')[0]
 			const canvasElement = document.getElementsByClassName('output_canvas')[0]
 			const canvasCtx = canvasElement.getContext('2d')
-			console.log('🚀 ~ file: index.js ~ line 19 ~ ; ~ navigator.mediaDevices', navigator.mediaDevices)
 
 			function onResults(results) {
 				canvasCtx.save()
@@ -72,9 +70,9 @@ function App() {
 
 			objectron.onResults(onResults)
 
-			const camera = new Camera(videoElement, {
+			const camera = new Camera(videoStream ?? videoElement, {
 				onFrame: async () => {
-					await objectron.send({ image: videoElement })
+					await objectron.send({ image: videoStream ?? videoElement })
 				},
 				width: 1280,
 				height: 720,
