@@ -70,14 +70,27 @@ function App() {
 
 			objectron.onResults(onResults)
 
-			const camera = new Camera(videoStream ?? videoElement, {
-				onFrame: async () => {
-					await objectron.send({ image: videoStream ?? videoElement })
-				},
-				width: 1280,
-				height: 720,
-			})
-			camera.start()
+			if (isMobile) {
+				videoStream.onloadedmetadata(() => {
+					const camera = new Camera(videoStream, {
+						onFrame: async () => {
+							await objectron.send({ image: videoStream })
+						},
+						width: 1280,
+						height: 720,
+					})
+					camera.start()
+				})
+			} else {
+				const camera = new Camera(videoElement, {
+					onFrame: async () => {
+						await objectron.send({ image: videoElement })
+					},
+					width: 1280,
+					height: 720,
+				})
+				camera.start()
+			}
 		})()
 	}, [model])
 
