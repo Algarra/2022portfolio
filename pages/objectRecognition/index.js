@@ -79,6 +79,7 @@ function App() {
 				width: 1280,
 				height: 720,
 			})
+
 			camera.start()
 		})()
 	}, [model])
@@ -92,7 +93,7 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				<video style={{ display: 'none' }} className='input_video'></video>
+				<video autoPlay className='input_video'></video>
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>
