@@ -14,6 +14,11 @@ function App() {
 		const videoElement = document.getElementsByClassName('input_video')[0]
 		const canvasElement = document.getElementsByClassName('output_canvas')[0]
 		const canvasCtx = canvasElement.getContext('2d')
+		;(async () => {
+			console.log('🚀 ~ file: index.js ~ line 19 ~ ; ~ navigator.mediaDevices', navigator.mediaDevices)
+			const videoStream = await navigator.mediaDevices.getUserMedia({ video: true })
+			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
+		})()
 
 		function onResults(results) {
 			canvasCtx.save()
