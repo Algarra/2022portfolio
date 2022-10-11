@@ -20,7 +20,7 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 						setLoading(false)
 					},
 					error => {
-						console.log(error.text)
+						console.error(error.text)
 						setLoading(false)
 					}
 				)

@@ -3,6 +3,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { roomContext } from '../../../context/RoomContext'
 import { isMobile } from 'react-device-detect'
 import { Group } from 'three'
+import Image from 'next/image'
+import code from './img/code.gif'
 
 export default function Code() {
 	const [hover, setHover] = useState(false)
@@ -49,7 +51,7 @@ export default function Code() {
 						setItemSelected({
 							title: 'Code',
 							text: 'I started programming a little over 4 years ago for a personal project in which I needed different extra features on a Wordpress website that I had at that time. After that and seeing the number of things that could be done, I started to make different applications with React and since then I have not stopped.',
-							img: '/img/code.gif',
+							img: <Image src={code} alt='detil' layout='fill' objectFit='cover' />,
 						})
 					}
 					onPointerOver={e => {

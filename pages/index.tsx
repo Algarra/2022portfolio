@@ -1,14 +1,14 @@
 import type { NextPage } from 'next'
 import { useState } from 'react'
-import { TopHome } from '../components/TopHome'
-import { RecentWorks } from '../components/RecentWorks'
-import { CurrentlyWorking } from '../components/CurrentlyWorking'
-import { TechnicalSkills } from '../components/TechnicalSkills'
-import { Contact } from '../components/Contact'
-import { Footer } from '../components/Footer'
-import { NotificationMessage } from '../components/NotificationMessage'
-import { NavBar } from '../components/NavBar'
-import { ProjectInfo } from '../components/ProjectInfo'
+import { TopHome } from '../components/homePage/TopHome'
+import { RecentWorks } from '../components/homePage/RecentWorks'
+import { CurrentlyWorking } from '../components/homePage/CurrentlyWorking'
+import { TechnicalSkills } from '../components/homePage/TechnicalSkills'
+import { Contact } from '../components/homePage/Contact'
+import { Footer } from '../components/homePage/Footer'
+import { NotificationMessage } from '../components/homePage/NotificationMessage'
+import { NavBar } from '../components/homePage/NavBar'
+import { ProjectInfo } from '../components/homePage/ProjectInfo'
 
 export type infoBoxContent = { options: string[]; info: { title: string; text: string }[] }
 

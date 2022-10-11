@@ -2,7 +2,9 @@ import { useContext, useEffect, useRef, useState } from 'react'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { roomContext } from '../../../context/RoomContext'
 import { isMobile } from 'react-device-detect'
+import dani from './img/dani-moto.jpeg'
 import { Group } from 'three'
+import Image from 'next/image'
 
 export default function MotorBikeHelmet() {
 	const [hover, setHover] = useState(false)
@@ -52,7 +54,7 @@ export default function MotorBikeHelmet() {
 						setItemSelected({
 							title: 'Motorbikes',
 							text: "I started riding a motorcycle when I was very young, following my father's hobby. And that hobby introduced me to competition from which I learned many positive things such as effort and dedication. Traveling and spending time with my father was probably the best part of that time.",
-							img: '/img/dani-moto.jpeg',
+							img: <Image src={dani} placeholder='blur' alt='detil' layout='fill' objectFit='cover' />,
 						})
 					}
 					onPointerOver={e => {

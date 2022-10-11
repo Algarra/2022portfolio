@@ -1,5 +1,5 @@
 import { Dispatch, FunctionComponent, SetStateAction } from 'react'
-import { infoBoxContent } from '../../pages'
+import { infoBoxContent } from '../../../pages'
 
 interface propTypes {
 	setInfoBox: Dispatch<SetStateAction<infoBoxContent | undefined>>

@@ -5,7 +5,6 @@ const Title = () => {
 	const title = 'Welcome to my room'
 
 	useEffect(() => {
-		console.log('object')
 		const timeout = setTimeout(() => {
 			setTypedTitle(title.slice(0, typedTitle.length + 1))
 		}, 200)

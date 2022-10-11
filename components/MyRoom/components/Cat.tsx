@@ -3,6 +3,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { roomContext } from '../../../context/RoomContext'
 import { isMobile } from 'react-device-detect'
 import { Group } from 'three'
+import Image from 'next/image'
+import cats from './img/cats.gif'
 
 export default function Cat() {
 	const [hover, setHover] = useState(false)
@@ -47,7 +49,7 @@ export default function Cat() {
 						setItemSelected({
 							title: 'Cats',
 							text: "Although I have always been a dog person somehow I have ended up living with cats. And even though it's very normal to live with cats nowadays, I can't avoid to feel like the crazy lady from the Simpsons on occasion.",
-							img: '/img/cats.gif',
+							img: <Image src={cats} alt='detil' layout='fill' objectFit='cover' />,
 						})
 					}
 					onPointerOver={e => {

@@ -4,7 +4,6 @@ import { roomContext } from '../../context/RoomContext'
 import MyRoom from './MyRoom'
 import Title from './components/Title'
 import Link from 'next/link'
-import Image from 'next/image'
 
 const RoomPage = () => {
 	const [content, setContent] = useState(false)
@@ -91,7 +90,7 @@ const RoomPage = () => {
 						<h2 className='text-4xl mt-5 font-extrabold dark:text-gray-800 w-full'>{itemSelected?.title}</h2>
 						<p className='my-4 text-lg text-gray-600 w-full'>{itemSelected?.text}</p>
 						<div className=' relative overflow-hidden w-full h-full max-h-60 lg:max-h-[60%] mt-10 '>
-							{itemSelected?.img && <Image src={itemSelected.img} alt='detil' layout='fill' objectFit='cover' />}
+							{itemSelected?.img && itemSelected?.img}
 						</div>
 					</>
 				)}

@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import dani from '../../public/img/dani.png'
+import dani from './img/dani.png'
 export const TopHome = () => (
 	<section
 		id='home'
@@ -29,7 +29,7 @@ export const TopHome = () => (
 				</div>
 				<div className='w-full flex lg:w-1/2 content-center '>
 					<div className='flex pt-8 lg:pt-0 m-auto'>
-						<Image src={dani} alt='' className=' w-full lg:w-auto' />
+						<Image src={dani} placeholder='blur' alt='' className=' w-full lg:w-auto' />
 					</div>
 				</div>
 			</div>

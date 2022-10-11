@@ -3,6 +3,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { roomContext } from '../../../context/RoomContext'
 import { isMobile } from 'react-device-detect'
 import { Group } from 'three'
+import Image from 'next/image'
+import game from './img/game.gif'
 
 export default function Xbox() {
 	const [hover, setHover] = useState(false)
@@ -50,7 +52,7 @@ export default function Xbox() {
 						setItemSelected({
 							title: 'Video Games',
 							text: 'The truth is that I am not a gamer or a person who spends many hours playing games. But I have to admit that a game after work can be one of the best ways to take your mind off work.',
-							img: '/img/game.gif',
+							img: <Image src={game} alt='detil' layout='fill' objectFit='cover' />,
 						})
 					}
 					onPointerOver={e => {

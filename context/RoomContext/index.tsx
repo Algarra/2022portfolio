@@ -1,15 +1,5 @@
-import React, { createContext, Dispatch, ReactNode, SetStateAction, useState } from 'react'
-
-interface componentTypes {
-	children: ReactNode
-}
-
-interface contextTypes {
-	itemOnHover: boolean
-	setItemOnHover: Dispatch<SetStateAction<boolean>>
-	itemSelected: { title: string; text: string; img: string } | undefined
-	setItemSelected: Dispatch<SetStateAction<{ title: string; text: string; img: string } | undefined>>
-}
+import React, { createContext, ReactNode, useState } from 'react'
+import { componentTypes, contextTypes } from './types'
 
 export const roomContext = createContext<contextTypes>({
 	itemOnHover: false,
@@ -20,7 +10,9 @@ export const roomContext = createContext<contextTypes>({
 
 export const RoomContext: React.FC<componentTypes> = ({ children }) => {
 	const [itemOnHover, setItemOnHover] = useState(false)
-	const [itemSelected, setItemSelected] = useState<{ title: string; text: string; img: string } | undefined>(undefined)
+	const [itemSelected, setItemSelected] = useState<{ title: string; text: string; img: ReactNode } | undefined>(
+		undefined
+	)
 
 	return (
 		<roomContext.Provider

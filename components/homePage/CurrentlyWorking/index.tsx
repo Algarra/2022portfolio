@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import about2 from '../../public/img/about-2.png'
-import about1 from '../../public/img/about-1.png'
-import rightShape from '../../public/img/about-right-shape.svg'
-import leftShape from '../../public/img/about-left-shape.svg'
-import rightDots from '../../public/img/right-dots.svg'
-import leftDots from '../../public/img/left-dots.svg'
+import about2 from './img/about-2.png'
+import about1 from './img/about-1.png'
+import rightShape from './img/about-right-shape.svg'
+import leftShape from './img/about-left-shape.svg'
+import rightDots from './img/right-dots.svg'
+import leftDots from './img/left-dots.svg'
 
 export const CurrentlyWorking = () => (
 	<>

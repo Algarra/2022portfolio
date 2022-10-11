@@ -28,12 +28,10 @@ function App() {
 			}
 
 			const videoStream = isMobile ? await navigator.mediaDevices.getUserMedia(constraints) : undefined
-			console.log('🚀 ~ file: index.js ~ line 20 ~ videoStream', videoStream)
 			const videoElement = document.getElementsByClassName('input_video')[0]
 
 			if (videoStream) videoElement.srcObject = videoStream
 
-			console.log('🚀 ~ file: index.js ~ line 34 ~ ; ~ videoElement', { ...videoElement })
 			const canvasElement = document.getElementsByClassName('output_canvas')[0]
 			const canvasCtx = canvasElement.getContext('2d')
 
@@ -42,7 +40,6 @@ function App() {
 				canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height)
 				if (results.objectDetections) {
 					for (const detectedObject of results.objectDetections) {
-						console.log('🚀 ~ file: App.js ~ line 27 ~ onResults ~ detectedObject', detectedObject)
 						// Reformat keypoint information as landmarks, for easy drawing.
 						const landmarks = detectedObject.keypoints.map(x => x.point2d)
 						// Draw bounding box.

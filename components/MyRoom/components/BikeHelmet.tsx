@@ -3,6 +3,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
 import { roomContext } from '../../../context/RoomContext'
 import { isMobile } from 'react-device-detect'
 import { Group } from 'three'
+import daniBike from './img/dani-bike.jpeg'
+import Image from 'next/image'
 
 export default function BikeHelmet() {
 	const [hover, setHover] = useState(false)
@@ -10,10 +12,6 @@ export default function BikeHelmet() {
 	const { itemOnHover, setItemOnHover, itemSelected, setItemSelected } = useContext(roomContext)
 
 	const bikeRef: any = useRef(null)
-
-	useEffect(() => {
-		console.log('🚀 ~ file: BikeHelmet.tsx ~ line 13 ~ BikeHelmet ~ bikeRef', bikeRef)
-	}, [bikeRef])
 
 	useEffect(() => {
 		const loader = new GLTFLoader()
@@ -60,7 +58,7 @@ export default function BikeHelmet() {
 						setItemSelected({
 							title: 'Bike',
 							text: 'I have always liked mountain biking, it started as a hobby when I was racing a motorcycle and I ended up dedicating myself professionally for a few years. The truth is that it was a very positive experience that allowed me to travel and meet many people.',
-							img: '/img/dani-bike.jpeg',
+							img: <Image src={daniBike} placeholder='blur' alt='detil' layout='fill' objectFit='cover' />,
 						})
 					}
 					onPointerOver={e => {

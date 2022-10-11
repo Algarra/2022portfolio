@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import typescript from '../../public/img/typescript.png'
-import next from '../../public/img/nextjs.png'
-import node from '../../public/img/node.png'
-import graph from '../../public/img/graphql.png'
+import typescript from './img/typescript.png'
+import next from './img/nextjs.png'
+import node from './img/node.png'
+import graph from './img/graphql.png'
 
 export const TechnicalSkills = () => (
 	<section id='tecnologies' className=' mt-40 lg:mt-56 pt-24 pb-24 bg-indigo-200 w-full flex justify-center'>
@@ -26,7 +26,7 @@ export const TechnicalSkills = () => (
 						<div className='p-8 lg:px-3'>
 							<div className=' text-6xl mb-[20px] text-theme-color leading-none'>
 								<div className=' w-16 '>
-									<Image src={typescript} alt='' />
+									<Image src={typescript} placeholder='blur' alt='' />
 								</div>
 							</div>
 							<div className='content'>
@@ -56,7 +56,7 @@ export const TechnicalSkills = () => (
 						<div className='p-8 lg:px-3'>
 							<div className=' text-6xl mb-[20px] text-theme-color leading-none'>
 								<div className=' w-16 '>
-									<Image src={next} alt='' />
+									<Image src={next} placeholder='blur' alt='' />
 								</div>
 							</div>
 							<div className='content'>
@@ -88,7 +88,7 @@ export const TechnicalSkills = () => (
 						<div className='p-8 lg:px-3'>
 							<div className=' text-6xl mb-[11px] text-theme-color leading-none'>
 								<div className=' w-16 '>
-									<Image src={node} alt='' />
+									<Image src={node} placeholder='blur' alt='' />
 								</div>
 							</div>
 							<div className='content'>
@@ -104,7 +104,7 @@ export const TechnicalSkills = () => (
 						<div className='p-8 lg:px-3'>
 							<div className=' text-6xl mb-[21px] text-theme-color leading-none'>
 								<div className=' w-16 '>
-									<Image src={graph} alt='' />
+									<Image src={graph} placeholder='blur' alt='' />
 								</div>
 							</div>
 							<div className='content'>
