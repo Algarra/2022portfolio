@@ -21,13 +21,18 @@ export default function Cat() {
 		})
 	}, [])
 
+	const executeRotation = () => {
+		setHover(true)
+		setTimeout(() => {
+			setHover(false)
+		}, 2000)
+	}
+
 	useEffect(() => {
 		if (isMobile) {
+			executeRotation()
 			const interval = setInterval(() => {
-				setHover(true)
-				setTimeout(() => {
-					setHover(false)
-				}, 2000)
+				executeRotation()
 			}, 10000)
 
 			if (itemOnHover) {

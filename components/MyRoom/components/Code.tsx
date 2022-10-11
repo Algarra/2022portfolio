@@ -21,15 +21,20 @@ export default function Code() {
 		})
 	}, [])
 
+	const executeRotation = () => {
+		setTimeout(() => {
+			setHover(true)
+			setTimeout(() => {
+				setHover(false)
+			}, 2000)
+		}, 6000)
+	}
+
 	useEffect(() => {
 		if (isMobile) {
+			executeRotation()
 			const interval = setInterval(() => {
-				setTimeout(() => {
-					setHover(true)
-					setTimeout(() => {
-						setHover(false)
-					}, 2000)
-				}, 6000)
+				executeRotation()
 			}, 10000)
 
 			if (itemOnHover) {

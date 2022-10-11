@@ -21,15 +21,20 @@ export default function BikeHelmet() {
 		})
 	}, [])
 
+	const executeRotation = () => {
+		setTimeout(() => {
+			setHover(true)
+			setTimeout(() => {
+				setHover(false)
+			}, 2000)
+		}, 4000)
+	}
+
 	useEffect(() => {
 		if (isMobile) {
+			executeRotation()
 			const interval = setInterval(() => {
-				setTimeout(() => {
-					setHover(true)
-					setTimeout(() => {
-						setHover(false)
-					}, 2000)
-				}, 4000)
+				executeRotation()
 			}, 10000)
 
 			if (itemOnHover) {
