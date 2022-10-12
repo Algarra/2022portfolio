@@ -1,86 +1,86 @@
 import { useEffect, useRef, useState } from 'react'
-import { Objectron, BOX_CONNECTIONS } from '@mediapipe/objectron'
-import { Camera } from '@mediapipe/camera_utils'
-import drawingUtils from '@mediapipe/drawing_utils'
-import { isMobile } from 'react-device-detect'
+// import { Objectron, BOX_CONNECTIONS } from '@mediapipe/objectron'
+// import { Camera } from '@mediapipe/camera_utils'
+// import drawingUtils from '@mediapipe/drawing_utils'
+// import { isMobile } from 'react-device-detect'
 
 function App() {
 	const [model, setModel] = useState('Shoe')
 
-	const canvasElement = useRef(null)
+	// const canvasElement = useRef(null)
 	const videoElement = useRef(null)
 
-	useEffect(() => {
-		;(async () => {
-			const constraints = {
-				video: {
-					width: {
-						min: 1280,
-						ideal: 1920,
-						max: 2560,
-					},
-					height: {
-						min: 720,
-						ideal: 1080,
-						max: 1440,
-					},
-					facingMode: 'environment',
-				},
-			}
+	// useEffect(() => {
+	// 	;(async () => {
+	// 		const constraints = {
+	// 			video: {
+	// 				width: {
+	// 					min: 1280,
+	// 					ideal: 1920,
+	// 					max: 2560,
+	// 				},
+	// 				height: {
+	// 					min: 720,
+	// 					ideal: 1080,
+	// 					max: 1440,
+	// 				},
+	// 				facingMode: 'environment',
+	// 			},
+	// 		}
 
-			const videoStream = isMobile ? await navigator.mediaDevices.getUserMedia(constraints) : undefined
-			const videoElement = document.getElementById('gum-local')
+	// 		const videoStream = isMobile ? await navigator.mediaDevices.getUserMedia(constraints) : undefined
+	// 		const videoElement = document.getElementById('gum-local')
 
-			if (videoStream) videoElement.srcObject = videoStream
+	// 		if (videoStream) videoElement.srcObject = videoStream
 
-			const canvasElement = document.getElementsByClassName('output_canvas')[0]
-			const canvasCtx = canvasElement.getContext('2d')
+	// 		const canvasElement = document.getElementsByClassName('output_canvas')[0]
+	// 		const canvasCtx = canvasElement.getContext('2d')
 
-			function onResults(results) {
-				canvasCtx.save()
-				canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height)
-				if (results.objectDetections) {
-					for (const detectedObject of results.objectDetections) {
-						// Reformat keypoint information as landmarks, for easy drawing.
-						const landmarks = detectedObject.keypoints.map(x => x.point2d)
-						// Draw bounding box.
-						drawingUtils.drawConnectors(canvasCtx, landmarks, BOX_CONNECTIONS, {
-							color: '#FF0000',
-						})
+	// 		function onResults(results) {
+	// 			canvasCtx.save()
+	// 			canvasCtx.drawImage(results.image, 0, 0, canvasElement.width, canvasElement.height)
+	// 			if (results.objectDetections) {
+	// 				for (const detectedObject of results.objectDetections) {
+	// 					// Reformat keypoint information as landmarks, for easy drawing.
+	// 					const landmarks = detectedObject.keypoints.map(x => x.point2d)
+	// 					// Draw bounding box.
+	// 					drawingUtils.drawConnectors(canvasCtx, landmarks, BOX_CONNECTIONS, {
+	// 						color: '#FF0000',
+	// 					})
 
-						// Draw centroid.
-						drawingUtils.drawLandmarks(canvasCtx, [landmarks[0]], {
-							color: '#FFFFFF',
-						})
-					}
-				}
-				canvasCtx.restore()
-			}
+	// 					// Draw centroid.
+	// 					drawingUtils.drawLandmarks(canvasCtx, [landmarks[0]], {
+	// 						color: '#FFFFFF',
+	// 					})
+	// 				}
+	// 			}
+	// 			canvasCtx.restore()
+	// 		}
 
-			const objectron = new Objectron({
-				locateFile: file => {
-					return `https://cdn.jsdelivr.net/npm/@mediapipe/objectron/${file}`
-				},
-			})
+	// 		const objectron = new Objectron({
+	// 			locateFile: file => {
+	// 				return `https://cdn.jsdelivr.net/npm/@mediapipe/objectron/${file}`
+	// 			},
+	// 		})
 
-			objectron.setOptions({
-				modelName: model,
-				maxNumObjects: 3,
-			})
+	// 		objectron.setOptions({
+	// 			modelName: model,
+	// 			maxNumObjects: 3,
+	// 		})
 
-			objectron.onResults(onResults)
+	// 		objectron.onResults(onResults)
 
-			const camera = new Camera(videoElement, {
-				onFrame: async () => {
-					await objectron.send({ image: videoElement })
-				},
-				width: 1280,
-				height: 720,
-			})
+	// 		const camera = new Camera(videoElement, {
+	// 			onFrame: async () => {
+	// 				await objectron.send({ image: videoElement })
+	// 			},
+	// 			width: 1280,
+	// 			height: 720,
+	// 		})
 
-			camera.start()
-		})()
-	}, [model])
+	// 		camera.start()
+	// 	})()
+	// }, [model])
 
 	useEffect(() => {
 		const constraints = (window.constraints = {
@@ -144,7 +144,7 @@ function App() {
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
 				<video ref={videoElement} id='gum-local' autoPlay playsinline></video>
-				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
+				{/* <canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas> */}
 			</div>
 		</div>
 	)
