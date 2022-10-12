@@ -11,12 +11,8 @@ export const TechnicalSkills = () => (
 				<div className='flex-wrap flex justify-center'>
 					<div className='w-full md:w-9/12 lg:w-8/12 xl:w-6/12'>
 						<div className='section-title text-center mb-15'>
-							<h2 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold'>
-								Technical skills
-							</h2>
-							<p className='text-lg px-2 '>
-								Here you will find a list of the technologies with which I have the most experience.
-							</p>
+							<h2 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold'>Technical skills</h2>
+							<p className='text-lg px-2 '>Here you will find a list of the technologies with which I have the most experience.</p>
 						</div>
 					</div>
 				</div>
@@ -74,9 +70,7 @@ export const TechnicalSkills = () => (
 								<i className='fa-brands fa-react'></i>
 							</div>
 							<div className='content'>
-								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>
-									React native
-								</h3>
+								<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>React native</h3>
 								<p className='text-lg'>1 years experience</p>
 								<div className='w-full bg-gray-200 rounded-full h-2.5 mb-4 dark:bg-gray-700'>
 									<div className='bg-blue-600 h-2.5 rounded-full dark:bg-blue-500' style={{ width: '70%' }}></div>
@@ -104,7 +98,7 @@ export const TechnicalSkills = () => (
 						<div className='p-8 lg:px-3'>
 							<div className=' text-6xl mb-[21px] text-theme-color leading-none'>
 								<div className=' w-16 '>
-									<Image src={graph} placeholder='blur' alt='' />
+									<Image src={graph} alt='' />
 								</div>
 							</div>
 							<div className='content'>

@@ -123,7 +123,9 @@ function App() {
 		;(async e => {
 			try {
 				const stream = await navigator.mediaDevices.getUserMedia(constraints)
+				console.log('first')
 				handleSuccess(stream)
+				console.log('second')
 				e.target.disabled = true
 			} catch (e) {
 				handleError(e)
@@ -140,8 +142,7 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				{/* <video autoPlay className='input_video'></video> */}
-				<video style={{ display: 'none' }} ref={videoElement} id='gum-local' autoPlay playsinline></video>
+				<video ref={videoElement} id='gum-local' autoPlay playsinline></video>
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>
