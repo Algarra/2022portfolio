@@ -84,7 +84,7 @@ function App() {
 	useEffect(() => {
 		const constraints = (window.constraints = {
 			audio: false,
-			video: { frameRate: { ideal: 10, max: 15 }, facingMode: 'environment' },
+			video: { facingMode: 'environment' },
 		})
 
 		function handleSuccess(stream) {
@@ -139,7 +139,7 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				<video id='gum-local' style={{ display: 'none' }} autoPlay playsInline></video>
+				<video id='gum-local' style={{ display: 'none' }} autoPlay playsInline facingMode='environment'></video>
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>
