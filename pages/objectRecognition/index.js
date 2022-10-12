@@ -143,7 +143,7 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				<video id='gum-local' autoPlay playsinline></video>
+				<video id='gum-local' autoPlay playsInline></video>
 				{/* <canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas> */}
 			</div>
 		</div>
