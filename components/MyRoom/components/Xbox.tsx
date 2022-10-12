@@ -13,14 +13,6 @@ export default function Xbox() {
 
 	const xboxRef: any = useRef(null)
 
-	useEffect(() => {
-		const loader = new GLTFLoader()
-
-		loader.load('/img/xbox.glb', gltf => {
-			setScene(gltf.scene)
-		})
-	}, [])
-
 	const executeRotation = () => {
 		setTimeout(() => {
 			setHover(true)
@@ -31,15 +23,19 @@ export default function Xbox() {
 	}
 
 	useEffect(() => {
+		const loader = new GLTFLoader()
+
+		loader.load('/img/xbox.glb', gltf => {
+			setScene(gltf.scene)
+		})
+	}, [])
+
+	useEffect(() => {
 		if (isMobile) {
 			executeRotation()
 			const interval = setInterval(itemOnHover => {
 				executeRotation()
 			}, 10000)
-
-			if (itemOnHover) {
-				clearInterval(interval)
-			}
 
 			return () => clearInterval(interval)
 		}

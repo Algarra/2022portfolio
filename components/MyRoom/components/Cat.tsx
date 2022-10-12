@@ -13,14 +13,6 @@ export default function Cat() {
 
 	const catRef: any = useRef()
 
-	useEffect(() => {
-		const loader = new GLTFLoader()
-
-		loader.load('/img/cat.glb', gltf => {
-			setScene(gltf.scene)
-		})
-	}, [])
-
 	const executeRotation = () => {
 		setHover(true)
 		setTimeout(() => {
@@ -29,15 +21,19 @@ export default function Cat() {
 	}
 
 	useEffect(() => {
+		const loader = new GLTFLoader()
+
+		loader.load('/img/cat.glb', gltf => {
+			setScene(gltf.scene)
+		})
+	}, [])
+
+	useEffect(() => {
 		if (isMobile) {
 			executeRotation()
 			const interval = setInterval(() => {
 				executeRotation()
 			}, 10000)
-
-			if (itemOnHover) {
-				clearInterval(interval)
-			}
 
 			return () => clearInterval(interval)
 		}

@@ -8,6 +8,7 @@ function App() {
 	const [model, setModel] = useState('Shoe')
 
 	const canvasElement = useRef(null)
+	const videoElement = useRef(null)
 
 	useEffect(() => {
 		;(async () => {
@@ -128,7 +129,7 @@ function App() {
 				handleError(e)
 			}
 		})()
-	}, [])
+	}, [videoElement])
 
 	return (
 		<div className='App'>
@@ -140,7 +141,7 @@ function App() {
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
 				{/* <video autoPlay className='input_video'></video> */}
-				<video style={{ display: 'none' }} id='gum-local' autoPlay playsinline></video>
+				<video style={{ display: 'none' }} ref={videoElement} id='gum-local' autoPlay playsinline></video>
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>

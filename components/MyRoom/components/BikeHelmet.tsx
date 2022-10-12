@@ -37,17 +37,9 @@ export default function BikeHelmet() {
 				executeRotation()
 			}, 10000)
 
-			if (itemOnHover) {
-				clearInterval(interval)
-			}
-
 			return () => clearInterval(interval)
 		}
 	}, [itemOnHover])
-
-	useEffect(() => {
-		document.body.style.cursor = hover ? 'pointer' : 'auto'
-	}, [hover])
 
 	return (
 		<>

@@ -13,14 +13,6 @@ export default function Code() {
 
 	const codeRef: any = useRef()
 
-	useEffect(() => {
-		const loader = new GLTFLoader()
-
-		loader.load('/img/code.glb', gltf => {
-			setScene(gltf.scene)
-		})
-	}, [])
-
 	const executeRotation = () => {
 		setTimeout(() => {
 			setHover(true)
@@ -31,15 +23,19 @@ export default function Code() {
 	}
 
 	useEffect(() => {
+		const loader = new GLTFLoader()
+
+		loader.load('/img/code.glb', gltf => {
+			setScene(gltf.scene)
+		})
+	}, [])
+
+	useEffect(() => {
 		if (isMobile) {
 			executeRotation()
 			const interval = setInterval(() => {
 				executeRotation()
 			}, 10000)
-
-			if (itemOnHover) {
-				clearInterval(interval)
-			}
 
 			return () => clearInterval(interval)
 		}
