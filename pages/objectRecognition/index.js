@@ -95,6 +95,7 @@ function App() {
 			console.log('Got stream with constraints:', constraints)
 			console.log(`Using video device: ${videoTracks[0].label}`)
 			window.stream = stream // make variable available to browser console
+			console.log('first')
 			video.srcObject = stream
 		}
 
@@ -127,7 +128,7 @@ function App() {
 				console.log('first')
 				handleSuccess(stream)
 				console.log('second')
-				e.target.disabled = true
+				// e.target.disabled = true
 			} catch (e) {
 				handleError(e)
 			}
