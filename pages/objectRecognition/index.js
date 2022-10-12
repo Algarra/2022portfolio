@@ -90,6 +90,7 @@ function App() {
 
 		function handleSuccess(stream) {
 			const video = document.querySelector('video')
+			console.log('22222')
 			const videoTracks = stream.getVideoTracks()
 			console.log('Got stream with constraints:', constraints)
 			console.log(`Using video device: ${videoTracks[0].label}`)
