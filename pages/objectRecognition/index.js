@@ -84,17 +84,15 @@ function App() {
 	useEffect(() => {
 		const constraints = (window.constraints = {
 			audio: false,
-			video: true,
+			video: { frameRate: { ideal: 10, max: 15 }, facingMode: 'environment' },
 		})
 
 		function handleSuccess(stream) {
 			const video = document.querySelector('video')
-			console.log('22222')
 			const videoTracks = stream.getVideoTracks()
 			console.log('Got stream with constraints:', constraints)
 			console.log(`Using video device: ${videoTracks[0].label}`)
 			window.stream = stream // make variable available to browser console
-			console.log('first')
 			video.srcObject = stream
 		}
 
@@ -124,9 +122,7 @@ function App() {
 		;(async e => {
 			try {
 				const stream = await navigator.mediaDevices.getUserMedia(constraints)
-				console.log('first')
 				handleSuccess(stream)
-				console.log('second')
 				// e.target.disabled = true
 			} catch (e) {
 				handleError(e)
@@ -143,7 +139,7 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				<video id='gum-local' autoPlay playsInline></video>
+				<video id='gum-local' style={{ display: 'none' }} autoPlay playsInline></video>
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>
