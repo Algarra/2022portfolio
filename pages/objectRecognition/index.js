@@ -28,7 +28,7 @@ function App() {
 			}
 
 			const videoStream = isMobile ? await navigator.mediaDevices.getUserMedia(constraints) : undefined
-			const videoElement = document.getElementsByClassName('input_video')[0]
+			const videoElement = document.getElementById('gum-local')
 
 			if (videoStream) videoElement.srcObject = videoStream
 
@@ -81,6 +81,55 @@ function App() {
 		})()
 	}, [model])
 
+	useEffect(() => {
+		const constraints = (window.constraints = {
+			audio: false,
+			video: true,
+		})
+
+		function handleSuccess(stream) {
+			const video = document.querySelector('video')
+			const videoTracks = stream.getVideoTracks()
+			console.log('Got stream with constraints:', constraints)
+			console.log(`Using video device: ${videoTracks[0].label}`)
+			window.stream = stream // make variable available to browser console
+			video.srcObject = stream
+		}
+
+		function handleError(error) {
+			if (error.name === 'OverconstrainedError') {
+				const v = constraints.video
+				errorMsg(`The resolution ${v.width.exact}x${v.height.exact} px is not supported by your device.`)
+			} else if (error.name === 'NotAllowedError') {
+				errorMsg(
+					'Permissions have not been granted to use your camera and ' +
+						'microphone, you need to allow the page access to your devices in ' +
+						'order for the demo to work.'
+				)
+			}
+			errorMsg(`getUserMedia error: ${error.name}`, error)
+		}
+
+		function errorMsg(msg, error) {
+			console.log('🚀 ~ file: index.js ~ line 114 ~ errorMsg ~ msg', msg)
+			// const errorElement = document.querySelector('#errorMsg')
+			// errorElement.innerHTML += `<p>${msg}</p>`
+			if (typeof error !== 'undefined') {
+				console.error(error)
+			}
+		}
+
+		;(async e => {
+			try {
+				const stream = await navigator.mediaDevices.getUserMedia(constraints)
+				handleSuccess(stream)
+				e.target.disabled = true
+			} catch (e) {
+				handleError(e)
+			}
+		})()
+	}, [])
+
 	return (
 		<div className='App'>
 			<select style={{ marginLeft: '15vw' }} value={model} onChange={e => setModel(e.target.value)}>
@@ -90,7 +139,8 @@ function App() {
 				<option value='Shoe'>Shoes</option>
 			</select>
 			<div style={{ margin: 'auto', width: 'fit-content' }}>
-				<video autoPlay className='input_video'></video>
+				{/* <video autoPlay className='input_video'></video> */}
+				<video style={{ display: 'none' }} id='gum-local' autoPlay playsinline></video>
 				<canvas ref={canvasElement} className='output_canvas' width='1280px' height='720px'></canvas>
 			</div>
 		</div>
