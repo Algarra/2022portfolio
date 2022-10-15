@@ -26,9 +26,8 @@ export const NavBar = () => {
 	}
 
 	useEffect(() => {
-		window.addEventListener('scroll', () => {
-			checkScreenPosition()
-		})
+		window.addEventListener('scroll', checkScreenPosition)
+		return () => window.removeEventListener('scroll', checkScreenPosition, false)
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [windowOnTop])
 	return (
@@ -76,10 +75,7 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a
-							className={positionWindow === 'recentJobs' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
-							href='#recentJobs'
-						>
+						<a className={positionWindow === 'recentJobs' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#recentJobs'>
 							Recent Jobs
 						</a>
 					</li>
@@ -89,10 +85,7 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a
-							className={positionWindow === 'workingOn' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
-							href='#workingOn'
-						>
+						<a className={positionWindow === 'workingOn' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#workingOn'>
 							Currently working on
 						</a>
 					</li>
@@ -103,10 +96,7 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a
-							className={positionWindow === 'tecnologies' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
-							href='#tecnologies'
-						>
+						<a className={positionWindow === 'tecnologies' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#tecnologies'>
 							Tecnologies
 						</a>
 					</li>
@@ -117,10 +107,7 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a
-							className={positionWindow === 'contact' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
-							href='#contact'
-						>
+						<a className={positionWindow === 'contact' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#contact'>
 							Contact
 						</a>
 					</li>
@@ -133,6 +120,16 @@ export const NavBar = () => {
 					</button>
 				</Link>
 			</div>
+
+			<span
+				className={` transition-all z-20 duration-700 text-right fixed inline-flex p-2 right-4 lg:right-10 overflow-hidden bottom-4 lg:bottom-10 ml-2 ${
+					windowOnTop ? 'w-[225px]' : 'w-10'
+				} hover:w-[225px] h-10 rounded-full bg-black hover:bg-opacity-50 bg-opacity-70 text-white`}
+			>
+				<a href='https://github.com/Algarra/2022portfolio' className=' absolute right-2.5 w-60 '>
+					Watch this website code<i className='fa-solid fa-code ml-2.5'></i>
+				</a>
+			</span>
 		</nav>
 	)
 }
