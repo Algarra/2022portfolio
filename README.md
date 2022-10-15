@@ -25,12 +25,6 @@ This project was designed to show my history work and some of my project:
   - React
   - CSS
 
-## Usage example
-
-Bring the best usages of your project.
-
-_For more examples and usage, please refer to the [Wiki][wiki]._
-
 ---
 
 ## Development setup
