@@ -20,6 +20,11 @@ const RoomPage = () => {
 		}
 	}, [itemSelected])
 
+	useEffect(() => {
+		const canvas = document.getElementById('canvas')
+		if (canvas) canvas.style.display = 'unset'
+	}, [])
+
 	return (
 		<div className=' justify-center flex absolute inset-0  bg-zinc-600'>
 			<Link href='/'>
@@ -58,7 +63,7 @@ const RoomPage = () => {
 				</button>
 			)}
 
-			<div className={` w-full h-full `}>
+			<div id='canvas' style={{ display: 'none' }} className={` w-full h-full `}>
 				<Canvas
 					dpr={[1, 2]}
 					shadows
