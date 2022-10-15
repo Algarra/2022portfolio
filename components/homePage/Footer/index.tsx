@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import hackerRank from '../TopHome/img/hackerRank.webp'
+
 export const Footer = () => (
 	<footer
 		className=' text-center bg-cover bg-no-repeat w-full bg-right-top pt-40 mt-25 bg-theme-color md:bg-transparent mb:pt-72 lg:pt-72'
@@ -9,12 +12,17 @@ export const Footer = () => (
 					<div className='w-max pt-2'>
 						<span className=' mr-5 text-white sm:pr-13 md:pr-0 2xl:pr-25'>Kepp knowing about me.</span>
 					</div>
-					<div className='w-12'>
-						<span className='flex items-center justify-center w-10 h-10 rounded-full bg-white bg-opacity-10 text-white'>
-							<a href='https://www.linkedin.com/in/daniel-algarra-navarro/'>
+					<div className=' flex flex-wrap'>
+						<a href='https://www.linkedin.com/in/daniel-algarra-navarro/' className=' cursor-pointer'>
+							<span className='flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-opacity-20 bg-opacity-10 text-white'>
 								<i className='fa-brands fa-linkedin-in'></i>
-							</a>
-						</span>
+							</span>
+						</a>
+						<a href='https://www.hackerrank.com/danielalgarrana1' className=' cursor-pointer'>
+							<span className='flex items-center justify-center ml-2 p-1.5 w-10 h-10 rounded-full bg-white hover:bg-opacity-20 bg-opacity-10 text-white'>
+								<Image src={hackerRank} placeholder='blur' alt='Hacker Rank' className=' grayscale contrast-200 brightness-200 ' />
+							</span>
+						</a>
 					</div>
 				</div>
 			</div>
