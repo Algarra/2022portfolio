@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { Objectron, BOX_CONNECTIONS } from '@mediapipe/objectron'
+import { BOX_CONNECTIONS, Objectron } from '@mediapipe/objectron'
 import { Camera } from '@mediapipe/camera_utils'
 import drawingUtils from '@mediapipe/drawing_utils'
-import { isMobile } from 'react-device-detect'
+import { io } from 'socket.io-client'
+// import { isMobile } from 'react-device-detect'
 
 function App() {
 	const [model, setModel] = useState('Shoe')
@@ -11,26 +12,29 @@ function App() {
 
 	useEffect(() => {
 		;(async () => {
-			const constraints = {
-				video: {
-					width: {
-						min: 1280,
-						ideal: 1920,
-						max: 2560,
-					},
-					height: {
-						min: 720,
-						ideal: 1080,
-						max: 1440,
-					},
-					facingMode: 'environment',
-				},
-			}
+			await fetch('/api/test')
+			// const constraints = {
+			// 	video: {
+			// 		width: {
+			// 			min: 1280,
+			// 			ideal: 1920,
+			// 			max: 2560,
+			// 		},
+			// 		height: {
+			// 			min: 720,
+			// 			ideal: 1080,
+			// 			max: 1440,
+			// 		},
+			// 		facingMode: 'environment',
+			// 	},
+			// }
 
-			const videoStream = isMobile ? await navigator.mediaDevices.getUserMedia(constraints) : undefined
+			// const videoStream = isMobile ? await navigator.mediaDevices.getUserMedia(constraints) : undefined
 			const videoElement = document.getElementById('gum-local')
 
-			if (videoStream) videoElement.srcObject = videoStream
+			// if (videoStream) videoElement.srcObject = videoStream
+
+			const socket = io()
 
 			const canvasElement = document.getElementsByClassName('output_canvas')[0]
 			const canvasCtx = canvasElement.getContext('2d')
@@ -63,29 +67,36 @@ function App() {
 			})
 
 			objectron.setOptions({
-				modelName: model,
+				modelName: 'Shoe',
 				maxNumObjects: 3,
 			})
-
-			objectron.onResults(onResults)
 
 			const camera = new Camera(videoElement, {
 				onFrame: async () => {
 					await objectron.send({ image: videoElement })
 				},
-				width: 1280,
-				height: 720,
+				width: 380,
+				height: 320,
 			})
+
+			objectron.onResults(result => {
+				// socket.emit('treatedImage', result)
+				onResults(result)
+			})
+
+			// socket.on('treatedImage', result => {
+			// 	onResults(result)
+			// })
 
 			camera.start()
 		})()
 	}, [model])
 
 	useEffect(() => {
-		const constraints = (window.constraints = {
+		const constraints = {
 			audio: false,
 			video: { facingMode: 'environment' },
-		})
+		}
 
 		function handleSuccess(stream) {
 			const video = document.querySelector('video')
