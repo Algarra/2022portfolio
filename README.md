@@ -9,8 +9,8 @@
 
 **Daniel Algarra**
 
-- _Released on_ [vercel][https://vercel.com/] (Cloud provider)
-- _My professional profile on_ [LinkedIn][linkedin-url]
+- _Released on_ [vercel][https://vercel.com/]
+- _My professional profile on_ [LinkedIn][https://www.linkedin.com/in/daniel-algarra-navarro/]
 
 ## Showcase
 
