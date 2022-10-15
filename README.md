@@ -1,7 +1,7 @@
 # Daniel Algarra Navarro
 
-> Short blurb about your project idea.
-> One or two paragraphs about your project and what it does.
+> This project is made to allow anyone to know more about me and my work history.
+> I hope it helps you get to know me a little more.
 
 ---
 
