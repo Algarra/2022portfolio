@@ -3,7 +3,7 @@ import { SitemapStream, streamToPromise } from 'sitemap'
 const handleRequest = async (req, res) => {
 	try {
 		const smStream = new SitemapStream({
-			hostname: `https://danielalgarranavarro.com`,
+			hostname: `https://${req.headers.host}`,
 			cacheTime: 600000,
 		})
 
