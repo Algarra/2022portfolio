@@ -1,6 +1,6 @@
 import { SitemapStream, streamToPromise } from 'sitemap'
 
-export default async (req, res) => {
+const handleRequest = async (req, res) => {
 	try {
 		const smStream = new SitemapStream({
 			hostname: `https://danielalgarranavarro.com`,
@@ -37,3 +37,5 @@ export default async (req, res) => {
 		res.send(JSON.stringify(e))
 	}
 }
+
+export default handleRequest
