@@ -38,6 +38,7 @@ export const NavBar = () => {
 				} z-50 top-6 lg:hidden text-3xl text-white `}
 				type='button'
 				onClick={() => SetSidebarOpen(!sidebarOpen)}
+				aria-label='menu'
 			>
 				{sidebarOpen ? <i className='fa-solid fa-xmark'></i> : <i className='fa-solid fa-bars'></i>}
 			</button>
@@ -65,7 +66,7 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a className={positionWindow === 'home' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#home'>
+						<a className={positionWindow === 'home' && !sidebarOpen ? 'underline decoration-sky-500' : ''} aria-label='home' href='#home'>
 							Home
 						</a>
 					</li>
@@ -75,7 +76,11 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a className={positionWindow === 'recentJobs' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#recentJobs'>
+						<a
+							className={positionWindow === 'recentJobs' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							aria-label='recentJobs'
+							href='#recentJobs'
+						>
 							Recent Jobs
 						</a>
 					</li>
@@ -85,7 +90,11 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a className={positionWindow === 'workingOn' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#workingOn'>
+						<a
+							className={positionWindow === 'workingOn' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							aria-label='workingOn'
+							href='#workingOn'
+						>
 							Currently working on
 						</a>
 					</li>
@@ -96,7 +105,11 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a className={positionWindow === 'tecnologies' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#tecnologies'>
+						<a
+							className={positionWindow === 'tecnologies' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							aria-label='tecnologies'
+							href='#tecnologies'
+						>
 							Tecnologies
 						</a>
 					</li>
@@ -107,7 +120,11 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a className={positionWindow === 'contact' && !sidebarOpen ? 'underline decoration-sky-500' : ''} href='#contact'>
+						<a
+							className={positionWindow === 'contact' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							aria-label='contact'
+							href='#contact'
+						>
 							Contact
 						</a>
 					</li>
@@ -126,7 +143,7 @@ export const NavBar = () => {
 					windowOnTop ? 'w-[225px]' : 'w-10'
 				} hover:w-[225px] h-10 rounded-full bg-black hover:bg-opacity-50 bg-opacity-70 text-white`}
 			>
-				<a href='https://github.com/Algarra/2022portfolio' className=' absolute right-2.5 w-60 '>
+				<a href='https://github.com/Algarra/2022portfolio' className=' absolute right-2.5 w-60 ' rel='nofollow' aria-label='github'>
 					Watch this website code<i className='fa-solid fa-code ml-2.5'></i>
 				</a>
 			</span>

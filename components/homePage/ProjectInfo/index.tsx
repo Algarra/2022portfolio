@@ -25,6 +25,7 @@ export const ProjectInfo: FunctionComponent<propTypes> = ({ infoBox, setInfoBox 
 					setInfoBox(undefined)
 				}}
 				className=' absolute right-2 text-white text-2xl'
+				aria-label='close'
 			>
 				<i data-testid='closeIcon' className='fa-solid fa-xmark'></i>
 			</button>
@@ -34,6 +35,7 @@ export const ProjectInfo: FunctionComponent<propTypes> = ({ infoBox, setInfoBox 
 						<button
 							type='button'
 							role='tab'
+							aria-label='tab'
 							onClick={() => setActualIndex(index)}
 							className={`inline-block p-4 ${
 								actualIndex === index ? 'text-blue-600' : 'text-blue-200'

@@ -1,7 +1,3 @@
 module.exports = {
 	plugins: ['tailwindcss'],
-	webpack: (config, { webpack }) => {
-		config.plugins.push(new webpack.IgnorePlugin(/\/__tests__\//))
-		return config
-	},
 }

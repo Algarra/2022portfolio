@@ -50,50 +50,50 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 					<div className='mb-6'>
 						<label htmlFor='email' className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100'>
 							Your name
+							<input
+								type='text'
+								id='name'
+								name='name'
+								data-testid='name'
+								className=' text-sm rounded-lg block w-full p-2.5 dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
+								placeholder=''
+								required
+								value={emailData.name}
+								onChange={e => setEmailData({ ...emailData, name: e.target.value })}
+							/>
 						</label>
-						<input
-							type='text'
-							id='name'
-							name='name'
-							data-testid='name'
-							className=' text-sm rounded-lg block w-full p-2.5 dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
-							placeholder=''
-							required
-							value={emailData.name}
-							onChange={e => setEmailData({ ...emailData, name: e.target.value })}
-						/>
 					</div>
 					<div className='mb-6'>
 						<label htmlFor='email' className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100'>
 							Your email
+							<input
+								type='email'
+								id='email'
+								data-testid='email'
+								name='email'
+								className=' text-sm rounded-lg block w-full p-2.5 dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
+								placeholder='name@example.com'
+								required
+								value={emailData.email}
+								onChange={e => setEmailData({ ...emailData, email: e.target.value })}
+							/>
 						</label>
-						<input
-							type='email'
-							id='email'
-							data-testid='email'
-							name='email'
-							className=' text-sm rounded-lg block w-full p-2.5 dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
-							placeholder='name@example.com'
-							required
-							value={emailData.email}
-							onChange={e => setEmailData({ ...emailData, email: e.target.value })}
-						/>
 					</div>
 					<div className='mb-6'>
 						<label htmlFor='message' className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100'>
 							Your message
+							<textarea
+								id='message'
+								name='message'
+								data-testid='message'
+								rows={4}
+								required
+								className='block p-2.5 w-full text-sm rounded-lg border dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
+								placeholder='Leave a message...'
+								value={emailData.message}
+								onChange={e => setEmailData({ ...emailData, message: e.target.value })}
+							></textarea>
 						</label>
-						<textarea
-							id='message'
-							name='message'
-							data-testid='message'
-							rows={4}
-							required
-							className='block p-2.5 w-full text-sm rounded-lg border dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
-							placeholder='Leave a message...'
-							value={emailData.message}
-							onChange={e => setEmailData({ ...emailData, message: e.target.value })}
-						></textarea>
 					</div>
 
 					<div className='w-full justify-end flex'>
@@ -102,6 +102,7 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 							value='Send'
 							name='submit'
 							data-testid='submit'
+							aria-label='send'
 							className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
 						>
 							{loading ? (
