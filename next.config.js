@@ -6,8 +6,8 @@ module.exports = {
 	redirects: async () => [
 		{
 			source: '/:path*',
-			has: [{ type: 'host', value: 'www.danielalgarranavarro.com' }],
-			destination: 'https://danielalgarranavarro.com/:path*',
+			has: [{ type: 'host', value: 'danielalgarranavarro.com' }],
+			destination: 'https://www.danielalgarranavarro.com/:path*',
 			permanent: true,
 		},
 	],
