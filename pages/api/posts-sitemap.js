@@ -7,13 +7,13 @@ const handleRequest = async (req, res) => {
 			cacheTime: 600000,
 		})
 
-		// List of posts
-		const posts = []
+		// List of pages
+		const pages = [{ slug: '' }, { slug: 'my-room' }]
 
 		// Create each URL row
-		posts.forEach(post => {
+		pages.forEach(post => {
 			smStream.write({
-				url: `/post/${post.slug}`,
+				url: `/${post.slug}`,
 				changefreq: 'daily',
 				priority: 0.9,
 			})
