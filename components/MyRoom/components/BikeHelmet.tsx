@@ -55,7 +55,7 @@ export default function BikeHelmet() {
 						setItemSelected({
 							title: 'Bike',
 							text: 'I have always liked mountain biking, it started as a hobby when I was racing a motorcycle and I ended up dedicating myself professionally for a few years. The truth is that it was a very positive experience that allowed me to travel and meet many people.',
-							img: <Image src={daniBike} placeholder='blur' alt='detil' layout='fill' objectFit='cover' />,
+							img: <Image src={daniBike} placeholder='blur' alt='daniBike' title='daniBike' layout='fill' objectFit='cover' />,
 						})
 					}
 					onPointerOver={e => {

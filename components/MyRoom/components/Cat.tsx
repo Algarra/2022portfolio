@@ -50,7 +50,7 @@ export default function Cat() {
 						setItemSelected({
 							title: 'Cats',
 							text: "Although I have always been a dog person somehow I have ended up living with cats. And even though it's very normal to live with cats nowadays, I can't avoid to feel like the crazy lady from the Simpsons on occasion.",
-							img: <Image src={cats} alt='detil' layout='fill' objectFit='cover' />,
+							img: <Image src={cats} alt='cats' title='cats' layout='fill' objectFit='cover' />,
 						})
 					}
 					onPointerOver={e => {

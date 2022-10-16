@@ -32,7 +32,7 @@ export const Footer = () => {
 							</a>
 							<a href='https://www.hackerrank.com/danielalgarrana1' aria-label='HackerRank' rel='nofollow' className=' cursor-pointer'>
 								<span className='flex items-center justify-center ml-2 p-1.5 w-10 h-10 rounded-full bg-white hover:bg-opacity-20 bg-opacity-10 text-white'>
-									<Image src={hackerRank} alt='Hacker Rank' className=' grayscale contrast-200 brightness-200 ' />
+									<Image src={hackerRank} alt='Hacker Rank' title='Hacker Rank' className=' grayscale contrast-200 brightness-200 ' />
 								</span>
 							</a>
 						</div>

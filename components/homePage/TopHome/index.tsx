@@ -33,13 +33,13 @@ export const TopHome = () => {
 							aria-label='hackerRank'
 							className='absolute left-28 -bottom-20 w-12 h-12 p-3 rounded-full bg-white hover:bg-slate-300 hidden lg:flex justify-center items-center'
 						>
-							<Image src={hackerRank} alt='Hacker Rank' className=' grayscale contrast-200 invert brightness-200 ' />
+							<Image src={hackerRank} alt='Hacker Rank' title='Hacker Rank' className=' grayscale contrast-200 invert brightness-200 ' />
 						</button>
 					</a>
 				</div>
 				<div className='w-full flex lg:w-1/2 content-center '>
 					<div className='flex pt-8 lg:pt-0 m-auto'>
-						<Image src={dani} alt='Dani' className=' w-full lg:w-auto' />
+						<Image src={dani} alt='Dani' title='Dani' className=' w-full lg:w-auto' />
 					</div>
 				</div>
 			</div>

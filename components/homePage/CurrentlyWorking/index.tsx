@@ -15,13 +15,13 @@ export const CurrentlyWorking = () => (
 				</div>
 				<div className='w-full lg:w-1/2 relative z-10 lg:pt-20 pb-20 mb-20 ml-6 lg:ml-0 lg:mb-0'>
 					<span className='w-12'>
-						<Image src={about1} alt='abut1' layout='responsive' />
+						<Image src={about1} alt='abut1' title='about1' layout='responsive' />
 					</span>
 					<span className=' absolute -z-10 top-1/2 w-2/3 h-full transform -translate-y-1/2 -left-10'>
-						<Image src={leftShape} alt='leftshape' layout='responsive' />
+						<Image src={leftShape} alt='leftshape' title='leftshape' layout='responsive' />
 					</span>
 					<span className=' absolute -z-10 -bottom-2 w-2/3 h-44 right-14'>
-						<Image src={leftDots} alt='leftDots' layout='responsive' />
+						<Image src={leftDots} alt='leftDots' title='leftDots' layout='responsive' />
 					</span>
 				</div>
 				<div className='w-full mt-20 lg:w-1/2 mb-10'>
@@ -60,13 +60,13 @@ export const CurrentlyWorking = () => (
 				</div>
 				<div className='w-full lg:w-1/2 order-first lg:order-last relative z-10 mb-18 lg:mb-0 '>
 					<span>
-						<Image src={about2} alt='' layout='responsive' className='' />
+						<Image src={about2} alt='about2' title='about2' layout='responsive' className='' />
 					</span>
 					<span className='absolute -z-10 top-1/2 -translate-y-1/2 right-0  w-2/3 lg:w-3/4 lg:-right-10'>
-						<Image src={rightShape} layout='responsive' alt='' />
+						<Image src={rightShape} layout='responsive' title='rightShape' alt='rightShape' />
 					</span>
 					<span className='absolute -z-10 -bottom-12 left-4 w-2/3 lg:w-3/4'>
-						<Image layout='responsive' src={rightDots} alt='' />
+						<Image layout='responsive' src={rightDots} title='rightDots' alt='rightDots' />
 					</span>
 				</div>
 			</div>
