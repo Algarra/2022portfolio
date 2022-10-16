@@ -25,7 +25,7 @@ export const CurrentlyWorking = () => (
 					</span>
 				</div>
 				<div className='w-full mt-20 lg:w-1/2 mb-10'>
-					<h1 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl'>Scraping application</h1>
+					<h3 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl'>Scraping application</h3>
 					<p className='mb-6'>
 						Right now I am building a scraping app to get information about online stores. Stock, price, sales per day, stock increase...
 						This is done to help distributors control prices and product rotation in each of their customers. Also if they are buying the
@@ -45,7 +45,7 @@ export const CurrentlyWorking = () => (
 			<div className='flex-wrap flex items-center '>
 				<div className='w-full lg:w-1/2 mt-52 lg:mt-0 '>
 					<div className='section-title mb-8'>
-						<h1 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl'>Eurosender</h1>
+						<h3 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl'>Eurosender</h3>
 						<p className=''>
 							{"On Eurosender I'm currently working on different applications, internal management apps and webside (NEXT js)"}
 						</p>

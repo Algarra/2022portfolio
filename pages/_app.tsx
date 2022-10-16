@@ -13,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 					name='description'
 					content="Daniel Algarra portfolio it's made to know more about me, my work experience and my abilities. You will find more about my professional career on the home page and more about me on my room."
 				/>
+				<link rel='canonical' href='https://www.danielalgarranavarro.com/' />
 				<meta name='viewport' content='width=device-width, initial-scale=1' />
 				<meta name='robots' content='index, follow' />
 				<meta charSet='UTF-8' />
