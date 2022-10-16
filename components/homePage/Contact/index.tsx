@@ -48,7 +48,7 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 					method='post'
 				>
 					<div className='mb-6'>
-						<label htmlFor='email' className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100'>
+						<label htmlFor='name' className='block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100'>
 							Your name
 							<input
 								type='text'

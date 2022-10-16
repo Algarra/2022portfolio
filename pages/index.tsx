@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 	const [infoBox, setInfoBox] = useState<infoBoxContent | undefined>(undefined)
 
 	return (
-		<div className='flex relative flex-wrap justify-center'>
+		<main className='flex relative flex-wrap justify-center'>
 			<NavBar />
 
 			<NotificationMessage newText={successMessage} />
@@ -35,7 +35,7 @@ const Home: NextPage = () => {
 			<ProjectInfo infoBox={infoBox} setInfoBox={setInfoBox} />
 
 			<Footer />
-		</div>
+		</main>
 	)
 }
 
