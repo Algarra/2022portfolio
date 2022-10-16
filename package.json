@@ -16,6 +16,7 @@
 	},
 	"dependencies": {
 		"@fortawesome/fontawesome-free": "^6.1.2",
+		"@fullhuman/postcss-purgecss": "^5.0.0",
 		"@mediapipe/camera_utils": "^0.3.1640029074",
 		"@mediapipe/drawing_utils": "^0.3.1620248257",
 		"@mediapipe/objectron": "^0.4.1636596145",
