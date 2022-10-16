@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<Head>
-				<title>Daniel Algarra Navarro</title>
+				<title>Daniel Algarra Navarro - Protfolio page</title>
 				<meta
 					name='description'
 					content="Daniel Algarra portfolio it's made to know more about me, my work experience and my abilities. You will find more about my professional career on the home page and more about me on my room."
