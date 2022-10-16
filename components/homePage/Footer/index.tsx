@@ -17,7 +17,7 @@ export const Footer = () => {
 				<div className='w-full flex text-center justify-center'>
 					<div className=' mb-10 mx-3 w-full justify-center flex flex-wrap '>
 						<div className='w-max pt-2'>
-							<span className=' mr-5 text-white sm:pr-13 md:pr-0 2xl:pr-25'>Kepp knowing about me.</span>
+							<span className=' mr-5 text-white sm:pr-13 md:pr-0 2xl:pr-25'>Keep knowing about me.</span>
 						</div>
 						<div className=' flex flex-wrap'>
 							<a href='https://www.linkedin.com/in/daniel-algarra-navarro/' className=' cursor-pointer'>
@@ -27,7 +27,7 @@ export const Footer = () => {
 							</a>
 							<a href='https://www.hackerrank.com/danielalgarrana1' className=' cursor-pointer'>
 								<span className='flex items-center justify-center ml-2 p-1.5 w-10 h-10 rounded-full bg-white hover:bg-opacity-20 bg-opacity-10 text-white'>
-									<Image src={hackerRank} placeholder='blur' alt='Hacker Rank' className=' grayscale contrast-200 brightness-200 ' />
+									<Image src={hackerRank} alt='Hacker Rank' className=' grayscale contrast-200 brightness-200 ' />
 								</span>
 							</a>
 						</div>

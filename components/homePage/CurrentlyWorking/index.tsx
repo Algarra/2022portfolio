@@ -9,40 +9,34 @@ import leftDots from './img/left-dots.svg'
 export const CurrentlyWorking = () => (
 	<>
 		<section id='workingOn' className='  lg:mt-10 relative z-10 pt-20 max-w-screen-2xl'>
-			<div className='px-8'>
-				<div className='flex-wrap flex items-center'>
-					<div className='w-full text-center'>
-						<h2 className=' mb-32 lg:mb-16 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold'>Currently working on</h2>
-					</div>
-					<div className='w-full lg:w-1/2'>
-						<div className='relative z-10 lg:pt-20 pb-20 mb-20 ml-6 lg:ml-0 lg:mb-0'>
-							<span className='w-12'>
-								<Image src={about1} alt='abut1' layout='responsive' />
-							</span>
-							<span className=' absolute -z-10 top-1/2 w-2/3 h-full transform -translate-y-1/2 -left-10'>
-								<Image src={leftShape} alt='leftshape' layout='responsive' />
-							</span>
-							<span className=' absolute -z-10 -bottom-2 w-2/3 h-44 right-14'>
-								<Image src={leftDots} alt='leftDots' layout='responsive' />
-							</span>
-						</div>
-					</div>
-					<div className='w-full mt-20 lg:w-1/2'>
-						<div className='mb-10'>
-							<h1 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl'>Scraping application</h1>
-							<p className='mb-6'>
-								Right now I am building a scraping app to get information about online stores. Stock, price, sales per day, stock
-								increase... This is done to help distributors control prices and product rotation in each of their customers. Also if they
-								are buying the products outside the official distributor.{' '}
-							</p>
-							<ul className='about-feature pb-10'>
-								<li>Playwright</li>
-								<li>Next js</li>
-								<li>Tailwind</li>
-								<li>MongoDB</li>
-							</ul>
-						</div>
-					</div>
+			<div className='px-8 flex-wrap flex items-center'>
+				<div className='w-full text-center'>
+					<h2 className=' mb-32 lg:mb-16 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold'>Currently working on</h2>
+				</div>
+				<div className='w-full lg:w-1/2 relative z-10 lg:pt-20 pb-20 mb-20 ml-6 lg:ml-0 lg:mb-0'>
+					<span className='w-12'>
+						<Image src={about1} alt='abut1' layout='responsive' />
+					</span>
+					<span className=' absolute -z-10 top-1/2 w-2/3 h-full transform -translate-y-1/2 -left-10'>
+						<Image src={leftShape} alt='leftshape' layout='responsive' />
+					</span>
+					<span className=' absolute -z-10 -bottom-2 w-2/3 h-44 right-14'>
+						<Image src={leftDots} alt='leftDots' layout='responsive' />
+					</span>
+				</div>
+				<div className='w-full mt-20 lg:w-1/2 mb-10'>
+					<h1 className='mb-6 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl'>Scraping application</h1>
+					<p className='mb-6'>
+						Right now I am building a scraping app to get information about online stores. Stock, price, sales per day, stock increase...
+						This is done to help distributors control prices and product rotation in each of their customers. Also if they are buying the
+						products outside the official distributor.{' '}
+					</p>
+					<ul className='about-feature pb-10'>
+						<li>Playwright</li>
+						<li>Next js</li>
+						<li>Tailwind</li>
+						<li>MongoDB</li>
+					</ul>
 				</div>
 			</div>
 		</section>
@@ -64,18 +58,16 @@ export const CurrentlyWorking = () => (
 						<li>Jest</li>
 					</ul>
 				</div>
-				<div className='w-full lg:w-1/2 order-first lg:order-last'>
-					<div className='relative z-10 mb-18 lg:mb-0 '>
-						<span>
-							<Image src={about2} alt='' layout='responsive' className='' />
-						</span>
-						<span className='absolute -z-10 top-1/2 -translate-y-1/2 right-0  w-2/3 lg:w-3/4 lg:-right-10'>
-							<Image src={rightShape} layout='responsive' alt='' />
-						</span>
-						<span className='absolute -z-10 -bottom-12 left-4 w-2/3 lg:w-3/4'>
-							<Image layout='responsive' src={rightDots} alt='' />
-						</span>
-					</div>
+				<div className='w-full lg:w-1/2 order-first lg:order-last relative z-10 mb-18 lg:mb-0 '>
+					<span>
+						<Image src={about2} alt='' layout='responsive' className='' />
+					</span>
+					<span className='absolute -z-10 top-1/2 -translate-y-1/2 right-0  w-2/3 lg:w-3/4 lg:-right-10'>
+						<Image src={rightShape} layout='responsive' alt='' />
+					</span>
+					<span className='absolute -z-10 -bottom-12 left-4 w-2/3 lg:w-3/4'>
+						<Image layout='responsive' src={rightDots} alt='' />
+					</span>
 				</div>
 			</div>
 		</section>

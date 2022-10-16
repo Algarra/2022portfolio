@@ -1,5 +1,5 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
-import emailjs from 'emailjs-com'
+import { sendForm } from 'emailjs-com'
 
 interface contact {
 	setSuccessMessage: Dispatch<SetStateAction<string>>
@@ -11,25 +11,22 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 	const [emailData, setEmailData] = useState({ name: '', email: '', message: '' })
 
 	useEffect(() => {
-		function sendEmail() {
-			if (emailData.name !== '' && emailData.email !== '' && emailData.message !== '' && form) {
-				emailjs.sendForm('service_mpjmw7k', 'template_nqp46x5', form, 'user_9mA1y3nPUcdafI8brKZnn').then(
-					() => {
-						setSuccessMessage('Data sent correctly')
-						setEmailData({ name: '', email: '', message: '' })
-						setLoading(false)
-					},
-					error => {
-						console.error(error.text)
-						setLoading(false)
-					}
-				)
-			} else {
-				setSuccessMessage('')
-				setLoading(false)
-			}
+		if (emailData.name !== '' && emailData.email !== '' && emailData.message !== '' && form && loading) {
+			sendForm('service_mpjmw7k', 'template_nqp46x5', form, 'user_9mA1y3nPUcdafI8brKZnn').then(
+				() => {
+					setSuccessMessage('Data sent correctly')
+					setEmailData({ name: '', email: '', message: '' })
+					setLoading(false)
+				},
+				error => {
+					console.error(error.text)
+					setLoading(false)
+				}
+			)
+		} else {
+			setSuccessMessage('')
+			setLoading(false)
 		}
-		if (form && loading) sendEmail()
 	}, [form, emailData, loading, setSuccessMessage])
 
 	return (
@@ -58,6 +55,7 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 							type='text'
 							id='name'
 							name='name'
+							data-testid='name'
 							className=' text-sm rounded-lg block w-full p-2.5 dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
 							placeholder=''
 							required
@@ -72,6 +70,7 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 						<input
 							type='email'
 							id='email'
+							data-testid='email'
 							name='email'
 							className=' text-sm rounded-lg block w-full p-2.5 dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
 							placeholder='name@example.com'
@@ -87,6 +86,7 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 						<textarea
 							id='message'
 							name='message'
+							data-testid='message'
 							rows={4}
 							required
 							className='block p-2.5 w-full text-sm rounded-lg border dark:bg-gray-200 dark:border-gray-100 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500'
@@ -101,6 +101,7 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 							type='submit'
 							value='Send'
 							name='submit'
+							data-testid='submit'
 							className='text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
 						>
 							{loading ? (

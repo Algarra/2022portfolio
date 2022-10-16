@@ -26,7 +26,7 @@ export const ProjectInfo: FunctionComponent<propTypes> = ({ infoBox, setInfoBox 
 				}}
 				className=' absolute right-2 text-white text-2xl'
 			>
-				<i className='fa-solid fa-xmark'></i>
+				<i data-testid='closeIcon' className='fa-solid fa-xmark'></i>
 			</button>
 			<ul className='flex flex-wrap text-sm font-medium text-center text-gray-500 bg-gray-50 rounded-t-lg border-b border-gray-200 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800'>
 				{infoBox?.options.map((item, index) => (

@@ -68,9 +68,7 @@ export const RecentWorks: FunctionComponent<propTypes> = ({ setInfoBox }) => {
 							</div>
 							<div className='content'>
 								<h3 className='mb-6 text-blue-900 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl '>Atmira</h3>
-								<p className='text-lg'>
-									Atmira is a consultancy located in Spain where I work developing web applications.
-								</p>
+								<p className='text-lg'>Atmira is a consultancy located in Spain where I work developing web applications.</p>
 							</div>
 						</div>
 					</div>
@@ -100,12 +98,8 @@ export const RecentWorks: FunctionComponent<propTypes> = ({ setInfoBox }) => {
 							</div>
 
 							<div className='content'>
-								<h3 className='mb-6 text-blue-900 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl '>
-									Pro Athletes World
-								</h3>
-								<p className='text-lg'>
-									PAW is a company that sells cycling products where I worked developing mobile and web apps.
-								</p>
+								<h3 className='mb-6 text-blue-900 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl '>Pro Athletes World</h3>
+								<p className='text-lg'>PAW is a company that sells cycling products where I worked developing mobile and web apps.</p>
 							</div>
 						</div>
 					</div>
