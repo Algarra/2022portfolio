@@ -1,6 +1,9 @@
-Sitemap: https://danielalgarranavarro.com/api/posts-sitemap
-
+# *
 User-agent: *
-Allow: /*
+Allow: /
 
-Disallow: /api/*
+# Host
+Host: https://www.danielalgarranavarro.com
+
+# Sitemaps
+Sitemap: https://www.danielalgarranavarro.com/sitemap.xml
