@@ -20,7 +20,7 @@ export const TopHome = () => {
 							Skills
 						</button>
 					</a>
-					<a href='https://www.linkedin.com/in/daniel-algarra-navarro/' aria-label='linkedin' rel='nofollow'>
+					<a href='https://www.linkedin.com/in/daniel-algarra-navarro/' target='_blank' aria-label='linkedin' rel='nofollow noreferrer'>
 						<button
 							aria-label='linkedin'
 							className='absolute left-10 -bottom-20 w-12 h-12 rounded-full bg-white hover:bg-slate-300 hidden lg:flex justify-center items-center'
@@ -28,7 +28,7 @@ export const TopHome = () => {
 							<i className='fa-brands fa-linkedin-in'></i>
 						</button>
 					</a>
-					<a href='https://www.hackerrank.com/danielalgarrana1' aria-label='hackerRank' rel='nofollow'>
+					<a href='https://www.hackerrank.com/danielalgarrana1' target='_blank' aria-label='hackerRank' rel='nofollow noreferrer'>
 						<button
 							aria-label='hackerRank'
 							className='absolute left-28 -bottom-20 w-12 h-12 p-3 rounded-full bg-white hover:bg-slate-300 hidden lg:flex justify-center items-center'

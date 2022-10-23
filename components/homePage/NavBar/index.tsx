@@ -143,7 +143,13 @@ export const NavBar = () => {
 					windowOnTop ? 'w-[225px]' : 'w-10'
 				} hover:w-[225px] h-10 rounded-full bg-black hover:bg-opacity-50 bg-opacity-70 text-white`}
 			>
-				<a href='https://github.com/Algarra/2022portfolio' className=' absolute right-2.5 w-60 ' rel='nofollow' aria-label='github'>
+				<a
+					href='https://github.com/Algarra/2022portfolio'
+					target='_blank'
+					className=' absolute right-2.5 w-60 '
+					rel='nofollow noreferrer'
+					aria-label='github'
+				>
 					Watch this website code<i className='fa-solid fa-code ml-2.5'></i>
 				</a>
 			</span>
