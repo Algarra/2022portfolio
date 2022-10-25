@@ -12,7 +12,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 				description="Daniel Algarra portfolio it's made to know more about me, my work experience and my abilities. You will find more about my professional career on the home page and more about me on my room."
 				canonical='https://www.danielalgarranavarro.com/'
 			/>
-
 			<Component {...pageProps} />
 		</>
 	)
