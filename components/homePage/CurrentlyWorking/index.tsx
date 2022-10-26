@@ -11,17 +11,19 @@ export const CurrentlyWorking = () => (
 		<section id='workingOn' className='  lg:mt-10 relative z-10 pt-20 max-w-screen-2xl'>
 			<div className='px-8 flex-wrap flex items-center'>
 				<div className='w-full text-center'>
-					<h2 className=' mb-32 lg:mb-16 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold'>Currently working on</h2>
+					<h2 className=' mb-16 md:mb-32 lg:mb-16 text-4xl md:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold'>
+						Currently working on
+					</h2>
 				</div>
-				<div className='w-full lg:w-1/2 relative z-10 lg:pt-20 pb-20 mb-20 ml-6 lg:ml-0 lg:mb-0'>
+				<div className='w-full lg:w-1/2 relative z-10 lg:pt-20 pb-20 mb-10 md:mb-20 ml-6 md:ml-[10%] lg:ml-0 lg:mb-0'>
 					<span className='w-12'>
-						<Image src={about1} alt='abut1' title='about1' layout='responsive' />
+						<Image src={about1} alt='abut1' title='about1' />
 					</span>
 					<span className=' absolute -z-10 top-1/2 w-2/3 h-full transform -translate-y-1/2 -left-10'>
-						<Image src={leftShape} alt='leftshape' title='leftshape' layout='responsive' />
+						<Image src={leftShape} alt='leftshape' title='leftshape' />
 					</span>
 					<span className=' absolute -z-10 -bottom-2 w-2/3 h-44 right-14'>
-						<Image src={leftDots} alt='leftDots' title='leftDots' layout='responsive' />
+						<Image src={leftDots} alt='leftDots' title='leftDots' />
 					</span>
 				</div>
 				<div className='w-full mt-20 lg:w-1/2 mb-10'>
@@ -58,15 +60,15 @@ export const CurrentlyWorking = () => (
 						<li>Jest</li>
 					</ul>
 				</div>
-				<div className='w-full lg:w-1/2 order-first lg:order-last relative z-10 mb-18 lg:mb-0 '>
+				<div className='w-full lg:w-1/2 order-first md:ml-[10%] lg:ml-0 lg:order-last relative z-10 mb-18 lg:mb-0 '>
 					<span>
-						<Image src={about2} alt='about2' title='about2' layout='responsive' className='' />
+						<Image src={about2} alt='about2' title='about2' className='' />
 					</span>
 					<span className='absolute -z-10 top-1/2 -translate-y-1/2 right-0  w-2/3 lg:w-3/4 lg:-right-10'>
-						<Image src={rightShape} layout='responsive' title='rightShape' alt='rightShape' />
+						<Image src={rightShape} title='rightShape' alt='rightShape' />
 					</span>
 					<span className='absolute -z-10 -bottom-12 left-4 w-2/3 lg:w-3/4'>
-						<Image layout='responsive' src={rightDots} title='rightDots' alt='rightDots' />
+						<Image src={rightDots} title='rightDots' alt='rightDots' />
 					</span>
 				</div>
 			</div>
