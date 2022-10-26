@@ -66,7 +66,11 @@ export const NavBar = () => {
 							if (sidebarOpen) SetSidebarOpen(false)
 						}}
 					>
-						<a className={positionWindow === 'home' && !sidebarOpen ? 'underline decoration-sky-500' : ''} aria-label='home' href='#home'>
+						<a
+							className={positionWindow === 'home' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
+							aria-label='Go to home'
+							href='#home'
+						>
 							Home
 						</a>
 					</li>
@@ -78,7 +82,7 @@ export const NavBar = () => {
 					>
 						<a
 							className={positionWindow === 'recentJobs' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
-							aria-label='recentJobs'
+							aria-label='Go to recentJobs'
 							href='#recentJobs'
 						>
 							Recent Jobs
@@ -92,7 +96,7 @@ export const NavBar = () => {
 					>
 						<a
 							className={positionWindow === 'workingOn' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
-							aria-label='workingOn'
+							aria-label='Go to workingOn'
 							href='#workingOn'
 						>
 							Currently working on
@@ -107,7 +111,7 @@ export const NavBar = () => {
 					>
 						<a
 							className={positionWindow === 'tecnologies' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
-							aria-label='tecnologies'
+							aria-label='Go to tecnologies'
 							href='#tecnologies'
 						>
 							Tecnologies
@@ -122,7 +126,7 @@ export const NavBar = () => {
 					>
 						<a
 							className={positionWindow === 'contact' && !sidebarOpen ? 'underline decoration-sky-500' : ''}
-							aria-label='contact'
+							aria-label='Go to contact'
 							href='#contact'
 						>
 							Contact
@@ -148,7 +152,7 @@ export const NavBar = () => {
 					target='_blank'
 					className=' absolute right-2.5 w-60 '
 					rel='nofollow noreferrer'
-					aria-label='github'
+					aria-label='Opem my github'
 				>
 					Watch this website code<i className='fa-solid fa-code ml-2.5'></i>
 				</a>

@@ -22,7 +22,7 @@ export const Footer = () => {
 						<div className=' flex flex-wrap'>
 							<a
 								href='https://www.linkedin.com/in/daniel-algarra-navarro/'
-								aria-label='Linkedin'
+								aria-label='Open my Linkedin'
 								target='_blank'
 								rel='nofollow noreferrer'
 								className=' cursor-pointer'
@@ -34,7 +34,7 @@ export const Footer = () => {
 							<a
 								href='https://www.hackerrank.com/danielalgarrana1'
 								target='_blank'
-								aria-label='HackerRank'
+								aria-label='Open my HackerRank'
 								rel='nofollow noreferrer'
 								className=' cursor-pointer'
 							>

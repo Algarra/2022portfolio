@@ -15,12 +15,17 @@ export const TopHome = () => {
 						Daniel Algarra Navarro JavaScript developer!
 					</h1>
 					<p className='text-white text-lg mb-10 xl:pr-18 2xl:pr-120'>Welcome to the site to know who I am.</p>
-					<a href='#tecnologies' aria-label='tecnologies'>
+					<a href='#tecnologies' aria-label='Go to tecnologies'>
 						<button className='border-2 bg-transparent hover:bg-slate-100 border-solid font-bold text-center rounded-full text-white hover:text-neutral-700 cursor-pointer py-4 px-6 '>
 							Skills
 						</button>
 					</a>
-					<a href='https://www.linkedin.com/in/daniel-algarra-navarro/' target='_blank' aria-label='linkedin' rel='nofollow noreferrer'>
+					<a
+						href='https://www.linkedin.com/in/daniel-algarra-navarro/'
+						target='_blank'
+						aria-label='Open my linkedin'
+						rel='nofollow noreferrer'
+					>
 						<button
 							aria-label='linkedin'
 							className='absolute left-10 2xl:left-16 -bottom-20 w-12 h-12 rounded-full bg-white hover:bg-slate-300 hidden lg:flex justify-center items-center'
@@ -28,7 +33,7 @@ export const TopHome = () => {
 							<i className='fa-brands fa-linkedin-in'></i>
 						</button>
 					</a>
-					<a href='https://www.hackerrank.com/danielalgarrana1' target='_blank' aria-label='hackerRank' rel='nofollow noreferrer'>
+					<a href='https://www.hackerrank.com/danielalgarrana1' target='_blank' aria-label='Opemn my hackerRank' rel='nofollow noreferrer'>
 						<button
 							aria-label='hackerRank'
 							className='absolute left-28 2xl:left-36 -bottom-20 w-12 h-12 p-3 rounded-full bg-white hover:bg-slate-300 hidden lg:flex justify-center items-center'
