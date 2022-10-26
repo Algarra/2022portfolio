@@ -13,7 +13,7 @@ const Title = () => {
 	}, [typedTitle])
 
 	return (
-		<h1 className=' mt-24 lg:mt-16 absolute font-mono z-10 m-auto mb-4 text-4xl font-light tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white blinking-cursor'>
+		<h1 className=' mt-24 px-6 lg:mt-16 absolute font-mono z-10 m-auto mb-4 text-4xl font-light tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white blinking-cursor'>
 			{typedTitle}
 		</h1>
 	)

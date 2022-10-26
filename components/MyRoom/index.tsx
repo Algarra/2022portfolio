@@ -26,7 +26,7 @@ const RoomPage = () => {
 	}, [])
 
 	return (
-		<div className=' justify-center flex absolute inset-0  bg-zinc-600'>
+		<div className=' justify-center overscroll-contain flex absolute inset-0  bg-zinc-600'>
 			<Link href='/'>
 				<button
 					aria-label='close'
@@ -81,7 +81,7 @@ const RoomPage = () => {
 
 			<div
 				className={` transition-all z-50 duration-700 absolute h-full right-0 ${
-					itemSelected ? 'lg:w-1/2 w-full p-14' : 'w-0'
+					itemSelected ? 'lg:w-1/2 w-full p-6 lg:p-14' : 'w-0'
 				} bg-clip-padding overflow-hidden glass-section bg-opacity-60 `}
 			>
 				{content && (
@@ -96,9 +96,9 @@ const RoomPage = () => {
 						>
 							<i className='fa-solid fa-xmark'></i>
 						</button>
-						<h2 className='text-4xl mt-5 font-extrabold dark:text-gray-800 w-full'>{itemSelected?.title}</h2>
+						<h2 className='text-4xl mt-10 lg:mt-0 font-extrabold dark:text-gray-800 w-full'>{itemSelected?.title}</h2>
 						<p className='my-4 text-lg text-gray-600 w-full'>{itemSelected?.text}</p>
-						<div className=' relative overflow-hidden w-full h-full max-h-60 lg:max-h-[60%] mt-10 '>
+						<div className=' relative overflow-hidden w-full h-full max-h-60 lg:max-h-[60%] mt-5 '>
 							{itemSelected?.img && itemSelected?.img}
 						</div>
 					</>

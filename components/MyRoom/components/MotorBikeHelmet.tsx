@@ -55,7 +55,7 @@ export default function MotorBikeHelmet() {
 						setItemSelected({
 							title: 'Motorbikes',
 							text: "I started riding a motorcycle when I was very young, following my father's hobby. And that hobby introduced me to competition from which I learned many positive things such as effort and dedication. Traveling and spending time with my father was probably the best part of that time.",
-							img: <Image src={dani} placeholder='blur' alt='dani' title='dani' layout='fill' objectFit='cover' />,
+							img: <Image src={dani} placeholder='blur' alt='dani' title='dani' fill />,
 						})
 					}
 					onPointerOver={e => {

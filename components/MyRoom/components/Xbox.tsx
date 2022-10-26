@@ -53,7 +53,7 @@ export default function Xbox() {
 						setItemSelected({
 							title: 'Video Games',
 							text: 'The truth is that I am not a gamer or a person who spends many hours playing games. But I have to admit that a game after work can be one of the best ways to take your mind off work.',
-							img: <Image src={game} alt='game' title='game' layout='fill' objectFit='cover' />,
+							img: <Image src={game} alt='game' title='game' fill />,
 						})
 					}
 					onPointerOver={e => {

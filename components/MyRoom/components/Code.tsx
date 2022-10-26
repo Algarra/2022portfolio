@@ -52,7 +52,7 @@ export default function Code() {
 						setItemSelected({
 							title: 'Code',
 							text: 'I started programming a little over 4 years ago for a personal project in which I needed different extra features on a Wordpress website that I had at that time. After that and seeing the number of things that could be done, I started to make different applications with React and since then I have not stopped.',
-							img: <Image src={code} alt='code' title='code' layout='fill' objectFit='cover' />,
+							img: <Image src={code} alt='code' title='code' fill />,
 						})
 					}
 					onPointerOver={e => {

@@ -16,7 +16,7 @@ export const TechnicalSkills = () => (
 				<div className='flex flex-wrap'>
 					<div className='w-full md:w-1/2 lg:w-4/12 p-8 lg:px-3'>
 						<div className=' text-6xl mb-[20px] text-theme-color leading-none w-16'>
-							<Image src={typescript} alt='Typescript' title='Typescript' />
+							<Image src={typescript} alt='Typescript' height={290} title='Typescript' />
 						</div>
 						<div className='content'>
 							<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>TypeScript</h3>
@@ -27,7 +27,7 @@ export const TechnicalSkills = () => (
 						</div>
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12 p-8 lg:px-3'>
-						<div className=' text-6xl mb-[31px] text-theme-color leading-none'>
+						<div className=' text-[65px] mb-[17px] text-theme-color leading-none'>
 							<i className='fa-brands fa-react'></i>
 						</div>
 						<div className='content'>
@@ -40,7 +40,7 @@ export const TechnicalSkills = () => (
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12 p-8 lg:px-3'>
 						<div className=' text-6xl mb-[20px] text-theme-color leading-none w-16 '>
-							<Image src={next} alt='Next' title='Next' />
+							<Image src={next} alt='Next' height={290} title='Next' />
 						</div>
 						<div className='content'>
 							<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>Next js</h3>
@@ -51,7 +51,7 @@ export const TechnicalSkills = () => (
 						</div>
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12 p-8 lg:px-3'>
-						<div className=' text-6xl mb-8 text-theme-color leading-none'>
+						<div className=' text-[65px] mb-[18px] text-theme-color leading-none'>
 							<i className='fa-brands fa-react'></i>
 						</div>
 						<div className='content'>
@@ -64,7 +64,7 @@ export const TechnicalSkills = () => (
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12 p-8 lg:px-3'>
 						<div className=' text-6xl mb-[11px] text-theme-color leading-none w-16'>
-							<Image src={node} alt='Node' title='Node' />
+							<Image src={node} alt='Node' height={290} title='Node' />
 						</div>
 						<div className='content'>
 							<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>Node</h3>
@@ -76,7 +76,7 @@ export const TechnicalSkills = () => (
 					</div>
 					<div className='w-full md:w-1/2 lg:w-4/12 p-8 lg:px-3'>
 						<div className=' text-6xl mb-[21px] text-theme-color leading-none w-16 '>
-							<Image src={graph} alt='GraphQl' title='GraphQl' />
+							<Image src={graph} alt='GraphQl' height={290} title='GraphQl' />
 						</div>
 						<div className='content'>
 							<h3 className='mb-6 text-xl md:text-2xl lg:text-l xl:text-l 2xl:text-2xl font-semibold'>GraphQL</h3>
