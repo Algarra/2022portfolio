@@ -46,6 +46,7 @@ export const TopHome = () => {
 					<div className='flex pt-8 lg:pt-0 m-auto'>
 						<Image
 							src={dani}
+							priority
 							sizes='(max-width: 768px) 600vw,
 							(max-width: 1023px) 350vw,
               210vw'
