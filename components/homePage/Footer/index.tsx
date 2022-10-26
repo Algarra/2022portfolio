@@ -1,17 +1,12 @@
 import Image from 'next/image'
-import { useEffect } from 'react'
 import hackerRank from '../TopHome/img/hackerRank.webp'
 
 export const Footer = () => {
-	useEffect(() => {
-		// FCP improvement
-		const footer = document.getElementById('footer')
-		if (footer) footer.style.backgroundImage = "url('/img/footer-bg.svg')"
-	}, [])
 	return (
 		<footer
 			className=' text-center bg-cover bg-no-repeat w-full bg-right-top pt-40 mt-25 bg-theme-color md:bg-transparent mb:pt-72 lg:pt-72'
 			id='footer'
+			style={{ backgroundImage: "url('/img/footer-bg.svg')" }}
 		>
 			<div className='flex flex-wrap'>
 				<div className='w-full flex text-center justify-center'>

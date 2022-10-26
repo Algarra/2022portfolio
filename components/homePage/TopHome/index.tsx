@@ -47,6 +47,7 @@ export const TopHome = () => {
 						<Image
 							src={dani}
 							sizes='(max-width: 768px) 600vw,
+							(max-width: 1023px) 350vw,
               210vw'
 							alt='Dani'
 							title='Dani'
