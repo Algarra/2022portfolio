@@ -14,7 +14,7 @@ export default function Custom404() {
 
 					<p className='mb-8 text-center text-gray-500 md:text-lg'>The page you’re looking for doesn’t exist.</p>
 
-					<Link href='/' aria-atomic>
+					<Link href='/' aria-label='Go to my home page'>
 						<span
 							aria-label='Go back to the home page'
 							className='px-6 py-2 text-sm font-semibold text-blue-800 bg-blue-100 hover:bg-blue-300 '
