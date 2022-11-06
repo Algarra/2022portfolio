@@ -1,7 +1,6 @@
-import dynamic from 'next/dynamic'
 import { FC, useState } from 'react'
 import { transfer } from '../../../../data/mocks/transfers'
-const TransfersNavigation = dynamic(() => import('./Navigation').then(mod => mod.TransfersNavigation))
+import { TransfersNavigation } from './Navigation'
 
 export const DetailsTable: FC<{ filteredTransfers: transfer[]; filter: string; transfers: transfer[]; iban: string }> = ({
 	filteredTransfers,

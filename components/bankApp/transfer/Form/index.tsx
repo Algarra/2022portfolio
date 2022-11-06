@@ -1,5 +1,4 @@
 import axios from 'axios'
-import dynamic from 'next/dynamic'
 import { Dispatch, FC, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
 import { defaultDestinationAccount, destinationAccount } from '../../../../app/bankApp/transfer/page'
 import { bankContext } from '../../../../context/bankContext'
@@ -7,9 +6,9 @@ import { accountDetails } from '../../../../data/types'
 import { Amount } from './components/Amount'
 import { Concept } from './components/Concept'
 import { DestinationOwnerInfo } from './components/DestinationOwnerInfo'
+import { OutsideDestinationAccount } from './components/OutsideDestinationAccount'
 import { SelectDestination } from './components/SelectDestination'
 import { SelectOrigin } from './components/SelectOrigin'
-const OutsideDestinationAccount = dynamic(() => import('./components/OutsideDestinationAccount').then(mod => mod.OutsideDestinationAccount))
 
 type TransferFromProps = {
 	originAccount: accountDetails | undefined
