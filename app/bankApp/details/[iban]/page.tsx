@@ -5,7 +5,7 @@ const getActualTransfers = (iban: string) => {
 	return fetch(`http://localhost:3001/api/transfer/?iban=${iban}`, { cache: 'no-store' }).then(response => response.json())
 }
 
-const Details = async ({ params }: { params: { iban: string } }) => {
+const Details = async ({ params }: any) => {
 	const actualTransfers: transfer[] = (await getActualTransfers(params.iban)).transfers
 
 	return (
