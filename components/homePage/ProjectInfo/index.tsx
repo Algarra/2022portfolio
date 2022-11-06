@@ -1,5 +1,5 @@
 import { Dispatch, FunctionComponent, SetStateAction, useEffect, useState } from 'react'
-import { infoBoxContent } from '../../../pages'
+import { infoBoxContent } from '../../../app/(home)/page'
 
 interface propTypes {
 	infoBox: infoBoxContent | undefined

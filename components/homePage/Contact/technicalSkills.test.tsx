@@ -10,7 +10,7 @@ jest.mock('emailjs-com', () => ({
 }))
 
 test('Forme fill and send', async () => {
-	render(<Contact setSuccessMessage={jest.fn()} />)
+	render(<Contact />)
 
 	fireEvent.change(screen.getByTestId('name'), { target: { value: 'Marcos' } })
 	fireEvent.change(screen.getByTestId('email'), { target: { value: 'marcos@test.com' } })
