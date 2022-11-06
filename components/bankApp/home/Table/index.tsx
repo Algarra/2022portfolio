@@ -26,7 +26,7 @@ export const Table: FC = () => {
 			setNotification({ type: 'success', message: 'Account closed' })
 			setAccounts(editAccountsResult.accountsList)
 		} catch (error: any) {
-			setNotification({ type: 'error', message: error.response.data.message ?? error.message })
+			setNotification({ type: 'error', message: error.response?.data?.message ?? error.message })
 		}
 	}
 
