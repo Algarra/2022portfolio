@@ -1,4 +1,5 @@
 'use client'
+import axios from 'axios'
 import Link from 'next/link'
 import { FC, useContext, useEffect, useState } from 'react'
 import { bankContext } from '../../../../context/bankContext'
@@ -16,17 +17,13 @@ export const Table: FC = () => {
 
 	const changeAccountStatus = async (iban: string) => {
 		try {
-			const editAccountsResult = await fetch(`/api/close-account`, {
-				method: 'PATCH',
-				body: JSON.stringify({
-					iban,
-				}),
-			}).then(response => response.json())
-
+			const editAccountsResult = await axios.patch(`/api/close-account`, {
+				iban,
+			})
 			setNotification({ type: 'success', message: 'Account closed' })
-			setAccounts(editAccountsResult.accountsList)
+			setAccounts(editAccountsResult.data.accountsList)
 		} catch (error: any) {
-			setNotification({ type: 'error', message: error.response?.data?.message ?? error.message })
+			setNotification({ type: 'error', message: error.response.data.message ?? error.message })
 		}
 	}
 
