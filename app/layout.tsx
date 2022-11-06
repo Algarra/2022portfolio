@@ -9,7 +9,7 @@ import { accountDetails } from '../data/types'
 import { Loader } from '../components/bankApp/common/Loader'
 
 const getActualAccounts = () => {
-	return fetch('http://localhost:3001/api/accounts', { cache: 'no-store' }).then(response => response.json())
+	return fetch('https://www.danielalgarranavarro.com/api/accounts', { cache: 'no-store' }).then(response => response.json())
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
