@@ -1,12 +1,12 @@
 'use client'
 import { FC, Suspense, useContext, useEffect, useState } from 'react'
 import axios from 'axios'
-import { bankContext } from '../../../context/bankContext'
-import { accountDetails } from '../../../data/types'
-import { TransferExchangeInfo } from '../../../components/bankApp/transfer/ExchangeInfo'
-import { TransferForm } from '../../../components/bankApp/transfer/Form'
-import { currencies } from '../../../data/mocks/currencies'
-import { countries } from '../../../data/mocks/countires'
+import { bankContext } from '../../../../context/bankContext'
+import { accountDetails } from '../../../../data/types'
+import { TransferExchangeInfo } from '../../../../components/bankApp/transfer/ExchangeInfo'
+import { TransferForm } from '../../../../components/bankApp/transfer/Form'
+import { currencies } from '../../../../data/mocks/currencies'
+import { countries } from '../../../../data/mocks/countires'
 import { defaultDestinationAccount, destinationAccount } from './utils'
 
 const TransferPage: FC = () => {

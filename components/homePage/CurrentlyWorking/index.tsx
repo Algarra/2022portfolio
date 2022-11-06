@@ -1,3 +1,4 @@
+'use client'
 import Image from 'next/image'
 import about2 from './img/about-2.png'
 import about1 from './img/about-1.png'

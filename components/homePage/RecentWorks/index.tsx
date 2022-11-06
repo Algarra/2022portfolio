@@ -1,11 +1,11 @@
-import { Dispatch, FunctionComponent, SetStateAction } from 'react'
-import { infoBoxContent } from '../../../pages'
+'use client'
+import { useState } from 'react'
+import { infoBoxContent } from '../../../app/(home)/page'
+import { ProjectInfo } from '../ProjectInfo'
 
-interface propTypes {
-	setInfoBox: Dispatch<SetStateAction<infoBoxContent | undefined>>
-}
+export const RecentWorks = () => {
+	const [infoBox, setInfoBox] = useState<infoBoxContent | undefined>(undefined)
 
-export const RecentWorks: FunctionComponent<propTypes> = ({ setInfoBox }) => {
 	return (
 		<section id='recentJobs' className=' pt-20 '>
 			<div className='px-4'>
@@ -105,6 +105,7 @@ export const RecentWorks: FunctionComponent<propTypes> = ({ setInfoBox }) => {
 					</div>
 				</div>
 			</div>
+			<ProjectInfo infoBox={infoBox} setInfoBox={setInfoBox} />
 		</section>
 	)
 }

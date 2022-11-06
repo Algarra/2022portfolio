@@ -1,11 +1,10 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import { sendForm } from 'emailjs-com'
+import { NotificationMessage } from '../NotificationMessage'
 
-interface contact {
-	setSuccessMessage: Dispatch<SetStateAction<string>>
-}
-
-export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
+export const Contact = () => {
+	const [successMessage, setSuccessMessage] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [form, setForm] = useState<HTMLFormElement | undefined>(undefined)
 	const [emailData, setEmailData] = useState({ name: '', email: '', message: '' })
@@ -132,6 +131,7 @@ export const Contact: React.FC<contact> = ({ setSuccessMessage }) => {
 					</div>
 				</form>
 			</div>
+			<NotificationMessage newText={successMessage} />
 		</section>
 	)
 }

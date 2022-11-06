@@ -2,7 +2,7 @@
 import { FC } from 'react'
 import { CardStats } from './Cards/CardStats'
 import { Loader } from '../../common/Loader'
-import { exchanges } from '../../../../app/bankApp/page'
+import { exchanges } from '../../../../app/(bank)/bankApp/page'
 
 export const InfoExchanges: FC<{ exchanges: exchanges[] }> = ({ exchanges }) => {
 	const colors = ['bg-red-600', 'bg-orange-700', 'bg-pink-600', 'bg-blue-600']

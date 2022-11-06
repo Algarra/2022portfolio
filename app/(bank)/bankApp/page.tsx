@@ -1,5 +1,5 @@
-import { InfoExchanges } from '../../components/bankApp/home/InfoCards/InfoExchanges'
-import { Table } from '../../components/bankApp/home/Table'
+import { InfoExchanges } from '../../../components/bankApp/home/InfoCards/InfoExchanges'
+import { Table } from '../../../components/bankApp/home/Table'
 
 export type exchanges = {
 	statFrom: string

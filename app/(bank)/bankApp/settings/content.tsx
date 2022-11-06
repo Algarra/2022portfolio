@@ -3,7 +3,7 @@
 import axios from 'axios'
 import { FC, useContext, useState } from 'react'
 import { SettingsType } from './page'
-import { bankContext } from '../../../context/bankContext'
+import { bankContext } from '../../../../context/bankContext'
 
 export const SettingsContent: FC<{ actualSettings: SettingsType }> = ({ actualSettings }) => {
 	const [settings, setSettings] = useState(actualSettings)

@@ -1,14 +1,13 @@
-import '../styles/globals.css'
+import '../../styles/globals.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import { ReactNode, Suspense } from 'react'
-import { Sidebar } from '../components/bankApp/common/Sidebar'
-import { BankContext } from '../context/bankContext'
-import { Notifications } from '../components/bankApp/common/Notifications'
-import { accountDetails } from '../data/types'
-import { Loader } from '../components/bankApp/common/Loader'
+import { accountDetails } from '../../data/types'
+import { BankContext } from '../../context/bankContext'
+import { Sidebar } from '../../components/bankApp/common/Sidebar'
+import { Notifications } from '../../components/bankApp/common/Notifications'
 
 const getActualAccounts = () => {
-	return fetch('https://www.danielalgarranavarro.com/api/accounts', { cache: 'no-store' }).then(response => response.json())
+	return fetch('http://localhost:3000/api/accounts', { cache: 'no-store' }).then(response => response.json())
 }
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
@@ -29,7 +28,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 				<body className=' bg-black '>
 					<Sidebar />
 					<Notifications />
-					<Suspense fallback={<Loader />}>{children}</Suspense>
+					<Suspense>{children}</Suspense>
 				</body>
 			</BankContext>
 		</html>

@@ -76,6 +76,7 @@ export const Sidebar = () => {
 									href={link.href}
 									data-testid={link.href}
 									className={`text-xs uppercase flex py-3 font-bold flex-wrap ${link.href === actualPath && ' text-white'} `}
+									replace
 								>
 									<div className=' md:w-full md:justify-center md:flex  '>
 										<i className={` ${link.icon} mr-2 md:text-3xl ${link.href === actualPath && 'text-lime-400'}`}></i>

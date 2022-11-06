@@ -8,7 +8,7 @@ export type SettingsType = {
 }
 
 const getActualSettings = () => {
-	return fetch('https://www.danielalgarranavarro.com/api/api-control', { cache: 'no-store' }).then(response => response.json())
+	return fetch('http://localhost:3000/api/api-control', { cache: 'no-store' }).then(response => response.json())
 }
 
 const Settings = async () => {
