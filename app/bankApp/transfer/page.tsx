@@ -7,21 +7,7 @@ import { TransferExchangeInfo } from '../../../components/bankApp/transfer/Excha
 import { TransferForm } from '../../../components/bankApp/transfer/Form'
 import { currencies } from '../../../data/mocks/currencies'
 import { countries } from '../../../data/mocks/countires'
-
-export type destinationAccount = {
-	iban: string
-	bank?: string
-	country: string
-	status?: boolean
-	currency: string
-	amount?: number
-}
-
-export const defaultDestinationAccount = {
-	iban: '',
-	country: '',
-	currency: '',
-}
+import { defaultDestinationAccount, destinationAccount } from './utils'
 
 const TransferPage: FC = () => {
 	const [originAccount, setOriginAccount] = useState<accountDetails | undefined>(undefined)

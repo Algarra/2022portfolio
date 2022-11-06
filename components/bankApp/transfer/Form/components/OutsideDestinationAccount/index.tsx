@@ -1,5 +1,5 @@
 import { Dispatch, FC, SetStateAction } from 'react'
-import { destinationAccount } from '../../../../../../app/bankApp/transfer/page'
+import { destinationAccount } from '../../../../../../app/bankApp/transfer/utils'
 
 type OutsideDestinationAccountProps = {
 	destinationAccount: destinationAccount

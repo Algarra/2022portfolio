@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { Dispatch, FC, SetStateAction, useContext, useEffect, useMemo, useState } from 'react'
-import { defaultDestinationAccount, destinationAccount } from '../../../../app/bankApp/transfer/page'
+import { defaultDestinationAccount, destinationAccount } from '../../../../app/bankApp/transfer/utils'
 import { bankContext } from '../../../../context/bankContext'
 import { accountDetails } from '../../../../data/types'
 import { Amount } from './components/Amount'
