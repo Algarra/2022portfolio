@@ -20,6 +20,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
 			<BankContext actualAccounts={actualAccounts}>
 				<head>
 					<title> Bank aplication</title>
+					<meta name='viewport' content='width=device-width, initial-scale=1' />
 				</head>
 
 				<body className=' bg-black '>
