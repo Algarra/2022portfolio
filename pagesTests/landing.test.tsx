@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import Home from '../pages'
+import Home from '../app/(home)/page'
 
 test('Load + opnen projectInfo', async () => {
 	render(<Home />)
