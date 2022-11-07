@@ -29,8 +29,8 @@ const fetchLastWeekExchangeData = () => {
 }
 
 const getActualAccounts = () => {
-	return fetch('https://next13-jade.vercel.app/api/accounts', {
-		cache: 'no-store',
+	return fetch('https://www.danielalgarranavarro.com/api/accounts', {
+		next: { revalidate: 10 },
 	}).then(response => response.json())
 }
 

@@ -2,7 +2,7 @@ import { transfer } from '../../../../data/mocks/transfers'
 import { DetailsContent } from './content'
 
 const getActualTransfers = (iban: string) => {
-	return fetch(`https://next13-jade.vercel.app/api/transfer/?iban=${iban}`, { cache: 'no-store' }).then(response => response.json())
+	return fetch(`https://www.danielalgarranavarro.com/api/transfer/?iban=${iban}`, { cache: 'no-store' }).then(response => response.json())
 }
 
 const Details = async ({ params }: any) => {

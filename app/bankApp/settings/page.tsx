@@ -8,7 +8,7 @@ export type SettingsType = {
 }
 
 const getActualSettings = () => {
-	return fetch('https://next13-jade.vercel.app/api/api-control', {
+	return fetch('https://www.danielalgarranavarro.com/api/api-control', {
 		cache: 'no-store',
 	}).then(response => response.json())
 }
