@@ -88,6 +88,12 @@ export const Sidebar = () => {
 					</ul>
 
 					<hr className='my-4 md:min-w-full' />
+
+					<p className='font-light text-gray-300'>
+						This bank app is built with{' '}
+						<span className='font-semibold text-gray-900 underline dark:text-white decoration-purple-500'>Next js 13</span> and is using the
+						new <span className='font-semibold text-gray-900 underline dark:text-white decoration-lime-500'>app/ folder</span>{' '}
+					</p>
 				</div>
 			</div>
 		</nav>
