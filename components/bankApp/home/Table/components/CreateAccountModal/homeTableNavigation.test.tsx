@@ -5,6 +5,8 @@ import { TableModal } from './index'
 
 let postErrorTest = false
 
+jest.mock('next/navigation', () => ({ useRouter: () => ({ refresh: jest.fn() }) }))
+
 const accounts: accountDetails[] = [
 	{
 		iban: 'FR7630006000011234567890189',

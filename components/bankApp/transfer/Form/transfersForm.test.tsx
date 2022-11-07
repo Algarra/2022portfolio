@@ -4,6 +4,7 @@ import { act } from 'react-dom/test-utils'
 import { TransferForm } from './index'
 
 let postErrorTest = false
+jest.mock('next/navigation', () => ({ useRouter: () => ({ refresh: jest.fn() }) }))
 
 jest.mock('axios', () => ({
 	post: jest.fn(() => {

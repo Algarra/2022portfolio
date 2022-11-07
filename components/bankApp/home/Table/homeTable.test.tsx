@@ -5,6 +5,8 @@ import { accountDetails } from '../../../../data/types'
 
 import { Table } from './index'
 
+jest.mock('next/navigation', () => ({ useRouter: () => ({ refresh: jest.fn() }) }))
+
 const accounts: accountDetails[] = [
 	{
 		iban: 'we2342',
