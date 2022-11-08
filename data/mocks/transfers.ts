@@ -8,7 +8,7 @@ export type transfer = {
 	destinationCurrency: string
 }
 
-let transfers: transfer[] = [
+const transfers: transfer[] = [
 	{
 		from: undefined,
 		originAmount: undefined,
@@ -52,9 +52,11 @@ let transfers: transfer[] = [
 ]
 
 export const setTransfers = (newTransfers: transfer[]) => {
-	transfers = [...newTransfers]
+	process.env.TRANSFERS = JSON.stringify([...newTransfers])
 }
 
 export const getTransfers = () => {
-	return [...transfers]
+	if (!process.env.TRANSFERS) process.env.TRANSFERS = JSON.stringify([...transfers])
+
+	return JSON.parse(process.env.TRANSFERS)
 }

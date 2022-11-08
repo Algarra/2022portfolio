@@ -1,6 +1,6 @@
 import { accountDetails } from '../types'
 
-let accounts = [
+const accounts = [
 	{
 		iban: 'FR7630006000011234567890189',
 		bank: 'BNP Paribas',
@@ -44,9 +44,11 @@ let accounts = [
 ]
 
 export const setAccounts = (newAccounts: accountDetails[]) => {
-	accounts = [...newAccounts]
+	process.env.ACCOUNTS = JSON.stringify([...newAccounts])
 }
 
 export const getAccounts = () => {
-	return [...accounts]
+	if (!process.env.ACCOUNTS) process.env.ACCOUNTS = JSON.stringify([...accounts])
+
+	return JSON.parse(process.env.ACCOUNTS)
 }

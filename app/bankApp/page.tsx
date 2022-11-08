@@ -13,7 +13,9 @@ export type exchanges = {
 }
 
 const fetchExchangeData = () => {
-	return fetch('https://api.exchangerate.host/latest').then(response => response.json())
+	return fetch('https://api.exchangerate.host/latest', {
+		next: { revalidate: 300 },
+	}).then(response => response.json())
 }
 
 const fetchLastWeekExchangeData = () => {
@@ -21,12 +23,14 @@ const fetchLastWeekExchangeData = () => {
 	actualDate.setDate(actualDate.getDate() - 7)
 
 	return fetch(`https://api.exchangerate.host/${actualDate.getFullYear()}-${actualDate.getMonth() + 1}-${actualDate.getDate()}`, {
-		cache: 'reload',
+		next: { revalidate: 300 },
 	}).then(response => response.json())
 }
 
 const getActualAccounts = () => {
-	return fetch(`${settings.BASE_URL}api/accounts`).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/accounts`, {
+		cache: 'no-store',
+	}).then(response => response.json())
 }
 
 const Home = async () => {

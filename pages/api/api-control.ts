@@ -8,7 +8,7 @@ import {
 	setAccountsPostError,
 	setAccountsPatchError,
 	setTransferPostError,
-} from '../../components/data/mocks/settings'
+} from '../../data/mocks/settings'
 
 type Data = {
 	settings: {

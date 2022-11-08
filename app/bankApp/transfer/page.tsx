@@ -1,9 +1,11 @@
-import { accountDetails } from '../../../components/data/types'
+import { accountDetails } from '../../../data/types'
 import { TransferPage } from './content'
 import settings from '../../../components/bankApp/settings'
 
 const getActualAccounts = () => {
-	return fetch(`${settings.BASE_URL}api/accounts`).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/accounts`, {
+		cache: 'no-store',
+	}).then(response => response.json())
 }
 
 const Transfer = async () => {

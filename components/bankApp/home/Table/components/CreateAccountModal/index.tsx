@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { Dispatch, FC, SetStateAction, useState } from 'react'
-import { countries } from '../../../../../data/mocks/countires'
-import { currencies } from '../../../../../data/mocks/currencies'
-import { accountDetails } from '../../../../../data/types'
+import { countries } from '../../../../../../data/mocks/countires'
+import { currencies } from '../../../../../../data/mocks/currencies'
+import { accountDetails } from '../../../../../../data/types'
 import { notificationObject } from '../../../../common/Notifications'
 import { apiErrorManagement } from '../../../../utils/apiError'
 

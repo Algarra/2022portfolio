@@ -1,9 +1,11 @@
-import { transfer } from '../../../../components/data/mocks/transfers'
+import { transfer } from '../../../../data/mocks/transfers'
 import { DetailsContent } from './content'
 import settings from '../../../../components/bankApp/settings'
 
 const getActualTransfers = (iban: string) => {
-	return fetch(`${settings.BASE_URL}api/transfer/?iban=${iban}`).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/transfer/?iban=${iban}`, {
+		cache: 'no-store',
+	}).then(response => response.json())
 }
 
 const Details = async ({ params }: any) => {
