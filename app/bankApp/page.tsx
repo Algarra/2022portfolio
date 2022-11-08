@@ -27,7 +27,7 @@ const fetchLastWeekExchangeData = () => {
 }
 
 const getActualAccounts = () => {
-	return fetch('https://www.danielalgarranavarro.com/api/accounts', {
+	return fetch('http://localhost:3000/api/accounts', {
 		cache: 'reload',
 	}).then(response => response.json())
 }

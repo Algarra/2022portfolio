@@ -2,9 +2,7 @@ import { transfer } from '../../../../data/mocks/transfers'
 import { DetailsContent } from './content'
 
 const getActualTransfers = (iban: string) => {
-	return fetch(`https://www.danielalgarranavarro.com/api/transfer/?iban=${iban}`, {
-		cache: 'force-cache',
-	}).then(response => response.json())
+	return fetch(`http://localhost:3000//api/transfer/?iban=${iban}`).then(response => response.json())
 }
 
 const Details = async ({ params }: any) => {

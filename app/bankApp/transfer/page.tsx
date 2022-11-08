@@ -2,7 +2,7 @@ import { accountDetails } from '../../../data/types'
 import { TransferPage } from './content'
 
 const getActualAccounts = () => {
-	return fetch('https://www.danielalgarranavarro.com/api/accounts', {
+	return fetch('http://localhost:3000/api/accounts', {
 		cache: 'force-cache',
 	}).then(response => response.json())
 }
