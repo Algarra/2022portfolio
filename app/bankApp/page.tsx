@@ -1,7 +1,5 @@
-import { Suspense } from 'react'
 import { InfoExchanges } from '../../components/bankApp/home/InfoCards/InfoExchanges'
 import { Table } from '../../components/bankApp/home/Table'
-import Loading from './loading'
 
 export type exchanges = {
 	statFrom: string
