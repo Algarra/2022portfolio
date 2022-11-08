@@ -29,7 +29,7 @@ const fetchLastWeekExchangeData = () => {
 
 const getActualAccounts = () => {
 	return fetch(`${settings.BASE_URL}api/accounts`, {
-		cache: 'no-store',
+		cache: 'no-cache',
 	}).then(response => response.json())
 }
 

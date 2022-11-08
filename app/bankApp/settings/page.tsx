@@ -10,7 +10,7 @@ export type SettingsType = {
 
 const getActualSettings = () => {
 	return fetch(`${settings.BASE_URL}api/api-control`, {
-		cache: 'no-store',
+		cache: 'no-cache',
 	}).then(response => response.json())
 }
 

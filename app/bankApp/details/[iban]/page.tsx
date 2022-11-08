@@ -9,11 +9,11 @@ const getActualTransfers = (iban: string) => {
 }
 
 const Details = async ({ params }: any) => {
-	const actualTransfers: transfer[] = (await getActualTransfers(params.iban)).transfers
+	const { transfers }: { transfers: transfer[] } = await getActualTransfers(params.iban)
 
 	return (
 		<div className={` text-white flex md:ml-48 h-fit md:h-screen `}>
-			<DetailsContent actualTransfers={actualTransfers} iban={params.iban} />
+			<DetailsContent actualTransfers={transfers} iban={params.iban} />
 		</div>
 	)
 }

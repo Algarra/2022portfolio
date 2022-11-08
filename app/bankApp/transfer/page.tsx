@@ -4,7 +4,7 @@ import settings from '../../../components/bankApp/settings'
 
 const getActualAccounts = () => {
 	return fetch(`${settings.BASE_URL}api/accounts`, {
-		cache: 'no-store',
+		cache: 'no-cache',
 	}).then(response => response.json())
 }
 
