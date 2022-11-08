@@ -1,14 +1,11 @@
 'use client'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 export const Sidebar = () => {
 	const [collapseShow, setCollapseShow] = useState('hidden')
-	const [actualPath, setActualPath] = useState('')
-
-	useEffect(() => {
-		setActualPath(window.location.pathname)
-	}, [])
+	const actualPath = usePathname()
 
 	return (
 		<nav className='md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-gray-600 flex flex-wrap items-center justify-between relative md:w-48 z-10 py-4 px-6'>
@@ -70,7 +67,6 @@ export const Sidebar = () => {
 								key={link.href}
 								onClick={() => {
 									setCollapseShow('hidden')
-									setActualPath(link.href)
 								}}
 							>
 								<Link
