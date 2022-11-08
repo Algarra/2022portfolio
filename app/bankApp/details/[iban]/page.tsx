@@ -1,8 +1,9 @@
 import { transfer } from '../../../../data/mocks/transfers'
 import { DetailsContent } from './content'
+import settings from '../../../../components/bankApp/settings'
 
 const getActualTransfers = (iban: string) => {
-	return fetch(`https://www.danielalgarranavarro.com/api/transfer/?iban=${iban}`).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/transfer/?iban=${iban}`).then(response => response.json())
 }
 
 const Details = async ({ params }: any) => {

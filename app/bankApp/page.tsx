@@ -1,5 +1,6 @@
 import { InfoExchanges } from '../../components/bankApp/home/InfoCards/InfoExchanges'
 import { Table } from '../../components/bankApp/home/Table'
+import settings from '../../components/bankApp/settings'
 
 export type exchanges = {
 	statFrom: string
@@ -25,9 +26,7 @@ const fetchLastWeekExchangeData = () => {
 }
 
 const getActualAccounts = () => {
-	return fetch('https://www.danielalgarranavarro.com/api/accounts', {
-		cache: 'reload',
-	}).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/accounts`).then(response => response.json())
 }
 
 const Home = async () => {
