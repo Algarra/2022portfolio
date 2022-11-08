@@ -9,9 +9,7 @@ export type SettingsType = {
 }
 
 const getActualSettings = () => {
-	return fetch(`${settings.BASE_URL}api/api-control`, {
-		cache: 'no-cache',
-	}).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/api-control`).then(response => response.json())
 }
 
 const Settings = async () => {

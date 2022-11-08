@@ -28,9 +28,7 @@ const fetchLastWeekExchangeData = () => {
 }
 
 const getActualAccounts = () => {
-	return fetch(`${settings.BASE_URL}api/accounts`, {
-		cache: 'no-cache',
-	}).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/accounts`).then(response => response.json())
 }
 
 const Home = async () => {
