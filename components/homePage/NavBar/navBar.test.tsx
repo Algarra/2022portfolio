@@ -24,6 +24,6 @@ test('Info diplay', async () => {
 	expect(screen.getAllByText('VISIT MY ROOM')[0].closest('button')).toHaveAttribute('href', '/my-room')
 	expect(screen.getAllByText('MY ROOM')[0].closest('button')).toHaveAttribute('href', '/my-room')
 
-	expect(screen.getAllByText('BANK APP')[0].closest('button')).toHaveAttribute('href', '/bankApp')
-	expect(screen.getAllByText('BANK APP')[1].closest('button')).toHaveAttribute('href', '/bankApp')
+	// expect(screen.getAllByText('BANK APP')[0].closest('button')).toHaveAttribute('href', '/bankApp')
+	// expect(screen.getAllByText('BANK APP')[1].closest('button')).toHaveAttribute('href', '/bankApp')
 })
