@@ -13,7 +13,7 @@ export type exchanges = {
 
 const fetchExchangeData = () => {
 	return fetch('https://api.exchangerate.host/latest', {
-		next: { revalidate: 60 },
+		next: { revalidate: 300 },
 	}).then(response => response.json())
 }
 
@@ -28,7 +28,7 @@ const fetchLastWeekExchangeData = () => {
 
 const getActualAccounts = () => {
 	return fetch('https://www.danielalgarranavarro.com/api/accounts', {
-		cache: 'no-store',
+		cache: 'force-cache',
 	}).then(response => response.json())
 }
 
