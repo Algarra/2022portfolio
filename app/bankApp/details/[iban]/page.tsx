@@ -3,7 +3,7 @@ import { DetailsContent } from './content'
 import settings from '../../../../settings'
 
 const getActualTransfers = (iban: string) => {
-	return fetch(`${settings.BASE_URL}api/transfer?iban=${iban}`).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/transfer?iban=${iban}`, { next: { revalidate: 10 } }).then(response => response.json())
 }
 
 const Details = async ({ params }: any) => {
