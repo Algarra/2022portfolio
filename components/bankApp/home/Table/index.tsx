@@ -94,7 +94,7 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 								{(!filteredAccounts.length && !filter ? actualAccounts : filteredAccounts).slice(page * 5, (page + 1) * 5).map(row => (
 									<tr key={row.iban} className=' border-b border-gray-800 hover:bg-gray-600'>
 										<th scope='row' className=' flex items-center py-4 px-6 whitespace-nowrap text-white'>
-											<Link href={`/bankApp/details/${row.iban}`} className='cursor-pointer'>
+											<Link href='/bankApp/details/[iban]' as={`/bankApp/details/${row.iban}`} className='cursor-pointer'>
 												<div className='pl-3'>
 													<div className='text-base font-semibold'>{row.iban}</div>
 													<div className='font-normal text-gray-300'>{row.bank}</div>
