@@ -1,4 +1,4 @@
-import { transfer } from '../../../../data/mocks/transfers'
+import { transfer } from '../../../../components/data/mocks/transfers'
 import { DetailsContent } from './content'
 import settings from '../../../../components/bankApp/settings'
 

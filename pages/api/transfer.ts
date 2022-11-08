@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { getAccounts, setAccounts } from '../../data/mocks/accounts'
-import { getAccountsDetailsGetError, getTransferPostError } from '../../data/mocks/settings'
-import { getTransfers, setTransfers, transfer } from '../../data/mocks/transfers'
-import { accountDetails } from '../../data/types'
+import { getAccounts, setAccounts } from '../../components/data/mocks/accounts'
+import { getAccountsDetailsGetError, getTransferPostError } from '../../components/data/mocks/settings'
+import { getTransfers, setTransfers, transfer } from '../../components/data/mocks/transfers'
+import { accountDetails } from '../../components/data/types'
 
 type Data = {
 	accountsList?: accountDetails[]

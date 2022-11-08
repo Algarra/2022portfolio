@@ -1,7 +1,7 @@
 /* eslint-disable prefer-promise-reject-errors */
 import { fireEvent, render, screen, waitFor } from '@testing-library/react'
 import { act } from 'react-dom/test-utils'
-import { accountDetails } from '../../../../data/types'
+import { accountDetails } from '../../../data/types'
 
 import { Table } from './index'
 

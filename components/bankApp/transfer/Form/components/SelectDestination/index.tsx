@@ -1,6 +1,6 @@
 import { Dispatch, FC, SetStateAction } from 'react'
 import { defaultDestinationAccount, destinationAccount } from '../../../../../../app/bankApp/transfer/utils'
-import { accountDetails } from '../../../../../../data/types'
+import { accountDetails } from '../../../../../data/types'
 
 type SelectDestinationProps = {
 	destinationAccount: destinationAccount

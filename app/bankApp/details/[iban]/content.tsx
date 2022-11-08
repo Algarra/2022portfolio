@@ -1,7 +1,7 @@
 'use client'
 import { FC, useEffect, useState } from 'react'
 import { DetailsTable } from '../../../../components/bankApp/details/Table'
-import { transfer } from '../../../../data/mocks/transfers'
+import { transfer } from '../../../../components/data/mocks/transfers'
 
 export const DetailsContent: FC<{
 	actualTransfers: transfer[]

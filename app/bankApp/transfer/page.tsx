@@ -1,4 +1,4 @@
-import { accountDetails } from '../../../data/types'
+import { accountDetails } from '../../../components/data/types'
 import { TransferPage } from './content'
 import settings from '../../../components/bankApp/settings'
 
