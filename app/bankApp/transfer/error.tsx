@@ -58,6 +58,7 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
 						</button>
 					</Link>
 					<button
+						onClick={() => reset()}
 						type='button'
 						className='text-red-900 bg-transparent border border-red-900 hover:bg-red-900 hover:text-white focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-xs px-3 py-1.5 text-center dark:border-red-800 dark:text-red-800 dark:hover:text-white'
 						data-dismiss-target='#alert-additional-content-2'
