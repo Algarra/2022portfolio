@@ -2,7 +2,7 @@ import { accountDetails } from '../../../data/types'
 import { TransferPage } from './content'
 
 const getActualAccounts = () => {
-	return fetch('https://www.danielalgarranavarro.com/api/accounts', { cache: 'no-store' }).then(response => response.json())
+	return fetch('https://www.danielalgarranavarro.com/api/accounts').then(response => response.json())
 }
 
 const Transfer = async () => {
