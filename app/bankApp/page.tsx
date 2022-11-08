@@ -12,9 +12,7 @@ export type exchanges = {
 }
 
 const fetchExchangeData = () => {
-	return fetch('https://api.exchangerate.host/latest', {
-		cache: 'reload',
-	}).then(response => response.json())
+	return fetch('https://api.exchangerate.host/latest').then(response => response.json())
 }
 
 const fetchLastWeekExchangeData = () => {
