@@ -62,12 +62,8 @@ const Home = async () => {
 	return (
 		<div className={` text-white flex md:ml-48 h-fit md:h-screen `}>
 			<div className=' w-full h-fit md:m-auto py-5 '>
-				<Suspense fallback={<Loading />}>
-					<InfoExchanges exchanges={exchanges} />
-				</Suspense>
-				<Suspense fallback={<Loading />}>
-					<Table actualAccounts={accountsList} />
-				</Suspense>
+				<InfoExchanges exchanges={exchanges} />
+				<Table actualAccounts={accountsList} />
 			</div>
 		</div>
 	)

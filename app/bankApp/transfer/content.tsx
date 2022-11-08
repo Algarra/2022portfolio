@@ -2,13 +2,13 @@
 import { FC, useEffect, useState } from 'react'
 import axios from 'axios'
 import { accountDetails } from '../../../data/types'
-import { TransferExchangeInfo } from '../../../components/bankApp/transfer/ExchangeInfo'
-import { TransferForm } from '../../../components/bankApp/transfer/Form'
 import { currencies } from '../../../data/mocks/currencies'
 import { countries } from '../../../data/mocks/countires'
 import { defaultDestinationAccount, destinationAccount } from './utils'
 import { notificationObject, Notifications } from '../../../components/bankApp/common/Notifications'
 import { apiErrorManagement } from '../../../components/bankApp/utils/apiError'
+import { TransferExchangeInfo } from '../../../components/bankApp/transfer/ExchangeInfo'
+import { TransferForm } from '../../../components/bankApp/transfer/Form'
 
 export const TransferPage: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts }) => {
 	const [originAccount, setOriginAccount] = useState<accountDetails | undefined>(undefined)
