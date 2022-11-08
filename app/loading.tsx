@@ -1,11 +1,10 @@
 export default function Loading() {
-	// You can add any UI inside Loading, including a Skeleton.
 	return (
-		<div className={` text-white flex md:ml-48 h-fit md:h-screen `}>
+		<div className={` text-white flex md:ml-48 h-screen `}>
 			<button
 				disabled
 				type='button'
-				className=' md:m-auto text-white bg-lime-700 hover:bg-lime-800 focus:ring-4 focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800 inline-flex items-center'
+				className=' m-auto h-fit text-white bg-lime-700 hover:bg-lime-800 focus:ring-4 focus:ring-lime-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center  dark:bg-lime-600 dark:hover:bg-lime-700 dark:focus:ring-lime-800 inline-flex items-center'
 			>
 				<svg
 					role='status'

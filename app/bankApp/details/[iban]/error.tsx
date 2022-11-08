@@ -8,10 +8,10 @@ export default function Error({ error, reset }: { error: Error; reset: () => voi
 		console.error(error)
 	}, [error])
 	return (
-		<div className={` flex md:ml-48 h-fit md:h-screen justify-center `}>
+		<div className={` flex md:ml-48 h-screen justify-center `}>
 			<div
 				id='alert-additional-content-2'
-				className=' p-4 border my-auto border-red-300 rounded-lg h-32 bg-red-50 dark:bg-red-200'
+				className=' p-4 m-4 border my-auto border-red-300 rounded-lg h-fit bg-red-50 dark:bg-red-200'
 				role='alert'
 			>
 				<div className='flex items-center'>
