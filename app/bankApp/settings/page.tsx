@@ -1,5 +1,5 @@
 import { SettingsContent } from './content'
-import settings from '../../../components/bankApp/settings'
+import settings from '../../../settings'
 
 export type SettingsType = {
 	accountsDetatilsGetError: boolean

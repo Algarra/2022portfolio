@@ -52,11 +52,11 @@ const transfers: transfer[] = [
 ]
 
 export const setTransfers = (newTransfers: transfer[]) => {
-	process.env.TRANSFERS = JSON.stringify([...newTransfers])
+	process.env.ACCOUNTS_TRANSFERS = JSON.stringify([...newTransfers])
 }
 
 export const getTransfers = () => {
-	if (!process.env.TRANSFERS) process.env.TRANSFERS = JSON.stringify([...transfers])
+	if (!process.env.ACCOUNTS_TRANSFERS) process.env.ACCOUNTS_TRANSFERS = JSON.stringify([...transfers])
 
-	return JSON.parse(process.env.TRANSFERS)
+	return JSON.parse(process.env.ACCOUNTS_TRANSFERS)
 }

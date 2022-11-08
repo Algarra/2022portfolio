@@ -1,6 +1,6 @@
 import { accountDetails } from '../../../data/types'
 import { TransferPage } from './content'
-import settings from '../../../components/bankApp/settings'
+import settings from '../../../settings'
 
 const getActualAccounts = () => {
 	return fetch(`${settings.BASE_URL}api/accounts`, {
