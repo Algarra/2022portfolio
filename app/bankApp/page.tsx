@@ -13,7 +13,7 @@ export type exchanges = {
 
 const fetchExchangeData = () => {
 	return fetch('https://api.exchangerate.host/latest', {
-		next: { revalidate: 300 },
+		cache: 'reload',
 	}).then(response => response.json())
 }
 
@@ -22,13 +22,13 @@ const fetchLastWeekExchangeData = () => {
 	actualDate.setDate(actualDate.getDate() - 7)
 
 	return fetch(`https://api.exchangerate.host/${actualDate.getFullYear()}-${actualDate.getMonth() + 1}-${actualDate.getDate()}`, {
-		next: { revalidate: 300 },
+		cache: 'reload',
 	}).then(response => response.json())
 }
 
 const getActualAccounts = () => {
 	return fetch('https://www.danielalgarranavarro.com/api/accounts', {
-		cache: 'force-cache',
+		cache: 'reload',
 	}).then(response => response.json())
 }
 
