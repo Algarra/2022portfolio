@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { FC, useEffect, useState } from 'react'
 import { accountDetails } from '../../../../data/types'
-import { Loader } from '../../common/Loader'
 import { notificationObject, Notifications } from '../../common/Notifications'
 import { TableModal } from './components/CreateAccountModal'
 import { TableNavigation } from './components/TableNavigation'
@@ -25,8 +24,8 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 			await axios.patch(`/api/close-account`, {
 				iban,
 			})
-			setNotification({ type: 'success', message: 'Account closed' })
 			router.refresh()
+			setNotification({ type: 'success', message: 'Account closed' })
 			setPage(0)
 		} catch (error: any) {
 			setNotification({ type: 'error', message: error.response.data.message ?? error.message })
@@ -67,7 +66,7 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 					</span>
 				</button>
 			</div>
-			{actualAccounts ? (
+			{actualAccounts && (
 				<>
 					<div className=' overflow-x-auto w-full'>
 						<table className=' w-full text-sm text-left text-gray-400 '>
@@ -114,7 +113,8 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 										</td>
 										<td className='py-4 px-6'>
 											<div
-												onClick={() => {
+												onClick={e => {
+													console.log('🚀 ~ file: index.tsx ~ line 117 ~ e', e)
 													if (row.status) {
 														changeAccountStatus(row.iban)
 													} else {
@@ -140,10 +140,6 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 						<TableNavigation page={page} setPage={setPage} accounts={actualAccounts} filteredAccounts={filteredAccounts} />
 					)}
 				</>
-			) : (
-				<div className='m-auto justify-center w-full flex p-5 '>
-					<Loader />
-				</div>
 			)}
 
 			<TableModal setShowModal={setShowModal} showModal={showModal} setNotification={setNotification} accounts={actualAccounts} />
