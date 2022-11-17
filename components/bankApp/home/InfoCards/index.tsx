@@ -1,6 +1,6 @@
 'use client'
 import { FC } from 'react'
-import { CardStats } from './Cards/CardStats'
+import { CardStats } from './Cards'
 import { Loader } from '../../common/Loader'
 import { exchanges } from '../../../../app/bankApp/page'
 

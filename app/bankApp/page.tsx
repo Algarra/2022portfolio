@@ -1,4 +1,4 @@
-import { InfoExchanges } from '../../components/bankApp/home/InfoCards/InfoExchanges'
+import { InfoExchanges } from '../../components/bankApp/home/InfoCards'
 import { Table } from '../../components/bankApp/home/Table'
 import settings from '../../settings'
 

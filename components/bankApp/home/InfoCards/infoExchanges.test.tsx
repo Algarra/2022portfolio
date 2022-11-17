@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react'
-import { InfoExchanges } from './InfoExchanges'
+import { InfoExchanges } from '.'
 
 const actualDate = new Date()
 actualDate.setDate(actualDate.getDate() - 7)
