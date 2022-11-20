@@ -1,13 +1,13 @@
 import { accountDetails } from '../../../data/types'
 import { TransferPage } from './content'
-import settings from '../../../settings'
+import { getAccounts } from '../../../data/mocks/accounts'
 
 const getActualAccounts = () => {
-	return fetch(`${settings.BASE_URL}api/accounts`, { next: { revalidate: 10 } }).then(response => response.json())
+	return getAccounts()
 }
 
 const Transfer = async () => {
-	const actualAccounts: accountDetails[] = (await getActualAccounts()).accountsList
+	const actualAccounts: accountDetails[] = await getActualAccounts()
 
 	return (
 		<div>
