@@ -1,6 +1,6 @@
 import { InfoExchanges } from '../../components/bankApp/home/InfoCards'
 import { Table } from '../../components/bankApp/home/Table'
-import { getAccounts } from '../../data/mocks/accounts'
+import settings from '../../settings'
 
 export type exchanges = {
 	statFrom: string
@@ -28,11 +28,11 @@ const fetchLastWeekExchangeData = () => {
 }
 
 const getActualAccounts = () => {
-	return getAccounts()
+	return fetch(`${settings.BASE_URL}api/accounts`, { cache: 'no-store' }).then(response => response.json())
 }
 
 const Home = async () => {
-	const [actualExchanges, lastWeekExchanges, accountsList] = await Promise.all([
+	const [actualExchanges, lastWeekExchanges, { accountsList }] = await Promise.all([
 		fetchExchangeData(),
 		fetchLastWeekExchangeData(),
 		getActualAccounts(),
