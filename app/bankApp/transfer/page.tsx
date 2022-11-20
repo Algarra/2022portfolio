@@ -3,7 +3,7 @@ import { TransferPage } from './content'
 import settings from '../../../settings'
 
 const getActualAccounts = async () => {
-	return await fetch(`${settings.BASE_URL}api/accounts`).then(response => response.json())
+	return await fetch(`${settings.BASE_URL}api/accounts`, { cache: 'reload' }).then(response => response.json())
 }
 
 const Transfer = async () => {
