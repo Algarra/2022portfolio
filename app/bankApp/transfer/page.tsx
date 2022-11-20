@@ -3,9 +3,7 @@ import settings from '../../../settings'
 import { TransferPage } from './content'
 
 const getActualAccounts = async () => {
-	return fetch(`${settings.BASE_URL}api/accounts`, {
-		next: { revalidate: 10 },
-	}).then(response => response.json())
+	return fetch(`${settings.BASE_URL}api/accounts`).then(response => response.json())
 }
 
 const Transfer = async () => {
