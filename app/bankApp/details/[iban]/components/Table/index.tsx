@@ -1,5 +1,5 @@
 import { FC, useState } from 'react'
-import { transfer } from '../../../../data/mocks/transfers'
+import { transfer } from '../../../../../../data/mocks/transfers'
 import { TransfersNavigation } from './Navigation'
 
 export const DetailsTable: FC<{ filteredTransfers: transfer[]; filter: string; transfers: transfer[]; iban: string }> = ({

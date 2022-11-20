@@ -2,11 +2,13 @@ import { transfer } from '../../../../data/mocks/transfers'
 import { DetailsContent } from './content'
 import settings from '../../../../settings'
 
-const getActualTransfers = (iban: string) => {
-	return fetch(`${settings.BASE_URL}api/transfer?iban=${iban}`, { next: { revalidate: 10 } }).then(response => response.json())
+const getActualTransfers = async (iban: string) => {
+	const data = await fetch(`${settings.BASE_URL}api/transfer?iban=${iban}`, { next: { revalidate: 4 } })
+
+	return data.json()
 }
 
-const Details = async ({ params }: any) => {
+const Details = async ({ params }: { params: { slug: string; iban: string } }) => {
 	const { transfers }: { transfers: transfer[] } = await getActualTransfers(params.iban)
 
 	return (

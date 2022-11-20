@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import { ReactNode } from 'react'
-import { Sidebar } from '../components/bankApp/common/Sidebar'
+import { Sidebar } from './common/Sidebar'
 
 export default async function RootLayout({ children }: { children: ReactNode }) {
 	return (

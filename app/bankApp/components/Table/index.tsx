@@ -1,12 +1,23 @@
 'use client'
-import axios from 'axios'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { FC, useEffect, useState } from 'react'
+import { notificationObject, Notifications } from '../../../common/Notifications'
 import { accountDetails } from '../../../../data/types'
-import { notificationObject, Notifications } from '../../common/Notifications'
 import { TableModal } from './components/CreateAccountModal'
 import { TableNavigation } from './components/TableNavigation'
+import settings from '../../../../settings'
+import { apiErrorManagement } from '../../../utils/apiError'
+
+async function update(iban: string, refresh: () => void) {
+	const response = await fetch(`${settings.BASE_URL}api/close-account`, {
+		method: 'PATCH',
+		body: JSON.stringify({ iban }),
+	})
+
+	if (response.ok) refresh()
+	return response
+}
 
 export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts }) => {
 	const [showModal, setShowModal] = useState(false)
@@ -20,15 +31,13 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 	const router = useRouter()
 
 	const changeAccountStatus = async (iban: string) => {
-		try {
-			await axios.patch(`/api/close-account`, {
-				iban,
-			})
-			router.refresh()
-			setNotification({ type: 'success', message: 'Account closed' })
+		const response: Response = await update(iban, router.refresh)
+
+		if (response.ok) {
+			setNotification({ type: 'success', message: (await response.json()).message })
 			setPage(0)
-		} catch (error: any) {
-			setNotification({ type: 'error', message: error.response.data.message ?? error.message })
+		} else {
+			apiErrorManagement(await response.json(), setNotification)
 		}
 	}
 

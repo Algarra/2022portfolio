@@ -1,11 +1,11 @@
-import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { Dispatch, FC, SetStateAction, useState } from 'react'
+import { notificationObject } from '../../../../../common/Notifications'
+import { apiErrorManagement } from '../../../../../utils/apiError'
 import { countries } from '../../../../../../data/mocks/countires'
 import { currencies } from '../../../../../../data/mocks/currencies'
 import { accountDetails } from '../../../../../../data/types'
-import { notificationObject } from '../../../../common/Notifications'
-import { apiErrorManagement } from '../../../../utils/apiError'
+import settings from '../../../../../../settings'
 
 type TableModalProps = {
 	showModal: boolean
@@ -23,23 +23,31 @@ const initialFormData = {
 	amount: 0,
 }
 
+async function update(account: accountDetails, refresh: () => void) {
+	const response = await fetch(`${settings.BASE_URL}api/accounts`, {
+		method: 'POST',
+		body: JSON.stringify(account),
+	})
+
+	if (response.ok) refresh()
+	return response
+}
+
 export const TableModal: FC<TableModalProps> = ({ showModal, setShowModal, setNotification, accounts }) => {
 	const [ibanError, setIbanError] = useState('')
 	const [newAccount, setNewAccount] = useState(initialFormData)
 	const router = useRouter()
 
 	const addNewAccount = async (account: accountDetails) => {
-		try {
-			try {
-				await axios.post(`/api/accounts`, account)
-				setNotification({ type: 'success', message: 'Account created' })
-				setNewAccount(initialFormData)
-				setShowModal(false)
-				router.refresh()
-			} catch (error) {
-				apiErrorManagement(error, setNotification)
-			}
-		} catch (error) {}
+		const response = await update(account, router.refresh)
+
+		if (response.ok) {
+			setNotification({ type: 'success', message: 'Account created' })
+			setNewAccount(initialFormData)
+			setShowModal(false)
+		} else {
+			apiErrorManagement(await response.json(), setNotification)
+		}
 	}
 	return (
 		<div

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from '@testing-library/react'
-import { transfer } from '../../../../../data/mocks/transfers'
+import { transfer } from '../../../../../../../data/mocks/transfers'
 import { TransfersNavigation } from './index'
 
 const transfers: transfer[] = [

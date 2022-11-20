@@ -18,15 +18,16 @@ const getAccountsAction = (res: NextApiResponse<Data | Error>) => {
 
 const postAccount = (req: NextApiRequest, res: NextApiResponse<Data | Error>) => {
 	if (!getAccountsPostError()) {
+		const bodyContent = JSON.parse(req.body)
 		setTransfers([
 			{
-				to: req.body.iban,
-				destinationAmount: req.body.amount,
-				destinationCurrency: req.body.currency,
+				to: bodyContent.iban,
+				destinationAmount: bodyContent.amount,
+				destinationCurrency: bodyContent.currency,
 			},
 			...getTransfers(),
 		])
-		setAccounts([req.body, ...getAccounts()])
+		setAccounts([bodyContent, ...getAccounts()])
 		res.status(201).send({ message: 'Account created' })
 	} else {
 		res.status(500).json({ message: 'At this moment is not possible to proceed with this request' })

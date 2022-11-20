@@ -1,5 +1,5 @@
 import { Dispatch, FC, SetStateAction } from 'react'
-import { transfer } from '../../../../../data/mocks/transfers'
+import { transfer } from '../../../../../../../data/mocks/transfers'
 
 type TableNavigationProps = {
 	page: number

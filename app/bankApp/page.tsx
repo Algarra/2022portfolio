@@ -1,6 +1,6 @@
-import { InfoExchanges } from '../../components/bankApp/home/InfoCards'
-import { Table } from '../../components/bankApp/home/Table'
 import settings from '../../settings'
+import { InfoExchanges } from './components/InfoCards'
+import { Table } from './components/Table'
 
 export type exchanges = {
 	statFrom: string
@@ -12,19 +12,24 @@ export type exchanges = {
 	statActual: string
 }
 
-const fetchExchangeData = () => {
-	return fetch('https://api.exchangerate.host/latest', {
+const fetchExchangeData = async () => {
+	const data = await fetch('https://api.exchangerate.host/latest', {
 		next: { revalidate: 300 },
-	}).then(response => response.json())
+	})
+	return data.json()
 }
 
-const fetchLastWeekExchangeData = () => {
+const fetchLastWeekExchangeData = async () => {
 	const actualDate = new Date()
 	actualDate.setDate(actualDate.getDate() - 7)
 
-	return fetch(`https://api.exchangerate.host/${actualDate.getFullYear()}-${actualDate.getMonth() + 1}-${actualDate.getDate()}`, {
-		next: { revalidate: 300 },
-	}).then(response => response.json())
+	const data = await fetch(
+		`https://api.exchangerate.host/${actualDate.getFullYear()}-${actualDate.getMonth() + 1}-${actualDate.getDate()}`,
+		{
+			next: { revalidate: 300 },
+		}
+	)
+	return data.json()
 }
 
 const getActualAccounts = async () => {

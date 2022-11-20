@@ -5,10 +5,10 @@ import { accountDetails } from '../../../data/types'
 import { currencies } from '../../../data/mocks/currencies'
 import { countries } from '../../../data/mocks/countires'
 import { defaultDestinationAccount, destinationAccount } from './utils'
-import { notificationObject, Notifications } from '../../../components/bankApp/common/Notifications'
-import { apiErrorManagement } from '../../../components/bankApp/utils/apiError'
-import { TransferExchangeInfo } from '../../../components/bankApp/transfer/ExchangeInfo'
-import { TransferForm } from '../../../components/bankApp/transfer/Form'
+import { notificationObject, Notifications } from '../../common/Notifications'
+import { apiErrorManagement } from '../../utils/apiError'
+import { TransferExchangeInfo } from './components/ExchangeInfo'
+import { TransferForm } from './components/Form'
 
 export const TransferPage: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts }) => {
 	const [originAccount, setOriginAccount] = useState<accountDetails | undefined>(undefined)

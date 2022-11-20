@@ -8,8 +8,10 @@ export type SettingsType = {
 	transferPostError: boolean
 }
 
-const getActualSettings = () => {
-	return fetch(`${settings.BASE_URL}api/api-control`, { next: { revalidate: 10 } }).then(response => response.json())
+const getActualSettings = async () => {
+	const data = await fetch(`${settings.BASE_URL}api/api-control`, { next: { revalidate: 10 } })
+
+	return data.json()
 }
 
 const Settings = async () => {

@@ -26,31 +26,32 @@ const getTransfersAction = (req: NextApiRequest, res: NextApiResponse<Data | Err
 
 const postTransfer = (req: NextApiRequest, res: NextApiResponse<Data | Error>) => {
 	if (!getTransferPostError()) {
+		const bodyContent = JSON.parse(req.body)
 		setTransfers([
 			{
-				from: req.body.originAccountIban,
-				originAmount: req.body.amount,
-				originCurrency: req.body.originCurrency,
-				concept: req.body.concept,
-				to: req.body.destinationAccountIban,
-				destinationAmount: req.body.destinationAmount,
-				destinationCurrency: req.body.destinationCurrency,
+				from: bodyContent.originAccountIban,
+				originAmount: bodyContent.amount,
+				originCurrency: bodyContent.originCurrency,
+				concept: bodyContent.concept,
+				to: bodyContent.destinationAccountIban,
+				destinationAmount: bodyContent.destinationAmount,
+				destinationCurrency: bodyContent.destinationCurrency,
 			},
 			...getTransfers(),
 		])
 
 		const newAccounts = [...getAccounts()].map(account => {
-			if (account.iban === req.body.originAccountIban) {
+			if (account.iban === bodyContent.originAccountIban) {
 				return {
 					...account,
-					amount: account.amount - req.body.amount,
+					amount: account.amount - bodyContent.amount,
 				}
 			}
 
-			if (account.iban === req.body.destinationAccountIban) {
+			if (account.iban === bodyContent.destinationAccountIban) {
 				return {
 					...account,
-					amount: account.amount + req.body.destinationAmount,
+					amount: account.amount + bodyContent.destinationAmount,
 				}
 			}
 

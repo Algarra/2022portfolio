@@ -1,10 +1,19 @@
 'use client'
-import axios from 'axios'
 import { FC, useState } from 'react'
 import { SettingsType } from './page'
-import { notificationObject, Notifications } from '../../../components/bankApp/common/Notifications'
+import { notificationObject, Notifications } from '../../common/Notifications'
 import { useRouter } from 'next/navigation'
-import { apiErrorManagement } from '../../../components/bankApp/utils/apiError'
+import { apiErrorManagement } from '../../utils/apiError'
+import settings from '../../../settings'
+
+async function update(data: { setting: string; value: boolean }, refresh: () => void) {
+	const response = await fetch(`${settings.BASE_URL}api/api-control`, {
+		method: 'POST',
+		body: JSON.stringify(data),
+	})
+	if (response.ok) refresh()
+	return response
+}
 
 export const SettingsContent: FC<{ actualSettings: SettingsType }> = ({ actualSettings }) => {
 	const [notification, setNotification] = useState<notificationObject>({
@@ -14,16 +23,17 @@ export const SettingsContent: FC<{ actualSettings: SettingsType }> = ({ actualSe
 	const router = useRouter()
 
 	const postNewSettings = async (setting: string, newValue: boolean) => {
-		try {
-			await axios.post('/api/api-control', {
+		const response: Response = await update(
+			{
 				setting,
 				value: newValue,
-			})
-
-			router.refresh()
+			},
+			router.refresh
+		)
+		if (response.ok) {
 			setNotification({ type: 'success', message: 'Settings changed' })
-		} catch (error) {
-			apiErrorManagement(error, setNotification)
+		} else {
+			apiErrorManagement(await response.json(), setNotification)
 		}
 	}
 

@@ -2,9 +2,9 @@ import { Dispatch, SetStateAction } from 'react'
 import { notificationObject } from '../common/Notifications'
 
 export const apiErrorManagement = (error: any, setNotification: Dispatch<SetStateAction<notificationObject>>) => {
-	const status = error.response.status
-	if (error.response.data.message) {
-		setNotification({ type: 'error', message: error.response.data.message })
+	const status = error.status
+	if (error.message) {
+		setNotification({ type: 'error', message: error.message })
 	} else {
 		if (status === 400) {
 			setNotification({ type: 'error', message: 'Bad request, was impossible to proceed' })

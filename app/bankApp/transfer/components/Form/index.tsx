@@ -1,29 +1,25 @@
-import axios from 'axios'
 import { useRouter } from 'next/navigation'
-import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react'
-import { defaultDestinationAccount, destinationAccount } from '../../../../app/bankApp/transfer/utils'
-import { accountDetails } from '../../../../data/types'
-import { notificationObject } from '../../common/Notifications'
-import { apiErrorManagement } from '../../utils/apiError'
+import { FC, FormEvent, useEffect, useState } from 'react'
+import { apiErrorManagement } from '../../../../utils/apiError'
+import { defaultDestinationAccount } from '../../utils'
+
 import { Amount } from './components/Amount'
 import { Concept } from './components/Concept'
 import { DestinationOwnerInfo } from './components/DestinationOwnerInfo'
 import { OutsideDestinationAccount } from './components/OutsideDestinationAccount'
 import { SelectDestination } from './components/SelectDestination'
 import { SelectOrigin } from './components/SelectOrigin'
+import settings from '../../../../../settings'
+import { form, TransferFromProps } from './types'
 
-type TransferFromProps = {
-	originAccount: accountDetails | undefined
-	setOriginAccount: Dispatch<SetStateAction<accountDetails | undefined>>
-	setAmount: Dispatch<SetStateAction<number>>
-	amount: number
-	setDestinationAccount: Dispatch<SetStateAction<destinationAccount>>
-	destinationAccount: destinationAccount
-	countries: string[]
-	currencies: string[]
-	exchangeTransferRate: number | undefined
-	accounts: accountDetails[]
-	setNotification: Dispatch<SetStateAction<notificationObject>>
+async function update(form: form, refresh: () => void) {
+	const response = await fetch(`${settings.BASE_URL}api/transfer`, {
+		method: 'POST',
+		body: JSON.stringify(form),
+	})
+
+	if (response.ok) refresh()
+	return response
 }
 
 export const TransferForm: FC<TransferFromProps> = ({
@@ -46,10 +42,10 @@ export const TransferForm: FC<TransferFromProps> = ({
 	const [lastname, setLastname] = useState('')
 	const router = useRouter()
 
-	const sendtransfer = async (e: any) => {
+	const sendtransfer = async (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
-		try {
-			await axios.post('/api/transfer', {
+		const response: Response = await update(
+			{
 				originAccountIban: originAccount?.iban,
 				amount,
 				originCurrency: originAccount?.currency,
@@ -59,9 +55,11 @@ export const TransferForm: FC<TransferFromProps> = ({
 				name,
 				lastname,
 				destinationAmount: amount * (exchangeTransferRate ?? 1),
-			})
+			},
+			router.refresh
+		)
 
-			router.refresh()
+		if (response.ok) {
 			setOriginAccount(undefined)
 			setDestinationAccount(defaultDestinationAccount)
 			setConcept('')
@@ -69,8 +67,8 @@ export const TransferForm: FC<TransferFromProps> = ({
 			setLastname('')
 			setAmount(0)
 			setNotification({ type: 'success', message: 'Transaction created succesfully' })
-		} catch (error) {
-			apiErrorManagement(error, setNotification)
+		} else {
+			apiErrorManagement(await response.json(), setNotification)
 		}
 	}
 

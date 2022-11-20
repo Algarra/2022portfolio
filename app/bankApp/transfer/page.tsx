@@ -1,6 +1,6 @@
 import { accountDetails } from '../../../data/types'
-import { TransferPage } from './content'
 import settings from '../../../settings'
+import { TransferPage } from './content'
 
 const getActualAccounts = async () => {
 	return fetch(`${settings.BASE_URL}api/accounts`, { cache: 'no-store' }).then(response => response.json())

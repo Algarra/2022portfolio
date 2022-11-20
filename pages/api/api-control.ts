@@ -24,19 +24,21 @@ type Error = {
 }
 
 const postSettings = (req: NextApiRequest, res: NextApiResponse<Data>) => {
-	if (req.body.setting === 'accountsDetailsGetError') {
-		setAccountsDetailsGetError(req.body.value)
+	const bodyContent = JSON.parse(req.body)
+
+	if (bodyContent.setting === 'accountsDetailsGetError') {
+		setAccountsDetailsGetError(bodyContent.value)
 	}
-	if (req.body.setting === 'accountsPostError') {
-		setAccountsPostError(req.body.value)
+	if (bodyContent.setting === 'accountsPostError') {
+		setAccountsPostError(bodyContent.value)
 	}
-	if (req.body.setting === 'accountsPatchError') {
-		setAccountsPatchError(req.body.value)
+	if (bodyContent.setting === 'accountsPatchError') {
+		setAccountsPatchError(bodyContent.value)
 	}
-	if (req.body.setting === 'transferPostError') {
-		setTransferPostError(req.body.value)
+	if (bodyContent.setting === 'transferPostError') {
+		setTransferPostError(bodyContent.value)
 	}
-	if (req.body.setting === 'reset-settings') {
+	if (bodyContent.setting === 'reset-settings') {
 		setAccountsDetailsGetError(false)
 		setAccountsPostError(false)
 		setAccountsPatchError(false)
