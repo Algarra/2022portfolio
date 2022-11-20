@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { destinationAccount } from '../../../../app/bankApp/transfer/utils'
-import { accountDetails } from '../../../../data/types'
+import { accountDetails } from '../../../../../data/types'
+import { destinationAccount } from '../../utils'
 
 type TransferExchangeInfoProps = {
 	originAccount: accountDetails | undefined

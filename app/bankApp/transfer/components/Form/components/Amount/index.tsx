@@ -1,5 +1,5 @@
 import { Dispatch, FC, SetStateAction } from 'react'
-import { accountDetails } from '../../../../../../data/types'
+import { accountDetails } from '../../../../../../../data/types'
 
 type AmountProps = {
 	amount: number
