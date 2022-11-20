@@ -114,7 +114,6 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 										<td className='py-4 px-6'>
 											<div
 												onClick={e => {
-													console.log('🚀 ~ file: index.tsx ~ line 117 ~ e', e)
 													if (row.status) {
 														changeAccountStatus(row.iban)
 													} else {
