@@ -6,42 +6,46 @@ import { TransferForm } from './index'
 let postErrorTest = false
 jest.mock('next/navigation', () => ({ useRouter: () => ({ refresh: jest.fn() }) }))
 
-jest.mock('axios', () => ({
-	post: jest.fn(() => {
-		if (!postErrorTest) {
-			return Promise.resolve({
-				data: {
-					accountsList: [
-						{
-							iban: 'FR7630006000011234567890189',
-							bank: 'BNP Paribas',
-							country: 'France',
-							status: true,
-							currency: 'EUR',
-							amount: 49457,
-						},
-						{
-							iban: 'ES7630006000011234567890779',
-							bank: 'BNP Paeribas',
-							country: 'Spain',
-							status: true,
-							currency: 'EUR',
-							amount: 49457,
-						},
-					],
-				},
-			})
-		} else {
-			return Promise.reject({
-				response: {
+// @ts-expect-error
+global.fetch = jest.fn(() =>
+	Promise.resolve({
+		status: !postErrorTest,
+		json: () => {
+			if (!postErrorTest) {
+				return Promise.resolve({
 					data: {
-						message: 'test',
+						accountsList: [
+							{
+								iban: 'FR7630006000011234567890189',
+								bank: 'BNP Paribas',
+								country: 'France',
+								status: true,
+								currency: 'EUR',
+								amount: 49457,
+							},
+							{
+								iban: 'ES7630006000011234567890779',
+								bank: 'BNP Paeribas',
+								country: 'Spain',
+								status: true,
+								currency: 'EUR',
+								amount: 49457,
+							},
+						],
 					},
-				},
-			})
-		}
-	}),
-}))
+				})
+			} else {
+				return Promise.reject({
+					response: {
+						data: {
+							message: 'test',
+						},
+					},
+				})
+			}
+		},
+	})
+)
 
 test('Changing destination owner toggle', async () => {
 	const setAmount = jest.fn()

@@ -26,25 +26,29 @@ const accounts: accountDetails[] = [
 	},
 ]
 
-jest.mock('axios', () => ({
-	post: jest.fn(() => {
-		if (!postErrorTest) {
-			return Promise.resolve({
-				data: {
-					accountsList: accounts,
-				},
-			})
-		} else {
-			return Promise.reject({
-				response: {
+// @ts-expect-error
+global.fetch = jest.fn(() =>
+	Promise.resolve({
+		status: !postErrorTest,
+		json: () => {
+			if (!postErrorTest) {
+				return Promise.resolve({
 					data: {
-						message: 'test',
+						accountsList: accounts,
 					},
-				},
-			})
-		}
-	}),
-}))
+				})
+			} else {
+				return Promise.reject({
+					response: {
+						data: {
+							message: 'test',
+						},
+					},
+				})
+			}
+		},
+	})
+)
 
 test('create an account', async () => {
 	const setShowModal = jest.fn()

@@ -66,25 +66,29 @@ jest.mock('next/router', () => ({
 
 let patchErrorTest = false
 
-jest.mock('axios', () => ({
-	patch: () => {
-		if (!patchErrorTest) {
-			return Promise.resolve({
-				data: {
-					accountsList: accounts,
-				},
-			})
-		} else {
-			return Promise.reject({
-				response: {
+// @ts-expect-error
+global.fetch = jest.fn(() =>
+	Promise.resolve({
+		status: !patchErrorTest,
+		json: () => {
+			if (!patchErrorTest) {
+				return Promise.resolve({
 					data: {
-						message: 'test',
+						accountsList: accounts,
 					},
-				},
-			})
-		}
-	},
-}))
+				})
+			} else {
+				return Promise.reject({
+					response: {
+						data: {
+							message: 'test',
+						},
+					},
+				})
+			}
+		},
+	})
+)
 
 test('Render table without navigation', async () => {
 	render(<Table actualAccounts={accounts.slice(0, 4)} />)
