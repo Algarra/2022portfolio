@@ -61,7 +61,7 @@ jest.mock('next/router', () => ({
 
 test('Go to page 2 and go back to 1', async () => {
 	const setPage = jest.fn()
-	const { rerender } = render(<TableNavigation accounts={accounts} filteredAccounts={[]} page={0} setPage={setPage} />)
+	const { rerender } = render(<TableNavigation filteredAccounts={accounts} page={0} setPage={setPage} />)
 
 	expect(screen.getByText('Previous')).not.toBeNull()
 
@@ -69,7 +69,7 @@ test('Go to page 2 and go back to 1', async () => {
 
 	expect(setPage).toHaveBeenCalled()
 
-	rerender(<TableNavigation accounts={accounts} filteredAccounts={[]} page={1} setPage={setPage} />)
+	rerender(<TableNavigation filteredAccounts={accounts} page={1} setPage={setPage} />)
 
 	fireEvent.click(screen.getByText('Previous'))
 
@@ -81,7 +81,6 @@ test('Go to page 2 and go back to 1 with filtered', async () => {
 
 	const { rerender } = render(
 		<TableNavigation
-			accounts={accounts}
 			filteredAccounts={[
 				{
 					iban: 'we2342',
@@ -153,7 +152,6 @@ test('Go to page 2 and go back to 1 with filtered', async () => {
 
 	rerender(
 		<TableNavigation
-			accounts={accounts}
 			filteredAccounts={[
 				{
 					iban: 'we2342',

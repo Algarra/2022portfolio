@@ -63,7 +63,7 @@ jest.mock('next/router', () => ({
 
 test('Go to page 2 and go back to 1', async () => {
 	const setPage = jest.fn()
-	const { rerender } = render(<TransfersNavigation transfers={transfers} filteredTransfers={[]} page={0} setPage={setPage} />)
+	const { rerender } = render(<TransfersNavigation filteredTransfers={transfers} page={0} setPage={setPage} />)
 
 	expect(screen.getByText('Previous')).not.toBeNull()
 
@@ -71,7 +71,7 @@ test('Go to page 2 and go back to 1', async () => {
 
 	expect(setPage).toHaveBeenCalled()
 
-	rerender(<TransfersNavigation transfers={transfers} filteredTransfers={[]} page={1} setPage={setPage} />)
+	rerender(<TransfersNavigation filteredTransfers={transfers} page={1} setPage={setPage} />)
 
 	fireEvent.click(screen.getByText('Previous'))
 
@@ -83,7 +83,6 @@ test('Go to page 2 and go back to 1 with filtered', async () => {
 
 	const { rerender } = render(
 		<TransfersNavigation
-			transfers={transfers}
 			filteredTransfers={[
 				{
 					to: 'Filter item',
@@ -124,7 +123,6 @@ test('Go to page 2 and go back to 1 with filtered', async () => {
 
 	rerender(
 		<TransfersNavigation
-			transfers={transfers}
 			filteredTransfers={[
 				{
 					to: 'Filter item',

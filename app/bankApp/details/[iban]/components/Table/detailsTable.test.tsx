@@ -62,13 +62,13 @@ jest.mock('next/router', () => ({
 }))
 
 test('Render table without navigation', async () => {
-	render(<DetailsTable iban='FR7630006000011234567890189' transfers={transfers.slice(0, 1)} filter={''} filteredTransfers={[]} />)
+	render(<DetailsTable iban='FR7630006000011234567890189' filter={''} filteredTransfers={transfers.slice(0, 1)} />)
 
 	expect(screen.getByText('initial income')).not.toBeNull()
 })
 
 test('Render table with navigation', async () => {
-	render(<DetailsTable iban='FR7630006000011234567890189' transfers={transfers} filter={''} filteredTransfers={[]} />)
+	render(<DetailsTable iban='FR7630006000011234567890189' filter={''} filteredTransfers={transfers} />)
 
 	expect(screen.getAllByText('FR7630006000011234567890189').length).toBe(5)
 })
@@ -77,7 +77,6 @@ test('Render table with filter', async () => {
 	render(
 		<DetailsTable
 			iban='FR7630006000011234567890189'
-			transfers={transfers}
 			filter={''}
 			filteredTransfers={[
 				{
