@@ -21,6 +21,10 @@ export const TransferPage: FC<{ actualAccounts: accountDetails[] }> = ({ actualA
 	})
 
 	useEffect(() => {
+		console.log('🚀 ~ file: content.tsx ~ line 26 ~ actualAccounts', actualAccounts)
+	}, [actualAccounts])
+
+	useEffect(() => {
 		if (originAccount?.currency && destinationAccount?.currency) {
 			;(async () => {
 				try {
