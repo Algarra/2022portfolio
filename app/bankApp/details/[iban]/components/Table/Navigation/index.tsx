@@ -4,23 +4,18 @@ import { transfer } from '../../../../../../../data/mocks/transfers'
 type TableNavigationProps = {
 	page: number
 	setPage: Dispatch<SetStateAction<number>>
-	transfers: transfer[]
 	filteredTransfers: transfer[]
 }
 
-export const TransfersNavigation: FC<TableNavigationProps> = ({ page, setPage, transfers, filteredTransfers }) => {
+export const TransfersNavigation: FC<TableNavigationProps> = ({ page, setPage, filteredTransfers }) => {
 	return (
 		<nav className='flex justify-between items-center pt-4' aria-label='Table navigation'>
 			<span className='text-sm font-normal pl-2 text-gray-400'>
 				Showing{' '}
 				<span className='font-semibold  text-white'>
-					{`${page * 5} - ${
-						(page + 1) * 5 > (!filteredTransfers.length ? transfers : filteredTransfers).length
-							? (!filteredTransfers.length ? transfers : filteredTransfers).length
-							: (page + 1) * 5
-					}`}
+					{`${page * 5} - ${(page + 1) * 5 > filteredTransfers.length ? filteredTransfers.length : (page + 1) * 5}`}
 				</span>{' '}
-				of <span className='font-semibold  text-white'>{(!filteredTransfers.length ? transfers : filteredTransfers).length}</span>
+				of <span className='font-semibold  text-white'>{filteredTransfers.length}</span>
 			</span>
 			<ul className='inline-flex items-center -space-x-px'>
 				<li>
@@ -44,11 +39,10 @@ export const TransfersNavigation: FC<TableNavigationProps> = ({ page, setPage, t
 				<li>
 					<span
 						onClick={() => {
-							if (page < Math.floor((!filteredTransfers.length ? transfers : filteredTransfers).length / 5)) setPage(page + 1)
+							if (page < Math.floor(filteredTransfers.length / 5)) setPage(page + 1)
 						}}
 						className={`block py-2 px-3 leading-tight rounded-r-lg border bg-gray-900 border-gray-800 text-gray-300 ${
-							page < Math.floor((!filteredTransfers.length ? transfers : filteredTransfers).length / 5) &&
-							'hover:bg-gray-700 hover:text-white cursor-pointer'
+							page < Math.floor(filteredTransfers.length / 5) && 'hover:bg-gray-700 hover:text-white cursor-pointer'
 						} `}
 					>
 						<span className='sr-only'>Next</span>

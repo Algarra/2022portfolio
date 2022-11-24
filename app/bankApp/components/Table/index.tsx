@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { FC, useEffect, useState } from 'react'
+import { FC, useMemo, useState } from 'react'
 import { notificationObject, Notifications } from '../../../common/Notifications'
 import { accountDetails } from '../../../../data/types'
 import { TableModal } from './components/CreateAccountModal'
@@ -22,13 +22,17 @@ async function update(iban: string, refresh: () => void) {
 export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts }) => {
 	const [showModal, setShowModal] = useState(false)
 	const [filter, setFilter] = useState('')
-	const [filteredAccounts, setFilteredAccounts] = useState<accountDetails[]>([])
 	const [page, setPage] = useState(0)
 	const [notification, setNotification] = useState<notificationObject>({
 		type: 'error',
 		message: '',
 	})
 	const router = useRouter()
+
+	const filteredAccounts = useMemo(
+		() => (actualAccounts ?? []).filter(account => account.iban.toUpperCase().startsWith(filter.toUpperCase())),
+		[filter, actualAccounts]
+	)
 
 	const changeAccountStatus = async (iban: string) => {
 		const response: Response = await update(iban, router.refresh)
@@ -40,14 +44,6 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 			apiErrorManagement(await response.json(), setNotification)
 		}
 	}
-
-	useEffect(() => {
-		if (filter) {
-			setFilteredAccounts((actualAccounts ?? []).filter(account => account.iban.toUpperCase().startsWith(filter.toUpperCase())))
-		} else {
-			setFilteredAccounts([])
-		}
-	}, [filter])
 
 	return (
 		<div className='overflow-x-auto relative mx-4 md:mx-10 p-3 shadow-md bg-gray-800 rounded-lg'>
@@ -99,7 +95,7 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 								</tr>
 							</thead>
 							<tbody>
-								{(!filteredAccounts.length && !filter ? actualAccounts : filteredAccounts).slice(page * 5, (page + 1) * 5).map(row => (
+								{filteredAccounts.slice(page * 5, (page + 1) * 5).map(row => (
 									<tr key={row.iban} className=' border-b border-gray-800 hover:bg-gray-600'>
 										<th scope='row' className=' flex items-center py-4 px-6 whitespace-nowrap text-white'>
 											<Link href='/bankApp/details/[iban]' as={`/bankApp/details/${row.iban}`} className='cursor-pointer'>
@@ -145,7 +141,7 @@ export const Table: FC<{ actualAccounts: accountDetails[] }> = ({ actualAccounts
 						)}
 					</div>
 					{(!filteredAccounts.length ? actualAccounts : filteredAccounts).length > 5 && (
-						<TableNavigation page={page} setPage={setPage} accounts={actualAccounts} filteredAccounts={filteredAccounts} />
+						<TableNavigation page={page} setPage={setPage} filteredAccounts={filteredAccounts} />
 					)}
 				</>
 			)}

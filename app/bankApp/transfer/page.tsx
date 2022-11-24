@@ -4,7 +4,7 @@ import { TransferPage } from './content'
 
 const getActualAccounts = async () => {
 	return fetch(`${settings.BASE_URL}api/accounts`, {
-		next: { revalidate: 11 },
+		cache: 'no-store',
 	}).then(response => response.json())
 }
 

@@ -2,12 +2,7 @@ import { FC, useState } from 'react'
 import { transfer } from '../../../../../../data/mocks/transfers'
 import { TransfersNavigation } from './Navigation'
 
-export const DetailsTable: FC<{ filteredTransfers: transfer[]; filter: string; transfers: transfer[]; iban: string }> = ({
-	filteredTransfers,
-	filter,
-	transfers,
-	iban,
-}) => {
+export const DetailsTable: FC<{ filteredTransfers: transfer[]; filter: string; iban: string }> = ({ filteredTransfers, filter, iban }) => {
 	const [page, setPage] = useState(0)
 
 	return (
@@ -33,7 +28,7 @@ export const DetailsTable: FC<{ filteredTransfers: transfer[]; filter: string; t
 					</tr>
 				</thead>
 				<tbody>
-					{(!filteredTransfers.length && !filter ? transfers : filteredTransfers).slice(page * 5, (page + 1) * 5).map((row, index) => (
+					{filteredTransfers.slice(page * 5, (page + 1) * 5).map((row, index) => (
 						<tr key={`${row.from}-${row.to}-${index}`} className='border-b border-gray-800 hover:bg-gray-600'>
 							<th scope='row' className='flex items-center py-4 px-6 whitespace-nowrap text-white'>
 								<div className='pl-3'>
@@ -64,14 +59,12 @@ export const DetailsTable: FC<{ filteredTransfers: transfer[]; filter: string; t
 					))}
 				</tbody>
 			</table>
-			{((!filteredTransfers.length && filter) || !transfers.length) && (
+			{!filteredTransfers.length && (
 				<div className=' w-full text-center '>
 					<h3>No results found</h3>
 				</div>
 			)}
-			{(!filteredTransfers.length ? transfers : filteredTransfers).length > 5 && (
-				<TransfersNavigation page={page} setPage={setPage} transfers={transfers} filteredTransfers={filteredTransfers} />
-			)}
+			{filteredTransfers.length > 5 && <TransfersNavigation page={page} setPage={setPage} filteredTransfers={filteredTransfers} />}
 		</div>
 	)
 }

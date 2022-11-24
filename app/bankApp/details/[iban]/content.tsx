@@ -1,5 +1,5 @@
 'use client'
-import { FC, useEffect, useState } from 'react'
+import { FC, useMemo, useState } from 'react'
 import { DetailsTable } from './components/Table'
 import { transfer } from '../../../../data/mocks/transfers'
 
@@ -7,21 +7,15 @@ export const DetailsContent: FC<{
 	actualTransfers: transfer[]
 	iban: string
 }> = ({ actualTransfers, iban }) => {
-	const [filteredTransfers, setFilteredTransfers] = useState<transfer[]>([])
 	const [filter, setFilter] = useState('')
 
-	useEffect(() => {
-		if (filter) {
-			setFilteredTransfers(
-				actualTransfers.filter(
-					tranfer =>
-						tranfer.to.toUpperCase().startsWith(filter.toUpperCase()) || tranfer.from?.toUpperCase().startsWith(filter.toUpperCase())
-				)
-			)
-		} else {
-			setFilteredTransfers([])
-		}
-	}, [filter])
+	const filteredTransfers = useMemo(
+		() =>
+			(actualTransfers ?? []).filter(
+				tranfer => tranfer.to.toUpperCase().startsWith(filter.toUpperCase()) || tranfer.from?.toUpperCase().startsWith(filter.toUpperCase())
+			),
+		[filter, actualTransfers]
+	)
 
 	return (
 		<div className='w-full h-fit md:m-auto py-5 '>
@@ -38,7 +32,7 @@ export const DetailsContent: FC<{
 						onChange={e => setFilter(e.target.value)}
 					/>
 				</div>
-				<DetailsTable filter={filter} filteredTransfers={filteredTransfers} transfers={actualTransfers} iban={iban} />
+				<DetailsTable filter={filter} filteredTransfers={filteredTransfers} iban={iban} />
 			</div>
 		</div>
 	)

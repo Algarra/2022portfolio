@@ -4,23 +4,18 @@ import { accountDetails } from '../../../../../../data/types'
 type TableNavigationProps = {
 	page: number
 	setPage: Dispatch<SetStateAction<number>>
-	accounts: accountDetails[]
 	filteredAccounts: accountDetails[]
 }
 
-export const TableNavigation: FC<TableNavigationProps> = ({ page, setPage, accounts, filteredAccounts }) => {
+export const TableNavigation: FC<TableNavigationProps> = ({ page, setPage, filteredAccounts }) => {
 	return (
 		<nav className='flex justify-between items-center pt-4' aria-label='Table navigation'>
 			<span className='text-sm font-normal pl-2 text-gray-400'>
 				Showing{' '}
 				<span className='font-semibold  text-white'>
-					{`${page * 5} - ${
-						(page + 1) * 5 > (!filteredAccounts.length ? accounts : filteredAccounts).length
-							? (!filteredAccounts.length ? accounts : filteredAccounts).length
-							: (page + 1) * 5
-					}`}
+					{`${page * 5} - ${(page + 1) * 5 > filteredAccounts.length ? filteredAccounts.length : (page + 1) * 5}`}
 				</span>{' '}
-				of <span className='font-semibold  text-white'>{(!filteredAccounts.length ? accounts : filteredAccounts).length}</span>
+				of <span className='font-semibold  text-white'>{filteredAccounts.length}</span>
 			</span>
 			<ul className='inline-flex items-center -space-x-px'>
 				<li>
@@ -42,11 +37,11 @@ export const TableNavigation: FC<TableNavigationProps> = ({ page, setPage, accou
 				<li>
 					<span
 						onClick={() => {
-							if (page < Math.floor((!filteredAccounts.length ? accounts : filteredAccounts).length / 5)) setPage(page + 1)
+							console.log('first')
+							if (page < Math.floor(filteredAccounts.length / 5)) setPage(page + 1)
 						}}
 						className={`block py-2 px-3 leading-tight rounded-r-lg border bg-gray-900 border-gray-800 text-gray-300 ${
-							page < Math.floor((!filteredAccounts.length ? accounts : filteredAccounts).length / 5) &&
-							'hover:bg-gray-700 hover:text-white cursor-pointer'
+							page < Math.floor(filteredAccounts.length / 5) && 'hover:bg-gray-700 hover:text-white cursor-pointer'
 						} `}
 					>
 						<span className='sr-only'>Next</span>
