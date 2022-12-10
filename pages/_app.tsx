@@ -8,8 +8,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<>
 			<DefaultSeo
-				defaultTitle='Daniel Algarra Navarro - Protfolio page'
-				description="Daniel Algarra portfolio it's made to know more about me, my work experience and my abilities. You will find more about my professional career on the home page and more about me on my room."
+				defaultTitle='Daniel Algarra: Frontend Developer and Javascript Expert'
+				description='Portfolio of Daniel Algarra, a frontend developer specializing in Javascript, Next.js, React, and other frontend development technologies. View my projects and contact me for job opportunities in web development and Javascript frameworks.'
 				canonical='https://www.danielalgarranavarro.com/'
 			/>
 			<Component {...pageProps} />
